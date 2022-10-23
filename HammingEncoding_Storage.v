@@ -1,13 +1,17 @@
 
 //====================================================================================================================
 //Hamming Encoding for Degree Project, Lakehead Univerity
-//Author: Brady Bourgeois-Robichaud, Clayton Murzyn, Tyler Winger
+//Author: Brady Bourgeois-Robichaud, Clayton, Tyler Winger
 //Date: Oct 20, 2022
 //Description: Hamming encoding 11-bits of data using 4 parity bits for error correction and an additional parity bit
 // for 2-bit error detection. (15+1 hamming encoding)
 //====================================================================================================================
 
-module HammingEncodingStorage (); //11 data bits and 4 + 1 parity bits, not using the 0 parity bit yet
+module HammingEncodingStorage (
+    input clk,
+    input [10:0] dataIn,
+    output reg [15:0] codeWordOut
+); //11 data bits and 4 + 1 parity bits, not using the 0 parity bit yet
 
   reg [10:0] data; //11 data bits
   reg [3:0] dataLoc [10:0]; //4-bit addresses for 11 data bits
@@ -15,6 +19,8 @@ module HammingEncodingStorage (); //11 data bits and 4 + 1 parity bits, not usin
   reg [3:0] dataOnesCount; //Counts the number of 1's found in the dataWord
   reg [3:0] parity; //The parity word used to encode the data
   reg [15:0] codeWord [2047:0]; //The assembly of the data and parity bits
+  //reg [10:0] dataIn;
+  integer a;
   
   integer i,j;
   
@@ -62,5 +68,17 @@ initial begin
         
         data = data + 1'b1; //Increment data everytime it calculates the codeWord
     end
+    //dataIn = 11'b10110100001;
+      
+     
 end
+
+always @(posedge clk ) begin
+    $display("Code Word: %0b \n Data In: %0b",codeWord[dataIn],dataIn);
+    codeWordOut = codeWord[dataIn];
+end
+
+
+
+
 endmodule
