@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+vHammingEncoding_Storage_TB
+!i10b 1
+Z1 !s100 gnC]zGb]Xf1HL]e:B^g;;2
+Z2 I0iXEMe`PTBdcfI`6bdYb20
+Z3 VKMhlzQ>mE1ePRDGI3ZWgc0
+Z4 dC:\Users\4tyle\OneDrive\!School\Degree\Code\Hamming
+Z5 w1666546649
+Z6 8C:/Users/4tyle/OneDrive/!School/Degree/Code/Hamming/HammingEncoding_Storage_TB.v
+Z7 FC:/Users/4tyle/OneDrive/!School/Degree/Code/Hamming/HammingEncoding_Storage_TB.v
+L0 6
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1666548261.084000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/Code/Hamming/HammingEncoding_Storage_TB.v|
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/Code/Hamming/HammingEncoding_Storage_TB.v|
+!s101 -O0
+Z10 o-work work -O0
+Z11 n@hamming@encoding_@storage_@t@b
+vHammingEncodingStorage
+Z12 IT><FF9S_U6M7=oLWkUGKg2
+Z13 VKB;]0ccL?9DjciLCQ^YPA0
+R4
+Z14 w1666548258
+Z15 8C:\Users\4tyle\OneDrive\!School\Degree\Code\Hamming\HammingEncoding_Storage.v
+Z16 FC:\Users\4tyle\OneDrive\!School\Degree\Code\Hamming\HammingEncoding_Storage.v
+L0 10
+R8
+r1
+31
+Z17 !s90 -reportprogress|300|-work|work|C:\Users\4tyle\OneDrive\!School\Degree\Code\Hamming\HammingEncoding_Storage.v|
+R10
+Z18 n@hamming@encoding@storage
+!i10b 1
+Z19 !s100 W`IhWIoA4H3j;D`2TVa7O3
+!s85 0
+Z20 !s108 1666548261.019000
+Z21 !s107 C:\Users\4tyle\OneDrive\!School\Degree\Code\Hamming\HammingEncoding_Storage.v|
+!s101 -O0
