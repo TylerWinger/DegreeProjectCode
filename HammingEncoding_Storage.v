@@ -1,7 +1,7 @@
 
 //====================================================================================================================
 //Hamming Encoding for Degree Project, Lakehead Univerity
-//Author: Brady Bourgeois-Robichaud, Clayton, Tyler Winger
+//Author: Brady Bourgeois-Robichaud, Clayton Murzyn, Tyler Winger
 //Date: Oct 20, 2022
 //Description: Hamming encoding 11-bits of data using 4 parity bits for error correction and an additional parity bit
 // for 2-bit error detection. (15+1 hamming encoding)
