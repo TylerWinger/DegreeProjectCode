@@ -5,61 +5,61 @@ cModel Technology
 Z0 dC:\altera\13.0sp1
 vHammingDecoding
 !i10b 1
-!s100 nBzB]`INR9gI^Ic:a==dU0
-IH2T0XC1DPHZ]0=m4<A:Yb0
-Z1 VlQC^0_2P7AUh4DCZ`B<VZ3
-Z2 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\Hamming
-w1666618345
-8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v
-FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v
+Z1 !s100 dz42YEFBA>_[64OGF6L643
+Z2 I<F]A5_:WebaU;DUKnIDcB1
+Z3 VlQC^0_2P7AUh4DCZ`B<VZ3
+Z4 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\Hamming
+Z5 w1666631443
+Z6 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v
+Z7 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v
 L0 3
-Z3 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
 !s85 0
 31
-!s108 1666618348.734000
+!s108 1666631450.263000
 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v|
-!s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v|
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingDecoding.v|
 !s101 -O0
-Z4 o-work work -O0
-Z5 n@hamming@decoding
+Z10 o-work work -O0
+Z11 n@hamming@decoding
 vHammingEncoding_Storage_TB
-Z6 IQiL9T9Oc`hN=D;><20T7a0
-Z7 VKMhlzQ>mE1ePRDGI3ZWgc0
-R2
-Z8 w1666546649
-Z9 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v
-Z10 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v
+Z12 IQiL9T9Oc`hN=D;><20T7a0
+Z13 VKMhlzQ>mE1ePRDGI3ZWgc0
+R4
+Z14 w1666546649
+Z15 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v
+Z16 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v
 L0 6
-R3
+R8
 r1
 31
-R4
-Z11 n@hamming@encoding_@storage_@t@b
-Z12 !s100 7TZ9lBFK?e`TGc^P9i8L>0
-Z13 !s108 1666549857.285000
-Z14 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v|
-Z15 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v|
+R10
+Z17 n@hamming@encoding_@storage_@t@b
+Z18 !s100 7TZ9lBFK?e`TGc^P9i8L>0
+Z19 !s108 1666549857.285000
+Z20 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v|
+Z21 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vHammingEncodingStorage
-Z16 I4z4eX2P7a^[co?d]A3;YP3
-Z17 VKB;]0ccL?9DjciLCQ^YPA0
-R2
-Z18 w1666548258
-Z19 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v
-Z20 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v
+Z22 I4z4eX2P7a^[co?d]A3;YP3
+Z23 VKB;]0ccL?9DjciLCQ^YPA0
+R4
+Z24 w1666548258
+Z25 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v
+Z26 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v
 L0 10
-R3
+R8
 r1
 31
-R4
-Z21 n@hamming@encoding@storage
-Z22 !s100 ]Nl[_Z9M:cVYJ0X5l9b_11
-Z23 !s108 1666549857.215000
-Z24 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v|
-Z25 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v|
+R10
+Z27 n@hamming@encoding@storage
+Z28 !s100 ]Nl[_Z9M:cVYJ0X5l9b_11
+Z29 !s108 1666549857.215000
+Z30 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v|
+Z31 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v|
 !i10b 1
 !s85 0
 !s101 -O0
