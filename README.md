@@ -1,3 +1,3 @@
 # DegreeProjectCode
 
-##How to run the testbench for encoding and decoding
+## How to run the testbench for encoding and decoding
