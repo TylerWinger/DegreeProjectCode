@@ -37,7 +37,7 @@ module Hamming_TB;
     end
     always @(negedge clk) begin
         channelWord = codeWordOut;
-        channelWord[2] = !channelWord[2];
+        channelWord[2] = !channelWord[2]; //Flipping bit 2
     end
 
 endmodule
