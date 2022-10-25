@@ -17,8 +17,8 @@
 9. Finally, press the `run` button or F9.
           
 ### Object descriptions
-dataIn - is the 11 bits of data we are trying to transmit
-clk - is a clock of arbitrary frequency.
-codeWordOut - is formed of the data and parity bits.
-dataOut - is the data decoded from the channelWord
-channelWord - is the codeWord sent through a 'channel', and may contain errors
+dataIn - is the 11 bits of data we are trying to transmit \
+clk - is a clock of arbitrary frequency. \
+codeWordOut - is formed of the data and parity bits. \
+dataOut - is the data decoded from the channelWord. \
+channelWord - is the codeWord sent through a 'channel', and may contain errors. \
