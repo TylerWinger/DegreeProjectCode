@@ -33,19 +33,11 @@ module Hamming_TB;
 
 
     always @(posedge clk) begin
-        dataIn = $random%2048;
+        dataIn = $random%2048; //Generating a random 11 bit number 
     end
     always @(negedge clk) begin
-        channelWord = codeWordOut + 1'b1;
+        channelWord = codeWordOut;
+        channelWord[2] = !channelWord[2];
     end
 
-/*
-initial begin
-    dataIn = $random%2048;
-    #2
-    channelWord = codeWordOut + 1'b1;
-
-end
-
-*/
 endmodule
