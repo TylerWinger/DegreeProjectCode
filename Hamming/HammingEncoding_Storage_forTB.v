@@ -1,7 +1,7 @@
 
 //====================================================================================================================
 //Hamming Encoding for Degree Project, Lakehead Univerity
-//Author: Brady Bourgeois-Robichaud, Clayton, Tyler Winger
+//Author: Brady Bourgeois-Robichaud, Clayton Murzyn, Tyler Winger
 //Date: Oct 20, 2022
 //Description: Hamming encoding 11-bits of data using 4 parity bits for error correction and an additional parity bit
 // for 2-bit error detection. (15+1 hamming encoding)
@@ -19,12 +19,13 @@ module HammingEncodingStorage (
   reg [3:0] dataOnesCount; //Counts the number of 1's found in the dataWord
   reg [3:0] parity; //The parity word used to encode the data
   reg [15:0] codeWord [2047:0]; //The assembly of the data and parity bits
+  reg [2:0] parityOnesCount;
+  reg zeroParity;
   
   integer i,j;
-  
+//==================================================================================================================== 
 initial begin
-    //data = 11'b10000101101; //arbitrary data bits for testing
-
+  //Initialize
     dataLoc[0] = 4'b0011;
     dataLoc[1] = 4'b0101;
     dataLoc[2] = 4'b0110;
@@ -36,20 +37,22 @@ initial begin
     dataLoc[8] = 4'b1101;
     dataLoc[9] = 4'b1110;
     dataLoc[10] = 4'b1111;
-    
     data = 11'b00000000000; //Initialize data to 0
-    
+    parityOnesCount = 4'b0000;
+//====================================================================================================================
+// Making a LUT for all 2048 possible codeWords 
+//--------------------------------------------------------------------------------------------------------------------
     for (j = 0; j < 2048; j = j + 1) begin    
         parity = 4'b0000; //Initialize parity to 0 at the start of every codeWord calculation
         dataOnesCount = 1'b0; //Initialize dataOnesCount to 0 at the start of every codeWord calculation
 
     //Determining where the 1's in the dataword reside
         for (i = 0; i < 11; i = i + 1) begin 
-            if (data[i] == 1) begin
-                dataOnes[dataOnesCount] = dataLoc[i];
-                dataOnesCount = dataOnesCount + 1;
-            end      
-        end
+        if (data[i] == 1) begin
+            dataOnes[dataOnesCount] = dataLoc[i];
+            dataOnesCount = dataOnesCount + 1;
+        end      
+    end
     
     //Taking the XOR of all the locations where a 1 are, to calculate the parity word 
         if (dataOnesCount == 1)begin
@@ -61,22 +64,26 @@ initial begin
                 parity = parity ^ dataOnes[i];
             end   
         end
-        
-        codeWord[j] = {data[10],data[9],data[8],data[7],data[6],data[5],data[4],parity[3],data[3],data[2],data[1],parity[2],data[0],parity[1],parity[0],1'b0};
+
+    //Finding the zeroth parity bit
+        for (i = 0; i < 4; i = i + 1) begin
+            if (parity[i] == 1) begin
+                parityOnesCount = parityOnesCount + 1;
+            end
+        end
+        zeroParity = (dataOnesCount + parityOnesCount) % 2;
+
+        codeWord[j] = {data[10],data[9],data[8],data[7],data[6],data[5],data[4],parity[3],data[3],data[2],data[1],parity[2],data[0],parity[1],parity[0],zeroParity};
         
         data = data + 1'b1; //Increment data everytime it calculates the codeWord
     end
-    //dataIn = 11'b10110100001;
-      
-     
 end
+//====================================================================================================================
 
 always @(negedge clk ) begin
     $display("Code Word: %0b \n Data In: %0b , %0d",codeWord[dataIn],dataIn,dataIn);
     codeWordOut <= codeWord[dataIn];
 end
-
-
-
+//====================================================================================================================
 
 endmodule

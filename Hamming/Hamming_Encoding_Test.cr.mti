@@ -1,11 +1,4 @@
-C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module HammingEncodingStorage
-
-Top level modules:
-	HammingEncodingStorage
-
-} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v
+C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/HammingEncoding_Storage_TB.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module HammingEncoding_Storage_TB
 
