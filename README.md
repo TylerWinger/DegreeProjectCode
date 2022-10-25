@@ -1,7 +1,7 @@
 # DegreeProjectCode
 
 ## How to run the testbench for encoding and decoding
-1. Download the following files: 
+Markup : 1. Download the following files: 
   1. TB_Encoding_and_Decoding.mpf
   2. Hamming_TB.v
   3. Hamming_Decoding_forTB.v
