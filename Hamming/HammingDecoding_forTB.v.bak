@@ -7,10 +7,9 @@
 // for 2-bit error detection. (15+1 hamming decoding)
 //====================================================================================================================
 
-module HammingDecoding_forTB (
+module HammingDecoding (
     input reg[15:0] channelWord, //codeWord with possible error
-    input clk,
-    output reg [10:0] dataOut
+    input clk
 );
 //====================================================================================================================
     reg [3:0] channelOnes [15:0]; //locations where there are 1's
@@ -18,19 +17,13 @@ module HammingDecoding_forTB (
     reg [4:0] errorLoc; //location of the error (if one exists), if 0 then there is no error
     //reg [15:0] channelWord; //incoming word, may have an error
     reg [15:0] correctCodeWord; //channelWord with error corrected if one existed
-    //reg [10:0] dataOut; //data extracted from the correctCodeWord
+    reg [10:0] dataWord; //data extracted from the correctCodeWord
     integer i; //used for for loops
-    reg complete;
 //====================================================================================================================    
-    initial begin
-        complete = 1'b1;
-    end 
-
-    always @(channelWord) begin
-        complete = 1'b0;
+    always @(negedge clk) begin
     //initial begin
         errorLoc = 5'b00000;
-        //channelWord = 16'b1111110011110110; //initalizing channelWord with a dataOut with 1 error. The correct codeWord corresponses to dataOut 2030 (see 'codeWordList.txt') 
+        //channelWord = 16'b1111110011110110; //initalizing channelWord with a dataWord with 1 error. The correct codeWord corresponses to dataWord 2030 (see 'codeWordList.txt') 
         onesCount = 0;
 
     //Finding the 1's in the channelWord, putting the location of the 1 in channelOnes if it exists or a 0 if not
@@ -67,11 +60,9 @@ module HammingDecoding_forTB (
             correctCodeWord = channelWord;
             correctCodeWord[errorLoc] = !correctCodeWord[errorLoc];
         end
-        dataOut = {correctCodeWord[15],correctCodeWord[14],correctCodeWord[13],correctCodeWord[12],correctCodeWord[11],correctCodeWord[10],correctCodeWord[9],correctCodeWord[7],correctCodeWord[6],correctCodeWord[5],correctCodeWord[3]};
+        dataWord = {correctCodeWord[15],correctCodeWord[14],correctCodeWord[13],correctCodeWord[12],correctCodeWord[11],correctCodeWord[10],correctCodeWord[9],correctCodeWord[7],correctCodeWord[6],correctCodeWord[5],correctCodeWord[3]};
         $display("Received Code Word = %0b",channelWord);
         $display("Correct Code Word = %0b",correctCodeWord);
-        $display("Data Word = %0d",dataOut);
-
-        complete = 1'b1;
+        $display("Data Word = %0d",dataWord);
     end
 endmodule

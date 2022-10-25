@@ -7,6 +7,7 @@ module HammingEncoding_Storage_TB;
     reg [10:0] dataIn;
     reg clk;
     wire [15:0] codeWordOut;
+    reg [15:0] channelWord;
 
     //localparam period = 1; //Duration for each bit = 1 * 100ms = 100ms
 
@@ -14,9 +15,11 @@ module HammingEncoding_Storage_TB;
         .dataIn(dataIn),
         .clk(clk),
         .codeWordOut(codeWordOut)
+    );  
+    HammingDecoding_forTB UUT2(
+        .clk(clk),
+        .channelWord(channelWord)
     );
-
-  
 
     always begin
         clk = 1'b1;
@@ -26,7 +29,8 @@ module HammingEncoding_Storage_TB;
     end
 
     always @(posedge clk) begin
-    dataIn <= $random%2048; //generate a random number between 0 and 2^11
+        dataIn = $random%2048; //generate a random number between 0 and 2^11
+        channelWord = codeWordOut;
     end
 
 endmodule

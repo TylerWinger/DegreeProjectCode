@@ -7,7 +7,7 @@
 // for 2-bit error detection. (15+1 hamming encoding)
 //====================================================================================================================
 
-module HammingEncodingStorage (
+module HammingEncodingStorage_forTB (
     input clk,
     input [10:0] dataIn,
     output reg [15:0] codeWordOut
@@ -80,7 +80,7 @@ initial begin
 end
 //====================================================================================================================
 
-always @(negedge clk ) begin
+always @(dataIn) begin
     $display("Code Word: %0b \n Data In: %0b , %0d",codeWord[dataIn],dataIn,dataIn);
     codeWordOut <= codeWord[dataIn];
 end
