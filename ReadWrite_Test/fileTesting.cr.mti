@@ -1,0 +1,15 @@
+C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/readingFileTest.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/readingFileTest.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module readingFileTest
+
+Top level modules:
+	readingFileTest
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/writingFileTest.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/writingFileTest.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module writingFileTest
+
+Top level modules:
+	writingFileTest
+
+} {} {}}

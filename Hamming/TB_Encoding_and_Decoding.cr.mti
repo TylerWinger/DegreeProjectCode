@@ -5,18 +5,18 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	Hamming_64_TB
 
-} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming_64bit/HammingEncoding64_Run.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming_64bit/HammingEncoding64_Run.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module HammingEncoding64_Run
-
-Top level modules:
-	HammingEncoding64_Run
-
 } {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/Hamming_TB.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming/Hamming_TB.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module Hamming_TB
 
 Top level modules:
 	Hamming_TB
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming_64bit/HammingEncoding64_Run.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/Hamming_64bit/HammingEncoding64_Run.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module HammingEncoding64_Run
+
+Top level modules:
+	HammingEncoding64_Run
 
 } {} {}}

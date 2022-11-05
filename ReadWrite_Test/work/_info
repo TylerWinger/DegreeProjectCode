@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\Hamming
+vreadingFileTest
+Z1 !s100 TW[C`[eZ>>l<OGUl[h5C_1
+Z2 IkgSZWmFC:alM_:o0CoF:h3
+Z3 VDoz4`^eH`KA?R7G3GKS3K1
+Z4 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\ReadWrite_Test
+Z5 w1667412080
+Z6 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/readingFileTest.v
+Z7 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/readingFileTest.v
+L0 22
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/readingFileTest.v|
+Z10 o-work work -O0
+Z11 nreading@file@test
+!i10b 1
+!s85 0
+Z12 !s108 1667413431.548000
+Z13 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/readingFileTest.v|
+!s101 -O0
+vwritingFileTest
+!i10b 1
+Z14 !s100 8o>4WcO3OTeGl`GO=L0?_1
+Z15 IL=4?`XGONK23J1:>hP^5L3
+Z16 V[55CfHaM7[_2WhOV;85?F0
+R4
+Z17 w1667413425
+Z18 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/writingFileTest.v
+Z19 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/writingFileTest.v
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1667413431.616000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/writingFileTest.v|
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/ReadWrite_Test/writingFileTest.v|
+!s101 -O0
+R10
+Z21 nwriting@file@test

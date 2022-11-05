@@ -1,5 +1,4 @@
 /*
-//Reading a string
 module readingFileTest ();
      integer file;
      reg [8*64:0] string;
@@ -18,7 +17,6 @@ module readingFileTest ();
 endmodule
 */
 
-//Reading binary data
 module readingFileTest (
 );
 integer file;

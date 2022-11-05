@@ -1,0 +1,14 @@
+
+module writingFileTest (
+);
+integer file;
+reg [63:0] data = 64'b1010101010101010101010101010101010101010101010101010101010101010;
+
+initial begin
+    file = $fopen("dataOut.txt","w");
+    //$fprintf(file,"%d",data);
+    $fwrite(file,data);
+    $fclose(file);
+end
+    
+endmodule
