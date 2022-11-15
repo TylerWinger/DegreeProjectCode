@@ -1,0 +1,119 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\Testing_SPI_Message
+vspi_byte
+Z1 IYK1`5gCL4DAzI4MBNT;mJ3
+Z2 Vl^S>8k@4;@0iM;HF?DSdZ3
+Z3 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\Testing_SPI_Byte
+Z4 w1667753555
+Z5 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte.v
+Z6 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte.v
+L0 21
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte.v|
+Z9 o-work work -O0
+Z10 !s100 4ThJL;<UP9W=_YH0RHCXa0
+Z11 !s108 1667753558.361000
+Z12 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vspi_byte_if
+Z13 !s100 fa70?QA?ik066A<lb7F`22
+Z14 I9:zHc=?UKeVAaPK;G^Rfh1
+Z15 V35XWcNdeLLG22eLRiCGD?1
+R3
+Z16 w1651276409
+Z17 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_if.v
+Z18 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_if.v
+L0 15
+R7
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_if.v|
+R9
+Z20 !s108 1667753558.435000
+Z21 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_if.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vspi_byte_tb
+Z22 !s100 D06zMeRiRL:E9Ozn4NOK^0
+Z23 I<;=cW2a1iTOE4X2[d[fz?1
+Z24 VV6Bif=^BA52G5b6Z]2n8Q1
+R3
+R16
+Z25 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_tb.v
+Z26 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_tb.v
+L0 13
+R7
+r1
+31
+Z27 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_tb.v|
+R9
+Z28 !s108 1667753558.741000
+Z29 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_byte_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vspi_msg_tb
+Z30 IYW7[i6=R3UWXHFzQoOo?B3
+Z31 V@IeA]5ER7aYoBf1nOZ`?B1
+R3
+R16
+Z32 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_msg_tb.v
+Z33 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_msg_tb.v
+L0 13
+R7
+r1
+31
+R9
+Z34 !s100 IndLz_HTRzS`Bm27IRI3h2
+Z35 !s108 1667752291.016000
+Z36 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_msg_tb.v|
+Z37 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_msg_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vspi_pll
+!i10b 1
+!s100 JOb]GMZz6Z_KI2iPQNAf<1
+I9`fOk35EnDUohVK97nYG03
+Z38 VfD[QK0kDP0ldUB^KWMR2G2
+R3
+R16
+8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll_bb.v
+FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll_bb.v
+L0 35
+R7
+r1
+!s85 0
+31
+!s108 1667753559.269000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll_bb.v|
+!s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll_bb.v|
+!s101 -O0
+R9
+vspi_pll2
+Z39 IFI_2agf=XneO7Kj>Y>F]b2
+Z40 V;;M>aG_<g:VV=GFL>Z8a>3
+R3
+Z41 w1667667839
+Z42 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll2_bb.v
+Z43 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll2_bb.v
+L0 34
+R7
+r1
+31
+R9
+Z44 !s100 fFNRGCP>;<lJB:C:R<A^21
+Z45 !s108 1667753558.967000
+Z46 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll2_bb.v|
+Z47 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Byte/spi_pll2_bb.v|
+!i10b 1
+!s85 0
+!s101 -O0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Nov 06 11:06:04 2022
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : Testing_SPI_Message
+Top-level Entity Name : spi_msg
+Family : Cyclone II
+Total logic elements : 1,015
+    Total combinational functions : 507
+    Dedicated logic registers : 548
+Total registers : 548
+Total pins : 8
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

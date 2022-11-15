@@ -1,0 +1,31 @@
+
+module spiTest (
+        input clk,
+    input rst,
+    input spi_ss,
+    input spi_mosi,
+    input spi_sck,
+    output spi_miso,
+    input sck
+);
+    wire [7:0] spi_dout
+    wire [7:0] spi_din
+    //Instantiate UUT spiSlave
+    spiSlave UUT(
+        .clk(clk),
+        .rst(rst),
+        .ss(spi_ss),
+        .mosi(spi_mosi),
+        .miso(spi_miso),
+        .sck(spi_sck),
+        .dout(spi_dout),
+        .din(spi_din)
+    );
+
+assign dout = din;
+
+always @(posedge) begin
+    
+end
+
+endmodule

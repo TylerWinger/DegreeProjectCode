@@ -1,0 +1,66 @@
+C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pll
+
+Top level modules:
+	pll
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2_bb.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2_bb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module spi_pll2
+
+Top level modules:
+	spi_pll2
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll_inst.v {0 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll_inst.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+** Error: C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll_inst.v(1): near "pll": syntax error, unexpected IDENTIFIER, expecting class
+
+} {3.0 4.0} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_msg.sv {1 {vlog -work work -sv C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_msg.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module spi_msg
+
+Top level modules:
+	spi_msg
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_byte_if.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_byte_if.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module spi_byte_if
+
+Top level modules:
+	spi_byte_if
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module spi_pll2
+
+Top level modules:
+	spi_pll2
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2_inst.v {0 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2_inst.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+** Error: C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_pll2_inst.v(1): near "spi_pll2": syntax error, unexpected IDENTIFIER, expecting class
+
+} {3.0 4.0} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll_bb.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/pll_bb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pll
+
+Top level modules:
+	pll
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_msg_if.sv {1 {vlog -work work -sv C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_msg_if.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling package spi_msg_if_sv_unit
+-- Compiling module spi_msg_if
+
+Top level modules:
+	spi_msg_if
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_msg_tb.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/Testing_SPI_Message/spi_msg_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module spi_msg_tb
+
+Top level modules:
+	spi_msg_tb
+
+} {} {}}

@@ -1,0 +1,64 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\Testing_SPI_Byte
+vspi_slave
+Z1 !s100 BV7Z^C7KW17j7P>Z3gPVe2
+Z2 IgRNIcGVE65?n`?BmK1kH[0
+Z3 VJhaTPV>jB]^ld[Nmb0;Ra2
+Z4 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI
+Z5 w1668288592
+Z6 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave.v
+Z7 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave.v|
+Z10 o-work work -O0
+Z11 !s108 1668288594.273000
+Z12 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vspiSlave
+Z13 !s100 <fFVkLV`<@K>KVa@F>LWz0
+Z14 IAjAUK?TS:9^3^XEn5iMW01
+Z15 V7m]jCdHD6[4=Y9leLdKFc2
+R4
+Z16 w1668381565
+Z17 8C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v
+Z18 FC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v
+L0 1
+R8
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v|
+R10
+Z20 nspi@slave
+!i10b 1
+!s85 0
+Z21 !s108 1668381639.709000
+Z22 !s107 C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v|
+!s101 -O0
+vspiTB
+!i10b 1
+!s100 Z<gKSKcOeSn2`ZY<L4BcH1
+I[V@fd3QnFCCVm0FNMaS071
+Z23 VmYdHhYJAnJ>c>XooXfZjz1
+R4
+w1668381637
+Z24 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v
+Z25 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1668381639.748000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v|
+Z26 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v|
+!s101 -O0
+R10
+Z27 nspi@t@b

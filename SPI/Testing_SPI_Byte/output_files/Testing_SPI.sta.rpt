@@ -1,0 +1,1216 @@
+TimeQuest Timing Analyzer report for Testing_SPI
+Sun Nov 06 15:17:55 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'pll|altpll_component|pll|clk[0]'
+ 12. Slow Model Hold: 'pll|altpll_component|pll|clk[0]'
+ 13. Slow Model Minimum Pulse Width: 'pll|altpll_component|pll|clk[0]'
+ 14. Slow Model Minimum Pulse Width: 'clk50Mhz'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Output Enable Times
+ 20. Minimum Output Enable Times
+ 21. Output Disable Times
+ 22. Minimum Output Disable Times
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'pll|altpll_component|pll|clk[0]'
+ 29. Fast Model Hold: 'pll|altpll_component|pll|clk[0]'
+ 30. Fast Model Minimum Pulse Width: 'pll|altpll_component|pll|clk[0]'
+ 31. Fast Model Minimum Pulse Width: 'clk50Mhz'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Output Enable Times
+ 37. Minimum Output Enable Times
+ 38. Output Disable Times
+ 39. Minimum Output Disable Times
+ 40. Multicorner Timing Analysis Summary
+ 41. Setup Times
+ 42. Hold Times
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Report TCCS
+ 48. Report RSKM
+ 49. Unconstrained Paths
+ 50. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Testing_SPI                                                       ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                             ;
++---------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+-----------------------------------+-------------------------------------+
+; Clock Name                      ; Type      ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master   ; Source                            ; Targets                             ;
++---------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+-----------------------------------+-------------------------------------+
+; clk50Mhz                        ; Base      ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;          ;                                   ; { clk50Mhz }                        ;
+; pll|altpll_component|pll|clk[0] ; Generated ; 5.000  ; 200.0 MHz ; 0.000 ; 2.500  ; 50.00      ; 1         ; 4           ;       ;        ;           ;            ; false    ; clk50Mhz ; pll|altpll_component|pll|inclk[0] ; { pll|altpll_component|pll|clk[0] } ;
++---------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+-----------------------------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Slow Model Fmax Summary                                               ;
++------------+-----------------+---------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                      ; Note ;
++------------+-----------------+---------------------------------+------+
+; 193.69 MHz ; 193.69 MHz      ; pll|altpll_component|pll|clk[0] ;      ;
++------------+-----------------+---------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------+
+; Slow Model Setup Summary                                 ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; pll|altpll_component|pll|clk[0] ; -0.163 ; -2.119        ;
++---------------------------------+--------+---------------+
+
+
++---------------------------------------------------------+
+; Slow Model Hold Summary                                 ;
++---------------------------------+-------+---------------+
+; Clock                           ; Slack ; End Point TNS ;
++---------------------------------+-------+---------------+
+; pll|altpll_component|pll|clk[0] ; 0.445 ; 0.000         ;
++---------------------------------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                   ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; pll|altpll_component|pll|clk[0] ; 1.389  ; 0.000         ;
+; clk50Mhz                        ; 10.000 ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'pll|altpll_component|pll|clk[0]'                                                                                             ;
++--------+-------------+-------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock                    ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; -0.163 ; counter[11] ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.163 ; counter[11] ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.197      ;
+; -0.096 ; counter[10] ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.096 ; counter[10] ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.130      ;
+; -0.068 ; counter[9]  ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; -0.068 ; counter[9]  ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 5.102      ;
+; 0.109  ; counter[11] ; counter[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[3]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[4]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[5]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[6]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[7]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[9]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[10] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[11] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[12] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.109  ; counter[11] ; counter[13] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.929      ;
+; 0.176  ; counter[10] ; counter[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[3]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[4]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[5]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[6]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[7]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[9]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[10] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[11] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[12] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.176  ; counter[10] ; counter[13] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.862      ;
+; 0.204  ; counter[9]  ; counter[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[3]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[4]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[5]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[6]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[7]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[9]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[10] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[11] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[12] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.204  ; counter[9]  ; counter[13] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 4.834      ;
+; 0.205  ; counter[12] ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.205  ; counter[12] ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.829      ;
+; 0.219  ; counter[1]  ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.219  ; counter[1]  ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.815      ;
+; 0.223  ; counter[3]  ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.811      ;
+; 0.223  ; counter[3]  ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 4.811      ;
++--------+-------------+-------------+---------------------------------+---------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'pll|altpll_component|pll|clk[0]'                                                                                                                                 ;
++-------+-------------------------------+-------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock                    ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; 0.445 ; spi_byte_if:byte_if|state[0]  ; spi_byte_if:byte_if|state[0]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; spi_byte_if:byte_if|state[2]  ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; LED[0]~reg0                   ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; spi_byte_if:byte_if|MISO_r    ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620 ; counter[27]                   ; counter[27]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.906      ;
+; 0.632 ; spi_byte_if:byte_if|MOSI_r[1] ; spi_byte_if:byte_if|buffer[0] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.918      ;
+; 0.632 ; spi_byte_if:byte_if|buffer[4] ; spi_byte_if:byte_if|buffer[5] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.918      ;
+; 0.636 ; spi_byte_if:byte_if|buffer[6] ; spi_byte_if:byte_if|buffer[7] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.922      ;
+; 0.669 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.955      ;
+; 0.671 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|state[0]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.957      ;
+; 0.780 ; spi_byte_if:byte_if|SS_r[0]   ; spi_byte_if:byte_if|SS_r[1]   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.066      ;
+; 0.781 ; spi_byte_if:byte_if|MOSI_r[0] ; spi_byte_if:byte_if|MOSI_r[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.067      ;
+; 0.782 ; spi_byte_if:byte_if|SCLK_r[0] ; spi_byte_if:byte_if|SCLK_r[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.068      ;
+; 0.786 ; spi_byte_if:byte_if|buffer[2] ; spi_byte_if:byte_if|buffer[3] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.072      ;
+; 0.797 ; spi_byte_if:byte_if|SS_r[1]   ; spi_byte_if:byte_if|SS_r[2]   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.083      ;
+; 0.968 ; counter[5]                    ; counter[5]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; spi_byte_if:byte_if|buffer[7] ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.254      ;
+; 0.970 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.256      ;
+; 0.972 ; counter[9]                    ; counter[9]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; spi_byte_if:byte_if|buffer[3] ; spi_byte_if:byte_if|buffer[4] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.258      ;
+; 0.974 ; spi_byte_if:byte_if|buffer[1] ; spi_byte_if:byte_if|buffer[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.260      ;
+; 0.975 ; counter[14]                   ; counter[14]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.261      ;
+; 0.976 ; counter[7]                    ; counter[7]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; counter[12]                   ; counter[12]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; counter[21]                   ; counter[21]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.262      ;
+; 0.980 ; counter[23]                   ; counter[23]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.266      ;
+; 0.981 ; counter[11]                   ; counter[11]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; counter[13]                   ; counter[13]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.267      ;
+; 0.984 ; counter[16]                   ; counter[16]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.270      ;
+; 0.985 ; counter[25]                   ; counter[25]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.271      ;
+; 0.985 ; spi_byte_if:byte_if|buffer[5] ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.271      ;
+; 0.986 ; counter[15]                   ; counter[15]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.272      ;
+; 1.001 ; spi_byte_if:byte_if|state[0]  ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.287      ;
+; 1.006 ; spi_byte_if:byte_if|state[0]  ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.292      ;
+; 1.014 ; counter[6]                    ; counter[6]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.300      ;
+; 1.014 ; counter[10]                   ; counter[10]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.300      ;
+; 1.018 ; counter[22]                   ; counter[22]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.304      ;
+; 1.019 ; counter[3]                    ; counter[3]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; counter[4]                    ; counter[4]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.305      ;
+; 1.019 ; counter[24]                   ; counter[24]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.305      ;
+; 1.020 ; counter[19]                   ; counter[19]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.306      ;
+; 1.020 ; counter[20]                   ; counter[20]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.306      ;
+; 1.022 ; spi_byte_if:byte_if|buffer[0] ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.308      ;
+; 1.023 ; counter[17]                   ; counter[17]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.309      ;
+; 1.024 ; counter[1]                    ; counter[1]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.310      ;
+; 1.024 ; counter[26]                   ; counter[26]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.310      ;
+; 1.095 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.381      ;
+; 1.099 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.385      ;
+; 1.104 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[5] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.390      ;
+; 1.104 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[4] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.390      ;
+; 1.126 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.412      ;
+; 1.127 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|state[0]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.413      ;
+; 1.141 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.427      ;
+; 1.157 ; spi_byte_if:byte_if|state[1]  ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.443      ;
+; 1.299 ; spi_byte_if:byte_if|state[0]  ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.585      ;
+; 1.302 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[7] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.588      ;
+; 1.332 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[0] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.618      ;
+; 1.339 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[3] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.625      ;
+; 1.341 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.627      ;
+; 1.344 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[7] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.630      ;
+; 1.345 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|SCLK_r[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.631      ;
+; 1.345 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[0] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.631      ;
+; 1.354 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.640      ;
+; 1.389 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.675      ;
+; 1.391 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.677      ;
+; 1.391 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.677      ;
+; 1.392 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[4] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.678      ;
+; 1.393 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.679      ;
+; 1.393 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[3] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.679      ;
+; 1.404 ; counter[9]                    ; counter[10]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.690      ;
+; 1.407 ; counter[14]                   ; counter[15]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.693      ;
+; 1.408 ; counter[12]                   ; counter[13]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.694      ;
+; 1.412 ; counter[23]                   ; counter[24]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.698      ;
+; 1.413 ; counter[11]                   ; counter[12]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.699      ;
+; 1.416 ; counter[16]                   ; counter[17]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.702      ;
+; 1.417 ; counter[25]                   ; counter[26]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.703      ;
+; 1.418 ; counter[15]                   ; counter[16]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.704      ;
+; 1.444 ; spi_byte_if:byte_if|state[2]  ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.730      ;
+; 1.447 ; counter[6]                    ; counter[7]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.733      ;
+; 1.447 ; counter[10]                   ; counter[11]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.733      ;
+; 1.451 ; counter[22]                   ; counter[23]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.737      ;
+; 1.452 ; counter[4]                    ; counter[5]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.738      ;
+; 1.452 ; counter[24]                   ; counter[25]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.738      ;
+; 1.452 ; counter[3]                    ; counter[4]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.738      ;
+; 1.453 ; counter[20]                   ; counter[21]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.739      ;
+; 1.453 ; counter[19]                   ; counter[20]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.739      ;
+; 1.457 ; counter[26]                   ; counter[27]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.743      ;
+; 1.484 ; counter[9]                    ; counter[11]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.770      ;
+; 1.487 ; counter[14]                   ; counter[16]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.773      ;
+; 1.488 ; counter[7]                    ; counter[9]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.774      ;
+; 1.492 ; counter[23]                   ; counter[25]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.778      ;
+; 1.493 ; counter[11]                   ; counter[13]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.779      ;
+; 1.497 ; counter[25]                   ; counter[27]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.783      ;
+; 1.498 ; counter[15]                   ; counter[17]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.784      ;
+; 1.500 ; spi_byte_if:byte_if|SS_r[1]   ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.786      ;
+; 1.501 ; counter[5]                    ; counter[6]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.787      ;
+; 1.509 ; counter[21]                   ; counter[22]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.795      ;
+; 1.517 ; counter[13]                   ; counter[14]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; -0.004     ; 1.799      ;
+; 1.521 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 1.807      ;
++-------+-------------------------------+-------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'pll|altpll_component|pll|clk[0]'                                                                       ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                           ; Clock Edge ; Target                        ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[0]~reg0                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[0]~reg0                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[1]~reg0                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[1]~reg0                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[0]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[0]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[10]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[10]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[11]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[11]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[12]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[12]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[13]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[13]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[14]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[14]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[15]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[15]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[16]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[16]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[17]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[17]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[18]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[18]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[19]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[19]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[1]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[1]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[20]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[20]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[21]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[21]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[22]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[22]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[23]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[23]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[24]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[24]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[25]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[25]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[26]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[26]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[27]                   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[27]                   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[2]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[2]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[3]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[3]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[4]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[4]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[5]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[5]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[6]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[6]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[7]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[7]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[8]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[8]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[9]                    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[9]                    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MISO_r    ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MISO_r    ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[0] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[0] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[1] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[1] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[0] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[0] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[1] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[1] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[2] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[2] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[0]   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[0]   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[1]   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[1]   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[2]   ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[2]   ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[0] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[0] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[1] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[1] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[2] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[2] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[3] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[3] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[4] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[4] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[5] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[5] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[6] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[6] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[7] ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[7] ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[0]  ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[0]  ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[1]  ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[1]  ;
+; 1.389 ; 2.500        ; 1.111          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[2]  ;
+; 1.389 ; 2.500        ; 1.111          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[2]  ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk50Mhz'                                                                            ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------+
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk50Mhz ; Rise       ; clk50Mhz|combout                  ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk50Mhz ; Rise       ; clk50Mhz|combout                  ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk50Mhz ; Rise       ; pll|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk50Mhz ; Rise       ; pll|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk50Mhz ; Rise       ; pll|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk50Mhz ; Rise       ; pll|altpll_component|pll|inclk[0] ;
+; 17.369 ; 20.000       ; 2.631          ; Port Rate        ; clk50Mhz ; Rise       ; clk50Mhz                          ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Times                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; MOSI      ; clk50Mhz   ; 6.487 ; 6.487 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SCLK      ; clk50Mhz   ; 6.209 ; 6.209 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SS        ; clk50Mhz   ; 6.748 ; 6.748 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Times                                                                              ;
++-----------+------------+--------+--------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++-----------+------------+--------+--------+------------+---------------------------------+
+; MOSI      ; clk50Mhz   ; -6.239 ; -6.239 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SCLK      ; clk50Mhz   ; -5.961 ; -5.961 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SS        ; clk50Mhz   ; -6.500 ; -6.500 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+--------+--------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; LED[*]    ; clk50Mhz   ; 6.344 ; 6.344 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[0]   ; clk50Mhz   ; 6.344 ; 6.344 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[1]   ; clk50Mhz   ; 5.231 ; 5.231 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; MISO      ; clk50Mhz   ; 4.140 ; 4.140 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; LED[*]    ; clk50Mhz   ; 5.231 ; 5.231 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[0]   ; clk50Mhz   ; 6.344 ; 6.344 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[1]   ; clk50Mhz   ; 5.231 ; 5.231 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; MISO      ; clk50Mhz   ; 4.140 ; 4.140 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Output Enable Times                                                                  ;
++-----------+------------+-------+------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 4.105 ;      ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+------+------------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Output Enable Times                                                          ;
++-----------+------------+-------+------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 4.105 ;      ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Output Disable Times                                                                          ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 4.105     ;           ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                                  ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 4.105     ;           ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+
+
++---------------------------------------------------------+
+; Fast Model Setup Summary                                ;
++---------------------------------+-------+---------------+
+; Clock                           ; Slack ; End Point TNS ;
++---------------------------------+-------+---------------+
+; pll|altpll_component|pll|clk[0] ; 3.031 ; 0.000         ;
++---------------------------------+-------+---------------+
+
+
++---------------------------------------------------------+
+; Fast Model Hold Summary                                 ;
++---------------------------------+-------+---------------+
+; Clock                           ; Slack ; End Point TNS ;
++---------------------------------+-------+---------------+
+; pll|altpll_component|pll|clk[0] ; 0.215 ; 0.000         ;
++---------------------------------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                   ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; pll|altpll_component|pll|clk[0] ; 1.500  ; 0.000         ;
+; clk50Mhz                        ; 10.000 ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'pll|altpll_component|pll|clk[0]'                                                                                            ;
++-------+-------------+-------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock                    ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; 3.031 ; counter[10] ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.031 ; counter[10] ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.997      ;
+; 3.042 ; counter[11] ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.042 ; counter[11] ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.986      ;
+; 3.047 ; counter[9]  ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.047 ; counter[9]  ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.981      ;
+; 3.069 ; counter[0]  ; counter[18] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.963      ;
+; 3.128 ; counter[2]  ; counter[18] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.904      ;
+; 3.132 ; counter[10] ; counter[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[3]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[4]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[5]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[6]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[7]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[9]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[10] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[11] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[12] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.132 ; counter[10] ; counter[13] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.900      ;
+; 3.143 ; counter[11] ; counter[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[3]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[4]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[5]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[6]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[7]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[9]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[10] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[11] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[12] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.143 ; counter[11] ; counter[13] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.889      ;
+; 3.148 ; counter[9]  ; counter[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[3]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[4]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[5]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[6]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[7]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[9]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[10] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[11] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[12] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.148 ; counter[9]  ; counter[13] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.884      ;
+; 3.156 ; counter[1]  ; counter[18] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; 0.000      ; 1.876      ;
+; 3.166 ; counter[1]  ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.166 ; counter[1]  ; counter[25] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.862      ;
+; 3.168 ; counter[12] ; counter[14] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[15] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[16] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[17] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[19] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[20] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[21] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[22] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[23] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[24] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[26] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
+; 3.168 ; counter[12] ; counter[27] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 5.000        ; -0.004     ; 1.860      ;
++-------+-------------+-------------+---------------------------------+---------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'pll|altpll_component|pll|clk[0]'                                                                                                                                 ;
++-------+-------------------------------+-------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock                    ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; 0.215 ; spi_byte_if:byte_if|state[0]  ; spi_byte_if:byte_if|state[0]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_byte_if:byte_if|state[2]  ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LED[0]~reg0                   ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_byte_if:byte_if|MISO_r    ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.238 ; counter[27]                   ; counter[27]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.390      ;
+; 0.246 ; spi_byte_if:byte_if|buffer[4] ; spi_byte_if:byte_if|buffer[5] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.398      ;
+; 0.248 ; spi_byte_if:byte_if|MOSI_r[1] ; spi_byte_if:byte_if|buffer[0] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.400      ;
+; 0.251 ; spi_byte_if:byte_if|buffer[6] ; spi_byte_if:byte_if|buffer[7] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.403      ;
+; 0.263 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.415      ;
+; 0.265 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|state[0]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.417      ;
+; 0.328 ; spi_byte_if:byte_if|buffer[2] ; spi_byte_if:byte_if|buffer[3] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.480      ;
+; 0.334 ; spi_byte_if:byte_if|MOSI_r[0] ; spi_byte_if:byte_if|MOSI_r[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.486      ;
+; 0.336 ; spi_byte_if:byte_if|SCLK_r[0] ; spi_byte_if:byte_if|SCLK_r[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.488      ;
+; 0.336 ; spi_byte_if:byte_if|SS_r[0]   ; spi_byte_if:byte_if|SS_r[1]   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.488      ;
+; 0.341 ; spi_byte_if:byte_if|SS_r[1]   ; spi_byte_if:byte_if|SS_r[2]   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.493      ;
+; 0.358 ; counter[5]                    ; counter[5]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; counter[14]                   ; counter[14]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; counter[7]                    ; counter[7]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; counter[9]                    ; counter[9]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.512      ;
+; 0.363 ; counter[11]                   ; counter[11]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; counter[12]                   ; counter[12]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; counter[13]                   ; counter[13]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; counter[21]                   ; counter[21]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; counter[23]                   ; counter[23]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; spi_byte_if:byte_if|buffer[7] ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; counter[15]                   ; counter[15]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; counter[16]                   ; counter[16]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; counter[25]                   ; counter[25]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; spi_byte_if:byte_if|buffer[3] ; spi_byte_if:byte_if|buffer[4] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367 ; spi_byte_if:byte_if|buffer[1] ; spi_byte_if:byte_if|buffer[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.519      ;
+; 0.372 ; counter[6]                    ; counter[6]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; counter[10]                   ; counter[10]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; spi_byte_if:byte_if|buffer[5] ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; counter[19]                   ; counter[19]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; counter[20]                   ; counter[20]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; counter[17]                   ; counter[17]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; counter[1]                    ; counter[1]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; counter[3]                    ; counter[3]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; counter[4]                    ; counter[4]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; counter[22]                   ; counter[22]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; counter[24]                   ; counter[24]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; counter[26]                   ; counter[26]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.528      ;
+; 0.378 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.530      ;
+; 0.385 ; spi_byte_if:byte_if|buffer[0] ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.537      ;
+; 0.386 ; spi_byte_if:byte_if|state[0]  ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.538      ;
+; 0.389 ; spi_byte_if:byte_if|state[0]  ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.541      ;
+; 0.428 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.580      ;
+; 0.429 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|state[2]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.581      ;
+; 0.430 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.582      ;
+; 0.434 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[5] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.586      ;
+; 0.434 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[4] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.586      ;
+; 0.440 ; spi_byte_if:byte_if|state[1]  ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.592      ;
+; 0.455 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|state[0]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.607      ;
+; 0.455 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|state[1]  ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.607      ;
+; 0.497 ; counter[14]                   ; counter[15]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; counter[9]                    ; counter[10]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.650      ;
+; 0.501 ; counter[11]                   ; counter[12]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.653      ;
+; 0.501 ; counter[12]                   ; counter[13]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.653      ;
+; 0.502 ; counter[23]                   ; counter[24]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.654      ;
+; 0.503 ; counter[15]                   ; counter[16]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; counter[16]                   ; counter[17]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; counter[25]                   ; counter[26]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.655      ;
+; 0.509 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[0] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[7] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.661      ;
+; 0.512 ; counter[6]                    ; counter[7]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.664      ;
+; 0.513 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[7] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.665      ;
+; 0.513 ; counter[10]                   ; counter[11]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.665      ;
+; 0.513 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.665      ;
+; 0.514 ; spi_byte_if:byte_if|SCLK_r[2] ; spi_byte_if:byte_if|buffer[3] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; counter[20]                   ; counter[21]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; counter[19]                   ; counter[20]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; spi_byte_if:byte_if|state[0]  ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.666      ;
+; 0.516 ; counter[26]                   ; counter[27]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[0] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; counter[4]                    ; counter[5]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; counter[22]                   ; counter[23]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; counter[24]                   ; counter[25]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; counter[3]                    ; counter[4]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.668      ;
+; 0.521 ; spi_byte_if:byte_if|SCLK_r[1] ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.673      ;
+; 0.532 ; counter[14]                   ; counter[16]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; counter[7]                    ; counter[9]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; counter[9]                    ; counter[11]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.685      ;
+; 0.536 ; counter[11]                   ; counter[13]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.688      ;
+; 0.537 ; counter[23]                   ; counter[25]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.689      ;
+; 0.538 ; counter[15]                   ; counter[17]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.690      ;
+; 0.538 ; counter[25]                   ; counter[27]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.690      ;
+; 0.544 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[1] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.696      ;
+; 0.546 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[2] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[6] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; spi_byte_if:byte_if|state[2]  ; LED[0]~reg0                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[4] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.699      ;
+; 0.548 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|MISO_r    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.700      ;
+; 0.548 ; spi_byte_if:byte_if|state[1]  ; spi_byte_if:byte_if|buffer[3] ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.700      ;
+; 0.548 ; counter[10]                   ; counter[12]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.700      ;
+; 0.549 ; counter[19]                   ; counter[21]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.701      ;
+; 0.550 ; counter[17]                   ; counter[19]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.702      ;
+; 0.551 ; counter[5]                    ; counter[6]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.703      ;
+; 0.551 ; counter[1]                    ; counter[3]                    ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.703      ;
+; 0.551 ; counter[22]                   ; counter[24]                   ; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 0.000        ; 0.000      ; 0.703      ;
++-------+-------------------------------+-------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'pll|altpll_component|pll|clk[0]'                                                                       ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                           ; Clock Edge ; Target                        ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[0]~reg0                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[0]~reg0                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[1]~reg0                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; LED[1]~reg0                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[0]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[0]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[10]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[10]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[11]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[11]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[12]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[12]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[13]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[13]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[14]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[14]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[15]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[15]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[16]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[16]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[17]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[17]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[18]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[18]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[19]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[19]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[1]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[1]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[20]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[20]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[21]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[21]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[22]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[22]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[23]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[23]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[24]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[24]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[25]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[25]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[26]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[26]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[27]                   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[27]                   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[2]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[2]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[3]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[3]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[4]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[4]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[5]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[5]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[6]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[6]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[7]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[7]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[8]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[8]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[9]                    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; counter[9]                    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MISO_r    ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MISO_r    ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[0] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[0] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[1] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|MOSI_r[1] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[0] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[0] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[1] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[1] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[2] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SCLK_r[2] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[0]   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[0]   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[1]   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[1]   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[2]   ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|SS_r[2]   ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[0] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[0] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[1] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[1] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[2] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[2] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[3] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[3] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[4] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[4] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[5] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[5] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[6] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[6] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[7] ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|buffer[7] ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[0]  ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[0]  ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[1]  ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[1]  ;
+; 1.500 ; 2.500        ; 1.000          ; High Pulse Width ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[2]  ;
+; 1.500 ; 2.500        ; 1.000          ; Low Pulse Width  ; pll|altpll_component|pll|clk[0] ; Rise       ; spi_byte_if:byte_if|state[2]  ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk50Mhz'                                                                            ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------+
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk50Mhz ; Rise       ; clk50Mhz|combout                  ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk50Mhz ; Rise       ; clk50Mhz|combout                  ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk50Mhz ; Rise       ; pll|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk50Mhz ; Rise       ; pll|altpll_component|pll|clk[0]   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; clk50Mhz ; Rise       ; pll|altpll_component|pll|inclk[0] ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; clk50Mhz ; Rise       ; pll|altpll_component|pll|inclk[0] ;
+; 17.620 ; 20.000       ; 2.380          ; Port Rate        ; clk50Mhz ; Rise       ; clk50Mhz                          ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Times                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; MOSI      ; clk50Mhz   ; 3.718 ; 3.718 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SCLK      ; clk50Mhz   ; 3.617 ; 3.617 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SS        ; clk50Mhz   ; 3.810 ; 3.810 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Times                                                                              ;
++-----------+------------+--------+--------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++-----------+------------+--------+--------+------------+---------------------------------+
+; MOSI      ; clk50Mhz   ; -3.598 ; -3.598 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SCLK      ; clk50Mhz   ; -3.497 ; -3.497 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SS        ; clk50Mhz   ; -3.690 ; -3.690 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+--------+--------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; LED[*]    ; clk50Mhz   ; 2.562 ; 2.562 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[0]   ; clk50Mhz   ; 2.562 ; 2.562 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[1]   ; clk50Mhz   ; 2.144 ; 2.144 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; MISO      ; clk50Mhz   ; 1.724 ; 1.724 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; LED[*]    ; clk50Mhz   ; 2.144 ; 2.144 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[0]   ; clk50Mhz   ; 2.562 ; 2.562 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[1]   ; clk50Mhz   ; 2.144 ; 2.144 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; MISO      ; clk50Mhz   ; 1.724 ; 1.724 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Output Enable Times                                                                  ;
++-----------+------------+-------+------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 1.696 ;      ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+------+------------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Output Enable Times                                                          ;
++-----------+------------+-------+------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 1.696 ;      ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Output Disable Times                                                                          ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 1.696     ;           ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                                  ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+; MISO      ; clk50Mhz   ; 1.696     ;           ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-----------+-----------+------------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                          ;
++----------------------------------+--------+-------+----------+---------+---------------------+
+; Clock                            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack                 ; -0.163 ; 0.215 ; N/A      ; N/A     ; 1.389               ;
+;  clk50Mhz                        ; N/A    ; N/A   ; N/A      ; N/A     ; 10.000              ;
+;  pll|altpll_component|pll|clk[0] ; -0.163 ; 0.215 ; N/A      ; N/A     ; 1.389               ;
+; Design-wide TNS                  ; -2.119 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk50Mhz                        ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  pll|altpll_component|pll|clk[0] ; -2.119 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++----------------------------------+--------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Times                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; MOSI      ; clk50Mhz   ; 6.487 ; 6.487 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SCLK      ; clk50Mhz   ; 6.209 ; 6.209 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SS        ; clk50Mhz   ; 6.748 ; 6.748 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Times                                                                              ;
++-----------+------------+--------+--------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++-----------+------------+--------+--------+------------+---------------------------------+
+; MOSI      ; clk50Mhz   ; -3.598 ; -3.598 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SCLK      ; clk50Mhz   ; -3.497 ; -3.497 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; SS        ; clk50Mhz   ; -3.690 ; -3.690 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+--------+--------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; LED[*]    ; clk50Mhz   ; 6.344 ; 6.344 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[0]   ; clk50Mhz   ; 6.344 ; 6.344 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[1]   ; clk50Mhz   ; 5.231 ; 5.231 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; MISO      ; clk50Mhz   ; 4.140 ; 4.140 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++-----------+------------+-------+-------+------------+---------------------------------+
+; LED[*]    ; clk50Mhz   ; 2.144 ; 2.144 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[0]   ; clk50Mhz   ; 2.562 ; 2.562 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+;  LED[1]   ; clk50Mhz   ; 2.144 ; 2.144 ; Rise       ; pll|altpll_component|pll|clk[0] ;
+; MISO      ; clk50Mhz   ; 1.724 ; 1.724 ; Rise       ; pll|altpll_component|pll|clk[0] ;
++-----------+------------+-------+-------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                               ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 1365     ; 0        ; 0        ; 0        ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; pll|altpll_component|pll|clk[0] ; pll|altpll_component|pll|clk[0] ; 1365     ; 0        ; 0        ; 0        ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Nov 06 15:17:54 2022
+Info: Command: quartus_sta Testing_SPI -c Testing_SPI
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Testing_SPI.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 20.000 -waveform {0.000 10.000} -name clk50Mhz clk50Mhz
+    Info (332110): create_generated_clock -source {pll|altpll_component|pll|inclk[0]} -multiply_by 4 -duty_cycle 50.00 -name {pll|altpll_component|pll|clk[0]} {pll|altpll_component|pll|clk[0]}
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.163
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.163        -2.119 pll|altpll_component|pll|clk[0] 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 pll|altpll_component|pll|clk[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 1.389
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.389         0.000 pll|altpll_component|pll|clk[0] 
+    Info (332119):    10.000         0.000 clk50Mhz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 3.031
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     3.031         0.000 pll|altpll_component|pll|clk[0] 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 pll|altpll_component|pll|clk[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 1.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.500         0.000 pll|altpll_component|pll|clk[0] 
+    Info (332119):    10.000         0.000 clk50Mhz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4536 megabytes
+    Info: Processing ended: Sun Nov 06 15:17:55 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
