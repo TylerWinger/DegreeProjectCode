@@ -11,24 +11,29 @@ module spiTB ();
     wire 
           miso,
           done,
-          din,
           mosi_q,
           miso_q,
           miso_d,
           mosi_d,
-          ss_d;
+          ss_d,
+          ss_q;
     wire [7:0] dout, data_d, data_q;
+    reg  [7:0] din = 8'hff;
+
+    integer i = 0;
 
     //Instantiate UUT spiSlave
     spiSlave UUT(
         .clk(clk),
         .rst(rst),
         .ss(ss),
+        .ss_d(ss_d),
+        .ss_q(ss_q),
         .mosi(mosi),
         .miso(miso),
         .sck(sck),
         .done(done),
-        .din(8'hff),
+        .din(din),
         .dout(dout),
         .mosi_d(mosi_d),
         .mosi_q(mosi_q),
@@ -48,11 +53,21 @@ module spiTB ();
         rst = 0;
         ss = 0;
         #1;
+        ss = 1;
+        #2
+        ss = 0;
     end
 
     always @(posedge clk) begin
         sck <= !sck;
-        mosi <= ! mosi;
+    end
+    always @(negedge sck) begin
+        // if (i < 10) begin
+        //     mosi <= !mosi;
+        //     i <= i + 1;
+        // end
+        // else ss = 1;
+        mosi <= !mosi;
     end
 
 

@@ -1,7 +1,7 @@
-C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v {2 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v
+C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v {2 {vlog -work work {C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiTB.v}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module spiTB
-** Warning: C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v(4): (vlog-2638) Bad name or identifier in Verilog compiler directive.  The following text was found where a compiler directive name or macro name was expected.: 1.
+** Warning: C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiTB.v(4): (vlog-2638) Bad name or identifier in Verilog compiler directive.  The following text was found where a compiler directive name or macro name was expected.: 1.
 
 
 Top level modules:

@@ -23,42 +23,42 @@ Z12 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/S
 !s85 0
 !s101 -O0
 vspiSlave
-Z13 !s100 <fFVkLV`<@K>KVa@F>LWz0
-Z14 IAjAUK?TS:9^3^XEn5iMW01
-Z15 V7m]jCdHD6[4=Y9leLdKFc2
+!i10b 1
+Z13 !s100 JDEagRN<LEXa1S]@IP89>0
+Z14 IaMod4>V7>0;M@o^XG4EV52
+Z15 VacJXAKWYCzjVLED13`mk50
 R4
-Z16 w1668381565
-Z17 8C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v
-Z18 FC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v
+Z16 w1668641491
+Z17 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave_TB_version.v
+Z18 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave_TB_version.v
 L0 1
 R8
 r1
+!s85 0
 31
-Z19 !s90 -reportprogress|300|-work|work|C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v|
+!s108 1668644952.314000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave_TB_version.v|
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiSlave_TB_version.v|
+!s101 -O0
 R10
 Z20 nspi@slave
-!i10b 1
-!s85 0
-Z21 !s108 1668381639.709000
-Z22 !s107 C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiSlave.v|
-!s101 -O0
 vspiTB
-!i10b 1
-!s100 Z<gKSKcOeSn2`ZY<L4BcH1
-I[V@fd3QnFCCVm0FNMaS071
-Z23 VmYdHhYJAnJ>c>XooXfZjz1
+Z21 IPY9;PT8MKPn78P0:>clYW2
+Z22 VmYdHhYJAnJ>c>XooXfZjz1
 R4
-w1668381637
-Z24 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v
-Z25 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v
+Z23 w1668644946
+Z24 8C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiTB.v
+Z25 FC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiTB.v
 L0 3
 R8
 r1
-!s85 0
 31
-!s108 1668381639.748000
-!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v|
-Z26 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/spiTB.v|
-!s101 -O0
+Z26 !s90 -reportprogress|300|-work|work|C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiTB.v|
 R10
 Z27 nspi@t@b
+!i10b 1
+Z28 !s100 mNiOQVhOGj<J5CL6MC9_M1
+!s85 0
+Z29 !s108 1668644952.274000
+Z30 !s107 C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\SPI\spiTB.v|
+!s101 -O0

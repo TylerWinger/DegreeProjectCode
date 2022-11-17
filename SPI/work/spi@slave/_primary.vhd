@@ -14,6 +14,8 @@ entity spiSlave is
         mosi_d          : out    vl_logic;
         mosi_q          : out    vl_logic;
         data_d          : out    vl_logic_vector(7 downto 0);
-        data_q          : out    vl_logic_vector(7 downto 0)
+        data_q          : out    vl_logic_vector(7 downto 0);
+        ss_d            : out    vl_logic;
+        ss_q            : out    vl_logic
     );
 end spiSlave;

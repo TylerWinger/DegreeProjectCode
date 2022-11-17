@@ -1,3 +1,5 @@
+// data in gets stored in dout after 8 bits get passed through mosi
+
 module spiSlave(
     input clk,
     input rst,
@@ -9,11 +11,10 @@ module spiSlave(
     input [7:0] din,
     output [7:0] dout,
     output reg mosi_d, mosi_q,
-    output reg [7:0] data_d, data_q
+    output reg [7:0] data_d, data_q,
+    output reg ss_d, ss_q
     );
 
-
-reg ss_d, ss_q;
 reg sck_d, sck_q;
 reg sck_old_d, sck_old_q;
 
