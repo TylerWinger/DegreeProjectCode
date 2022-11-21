@@ -29,44 +29,44 @@ assign dout = din;
 
 
 always @(posedge clk) begin
-    if (rst) begin
-        LEDG[0] <= rst;
+   if (rst) begin
+       LEDG[0] <= rst;
 		if (mosi == 1) begin
-            LEDG[1] <= 1'b1;
-        end
-        LEDR[0] <= (din[0])?1'b1:1'b0;
-        LEDR[1] <= (din[1])?1'b1:1'b0;
-        LEDR[2] <= (din[2])?1'b1:1'b0;
-        LEDR[3] <= (din[3])?1'b1:1'b0;
-        LEDR[4] <= (din[4])?1'b1:1'b0;
-        LEDR[5] <= (din[5])?1'b1:1'b0;
-        LEDR[6] <= (din[6])?1'b1:1'b0;
-        LEDR[7] <= (din[7])?1'b1:1'b0;
-    end
-    else begin
-        LEDR[0] <= 1'b0;
-        LEDR[1] <= 1'b0;
+           LEDG[1] <= 1'b1;
+       end
+       LEDR[0] <= (din[0])?1'b1:1'b0;
+       LEDR[1] <= (din[1])?1'b1:1'b0;
+       LEDR[2] <= (din[2])?1'b1:1'b0;
+       LEDR[3] <= (din[3])?1'b1:1'b0;
+       LEDR[4] <= (din[4])?1'b1:1'b0;
+       LEDR[5] <= (din[5])?1'b1:1'b0;
+       LEDR[6] <= (din[6])?1'b1:1'b0;
+       LEDR[7] <= (din[7])?1'b1:1'b0;
+   end
+   else begin
+       LEDR[0] <= 1'b0;
+       LEDR[1] <= 1'b0;
 		  LEDR[2] <= 1'b0;
-        LEDR[3] <= 1'b0;
-        LEDR[4] <= 1'b0;
-        LEDR[5] <= 1'b0;
-        LEDR[6] <= 1'b0;
-        LEDR[7] <= 1'b0;
-        LEDG[0] <= 1'b0;
+       LEDR[3] <= 1'b0;
+       LEDR[4] <= 1'b0;
+       LEDR[5] <= 1'b0;
+       LEDR[6] <= 1'b0;
+       LEDR[7] <= 1'b0;
+       LEDG[0] <= 1'b0;
 		  LEDG[1] <= 1'b0;
-        
-    end
+       
+   end
 
-        // if (din == 8'b11111110) begin
-        //     LED[0] <= 1'b1;
+       // if (din == 8'b11111110) begin
+       //     LED[0] <= 1'b1;
 		// 	end
-        // if (spi_dout == 8'b1111110) begin
-        //     LED[1] <= 1'b1;
-        // end
+       // if (spi_dout == 8'b1111110) begin
+       //     LED[1] <= 1'b1;
+       // end
 
-        // if (rst) begin
+       // if (rst) begin
 		// 	LED[2] <= 1'b1;
-        // end
+       // end
 
 
 end

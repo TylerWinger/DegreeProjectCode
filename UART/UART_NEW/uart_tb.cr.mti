@@ -1,0 +1,43 @@
+C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/impl_top.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/impl_top.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module impl_top
+
+Top level modules:
+	impl_top
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/tx_tb.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/tx_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tx_tb
+
+Top level modules:
+	tx_tb
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module uart_rx
+
+Top level modules:
+	uart_rx
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tb.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module uart_tb
+
+Top level modules:
+	uart_tb
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/rx_tb.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/rx_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module rx_tb
+
+Top level modules:
+	rx_tb
+
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module uart_tx
+
+Top level modules:
+	uart_tx
+
+} {} {}}

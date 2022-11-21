@@ -1,5 +1,5 @@
 Fitter report for Test_MOJO_SPI
-Mon Nov 14 19:14:26 2022
+Fri Nov 18 12:56:28 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,17 +62,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Nov 14 19:14:26 2022           ;
+; Fitter Status                      ; Successful - Fri Nov 18 12:56:28 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Test_MOJO_SPI                                   ;
 ; Top-level Entity Name              ; spiTest                                         ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 41 / 18,752 ( < 1 % )                           ;
-;     Total combinational functions  ; 36 / 18,752 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 34 / 18,752 ( < 1 % )                           ;
-; Total registers                    ; 34                                              ;
+; Total logic elements               ; 30 / 18,752 ( < 1 % )                           ;
+;     Total combinational functions  ; 27 / 18,752 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 24 / 18,752 ( < 1 % )                           ;
+; Total registers                    ; 24                                              ;
 ; Total pins                         ; 16 / 315 ( 5 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -149,8 +149,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 91 ( 0.00 % )      ;
-;     -- Achieved     ; 0 / 91 ( 0.00 % )      ;
+;     -- Requested    ; 0 / 72 ( 0.00 % )      ;
+;     -- Achieved     ; 0 / 72 ( 0.00 % )      ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -173,7 +173,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 88      ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 69      ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -189,26 +189,26 @@ The pin-out file can be found in C:/Users/4tyle/OneDrive/!School/Degree/github/c
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 41 / 18,752 ( < 1 % ) ;
-;     -- Combinational with no register       ; 7                     ;
-;     -- Register only                        ; 5                     ;
-;     -- Combinational with a register        ; 29                    ;
+; Total logic elements                        ; 30 / 18,752 ( < 1 % ) ;
+;     -- Combinational with no register       ; 6                     ;
+;     -- Register only                        ; 3                     ;
+;     -- Combinational with a register        ; 21                    ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 5                     ;
-;     -- 3 input functions                    ; 14                    ;
-;     -- <=2 input functions                  ; 17                    ;
-;     -- Register only                        ; 5                     ;
+;     -- 4 input functions                    ; 6                     ;
+;     -- 3 input functions                    ; 13                    ;
+;     -- <=2 input functions                  ; 8                     ;
+;     -- Register only                        ; 3                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 36                    ;
+;     -- normal mode                          ; 27                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
-; Total registers*                            ; 34 / 19,649 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 34 / 18,752 ( < 1 % ) ;
+; Total registers*                            ; 24 / 19,649 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 24 / 18,752 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )       ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 4 / 1,172 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 3 / 1,172 ( < 1 % )   ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 16 / 315 ( 5 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
@@ -225,10 +225,10 @@ The pin-out file can be found in C:/Users/4tyle/OneDrive/!School/Degree/github/c
 ; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
-; Maximum fan-out                             ; 34                    ;
-; Highest non-global fan-out                  ; 24                    ;
-; Total fan-out                               ; 202                   ;
-; Average fan-out                             ; 2.13                  ;
+; Maximum fan-out                             ; 24                    ;
+; Highest non-global fan-out                  ; 14                    ;
+; Total fan-out                               ; 151                   ;
+; Average fan-out                             ; 2.04                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -241,25 +241,25 @@ The pin-out file can be found in C:/Users/4tyle/OneDrive/!School/Degree/github/c
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 41 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 7                    ; 0                              ;
-;     -- Register only                        ; 5                    ; 0                              ;
-;     -- Combinational with a register        ; 29                   ; 0                              ;
+; Total logic elements                        ; 30 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 6                    ; 0                              ;
+;     -- Register only                        ; 3                    ; 0                              ;
+;     -- Combinational with a register        ; 21                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 5                    ; 0                              ;
-;     -- 3 input functions                    ; 14                   ; 0                              ;
-;     -- <=2 input functions                  ; 17                   ; 0                              ;
-;     -- Register only                        ; 5                    ; 0                              ;
+;     -- 4 input functions                    ; 6                    ; 0                              ;
+;     -- 3 input functions                    ; 13                   ; 0                              ;
+;     -- <=2 input functions                  ; 8                    ; 0                              ;
+;     -- Register only                        ; 3                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 36                   ; 0                              ;
+;     -- normal mode                          ; 27                   ; 0                              ;
 ;     -- arithmetic mode                      ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 34                   ; 0                              ;
-;     -- Dedicated logic registers            ; 34 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
+; Total registers                             ; 24                   ; 0                              ;
+;     -- Dedicated logic registers            ; 24 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 4 / 1172 ( < 1 % )   ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 3 / 1172 ( < 1 % )   ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 16                   ; 0                              ;
@@ -275,8 +275,8 @@ The pin-out file can be found in C:/Users/4tyle/OneDrive/!School/Degree/github/c
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 202                  ; 0                              ;
-;     -- Registered Connections               ; 75                   ; 0                              ;
+;     -- Total Connections                    ; 151                  ; 0                              ;
+;     -- Registered Connections               ; 56                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -309,8 +309,8 @@ The pin-out file can be found in C:/Users/4tyle/OneDrive/!School/Degree/github/c
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; clk  ; L1    ; 2        ; 0            ; 13           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; mosi ; A14   ; 4        ; 29           ; 27           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; rst  ; R22   ; 6        ; 50           ; 10           ; 1           ; 24                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; mosi ; A14   ; 4        ; 29           ; 27           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; rst  ; R22   ; 6        ; 50           ; 10           ; 1           ; 14                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; sck  ; A16   ; 4        ; 33           ; 27           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; ss   ; A13   ; 4        ; 26           ; 27           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
@@ -886,8 +886,8 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name   ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------+--------------+
-; |spiTest                   ; 41 (10)     ; 34 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 7 (0)        ; 5 (1)             ; 29 (9)           ; |spiTest              ; work         ;
-;    |spiSlave:UUT|          ; 31 (31)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 4 (4)             ; 20 (20)          ; |spiTest|spiSlave:UUT ; work         ;
+; |spiTest                   ; 30 (0)      ; 24 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 6 (0)        ; 3 (0)             ; 21 (0)           ; |spiTest              ; work         ;
+;    |spiSlave:UUT|          ; 30 (30)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 3 (3)             ; 21 (21)          ; |spiTest|spiSlave:UUT ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -908,11 +908,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[7] ; Output   ; --            ; --            ; --                    ; --  ;
 ; LEDG[0] ; Output   ; --            ; --            ; --                    ; --  ;
 ; LEDG[1] ; Output   ; --            ; --            ; --                    ; --  ;
-; clk     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; rst     ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
-; mosi    ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; clk     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; sck     ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; ss      ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; mosi    ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 +---------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -921,20 +921,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------+-------------------+---------+
 ; Source Pin / Fanout               ; Pad To Core Index ; Setting ;
 +-----------------------------------+-------------------+---------+
-; clk                               ;                   ;         ;
 ; rst                               ;                   ;         ;
-;      - spiSlave:UUT|miso_q        ; 1                 ; 6       ;
-;      - LEDG[1]~reg0               ; 1                 ; 6       ;
-;      - LEDR~0                     ; 1                 ; 6       ;
-;      - LEDR~1                     ; 1                 ; 6       ;
-;      - LEDR~2                     ; 1                 ; 6       ;
-;      - LEDR~3                     ; 1                 ; 6       ;
-;      - LEDR~4                     ; 1                 ; 6       ;
-;      - LEDR~5                     ; 1                 ; 6       ;
-;      - LEDR~6                     ; 1                 ; 6       ;
-;      - LEDR~7                     ; 1                 ; 6       ;
+;      - spiSlave:UUT|miso_q~1      ; 1                 ; 6       ;
 ;      - spiSlave:UUT|dout_q~0      ; 1                 ; 6       ;
-;      - spiSlave:UUT|dout_q[0]~2   ; 1                 ; 6       ;
+;      - spiSlave:UUT|dout_q[7]~2   ; 1                 ; 6       ;
+;      - spiSlave:UUT|bit_ct_q~0    ; 1                 ; 6       ;
+;      - spiSlave:UUT|bit_ct_q[0]~1 ; 1                 ; 6       ;
+;      - spiSlave:UUT|bit_ct_q~2    ; 1                 ; 6       ;
+;      - spiSlave:UUT|bit_ct_q~3    ; 1                 ; 6       ;
 ;      - spiSlave:UUT|dout_q~3      ; 1                 ; 6       ;
 ;      - spiSlave:UUT|dout_q~4      ; 1                 ; 6       ;
 ;      - spiSlave:UUT|dout_q~5      ; 1                 ; 6       ;
@@ -942,32 +936,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - spiSlave:UUT|dout_q~7      ; 1                 ; 6       ;
 ;      - spiSlave:UUT|dout_q~8      ; 1                 ; 6       ;
 ;      - spiSlave:UUT|dout_q~9      ; 1                 ; 6       ;
-;      - spiSlave:UUT|bit_ct_q~0    ; 1                 ; 6       ;
-;      - spiSlave:UUT|bit_ct_q[0]~1 ; 1                 ; 6       ;
-;      - spiSlave:UUT|bit_ct_q~2    ; 1                 ; 6       ;
-;      - spiSlave:UUT|bit_ct_q~3    ; 1                 ; 6       ;
-;      - LEDG[0]~reg0feeder         ; 1                 ; 6       ;
-; mosi                              ;                   ;         ;
-;      - LEDG~0                     ; 1                 ; 6       ;
-;      - spiSlave:UUT|mosi_q~feeder ; 1                 ; 6       ;
+; clk                               ;                   ;         ;
 ; sck                               ;                   ;         ;
-;      - spiSlave:UUT|sck_q~feeder  ; 1                 ; 6       ;
+;      - spiSlave:UUT|sck_q~feeder  ; 0                 ; 6       ;
 ; ss                                ;                   ;         ;
 ;      - spiSlave:UUT|ss_q~feeder   ; 1                 ; 6       ;
+; mosi                              ;                   ;         ;
+;      - spiSlave:UUT|mosi_q        ; 0                 ; 6       ;
 +-----------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                    ;
-+----------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; Name                       ; Location           ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; clk                        ; PIN_L1             ; 34      ; Clock                   ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; rst                        ; PIN_R22            ; 24      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
-; spiSlave:UUT|bit_ct_q[0]~1 ; LCCOMB_X47_Y10_N22 ; 3       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; spiSlave:UUT|data_q[7]~1   ; LCCOMB_X48_Y10_N30 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; spiSlave:UUT|dout_q[0]~2   ; LCCOMB_X47_Y10_N30 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-+----------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                         ;
++----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                       ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; clk                        ; PIN_L1             ; 24      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; spiSlave:UUT|bit_ct_q[0]~1 ; LCCOMB_X32_Y26_N8  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; spiSlave:UUT|data_q[7]~1   ; LCCOMB_X33_Y26_N20 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; spiSlave:UUT|dout_q[7]~2   ; LCCOMB_X33_Y26_N22 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
++----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -975,7 +963,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_L1   ; 34      ; Global Clock         ; GCLK2            ; --                        ;
+; clk  ; PIN_L1   ; 24      ; Global Clock         ; GCLK2            ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -984,8 +972,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+---------+
 ; Name                       ; Fan-Out ;
 +----------------------------+---------+
-; rst                        ; 24      ;
-; spiSlave:UUT|dout_q[0]~2   ; 8       ;
+; rst                        ; 14      ;
+; spiSlave:UUT|dout_q[7]~2   ; 8       ;
 ; spiSlave:UUT|data_q[7]~1   ; 8       ;
 ; spiSlave:UUT|data_q[7]~0   ; 8       ;
 ; spiSlave:UUT|ss_q          ; 8       ;
@@ -995,69 +983,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; spiSlave:UUT|sck_old_q     ; 4       ;
 ; spiSlave:UUT|bit_ct_q[0]~1 ; 3       ;
 ; spiSlave:UUT|bit_ct_q[2]   ; 3       ;
-; mosi                       ; 2       ;
-; spiSlave:UUT|data_q[5]     ; 2       ;
-; spiSlave:UUT|data_q[4]     ; 2       ;
-; spiSlave:UUT|data_q[3]     ; 2       ;
-; spiSlave:UUT|data_q[2]     ; 2       ;
-; spiSlave:UUT|data_q[1]     ; 2       ;
-; spiSlave:UUT|data_q[0]     ; 2       ;
 ; spiSlave:UUT|mosi_q        ; 2       ;
+; spiSlave:UUT|data_q[0]     ; 2       ;
+; spiSlave:UUT|data_q[1]     ; 2       ;
+; spiSlave:UUT|data_q[2]     ; 2       ;
+; spiSlave:UUT|data_q[3]     ; 2       ;
+; spiSlave:UUT|data_q[4]     ; 2       ;
+; spiSlave:UUT|data_q[5]     ; 2       ;
 ; spiSlave:UUT|data_q[6]     ; 2       ;
-; spiSlave:UUT|dout_q[7]     ; 2       ;
-; spiSlave:UUT|dout_q[6]     ; 2       ;
-; spiSlave:UUT|dout_q[5]     ; 2       ;
-; spiSlave:UUT|dout_q[4]     ; 2       ;
-; spiSlave:UUT|dout_q[3]     ; 2       ;
-; spiSlave:UUT|dout_q[2]     ; 2       ;
-; spiSlave:UUT|dout_q[1]     ; 2       ;
-; spiSlave:UUT|dout_q[0]     ; 2       ;
-; LEDG[1]~reg0               ; 2       ;
 ; spiSlave:UUT|miso_q        ; 2       ;
+; mosi                       ; 1       ;
 ; ss                         ; 1       ;
 ; sck                        ; 1       ;
-; spiSlave:UUT|data_d[5]~7   ; 1       ;
-; spiSlave:UUT|data_d[4]~6   ; 1       ;
-; spiSlave:UUT|data_d[3]~5   ; 1       ;
-; spiSlave:UUT|data_d[2]~4   ; 1       ;
-; spiSlave:UUT|data_d[1]~3   ; 1       ;
-; spiSlave:UUT|data_d[0]~2   ; 1       ;
+; spiSlave:UUT|dout_q~9      ; 1       ;
+; spiSlave:UUT|data_d[0]~7   ; 1       ;
+; spiSlave:UUT|dout_q[0]     ; 1       ;
+; spiSlave:UUT|dout_q~8      ; 1       ;
+; spiSlave:UUT|data_d[1]~6   ; 1       ;
+; spiSlave:UUT|dout_q[1]     ; 1       ;
+; spiSlave:UUT|dout_q~7      ; 1       ;
+; spiSlave:UUT|data_d[2]~5   ; 1       ;
+; spiSlave:UUT|dout_q[2]     ; 1       ;
+; spiSlave:UUT|dout_q~6      ; 1       ;
+; spiSlave:UUT|data_d[3]~4   ; 1       ;
+; spiSlave:UUT|dout_q[3]     ; 1       ;
+; spiSlave:UUT|dout_q~5      ; 1       ;
+; spiSlave:UUT|data_d[4]~3   ; 1       ;
+; spiSlave:UUT|dout_q[4]     ; 1       ;
+; spiSlave:UUT|dout_q~4      ; 1       ;
+; spiSlave:UUT|data_d[5]~2   ; 1       ;
+; spiSlave:UUT|dout_q[5]     ; 1       ;
+; spiSlave:UUT|dout_q~3      ; 1       ;
 ; spiSlave:UUT|bit_ct_q~3    ; 1       ;
 ; spiSlave:UUT|bit_ct_q~2    ; 1       ;
 ; spiSlave:UUT|bit_ct_q~0    ; 1       ;
 ; spiSlave:UUT|Add0~0        ; 1       ;
 ; spiSlave:UUT|data_d[6]~1   ; 1       ;
-; spiSlave:UUT|dout_q~9      ; 1       ;
-; spiSlave:UUT|dout_q~8      ; 1       ;
-; spiSlave:UUT|dout_q~7      ; 1       ;
-; spiSlave:UUT|dout_q~6      ; 1       ;
-; spiSlave:UUT|dout_q~5      ; 1       ;
-; spiSlave:UUT|dout_q~4      ; 1       ;
-; spiSlave:UUT|dout_q~3      ; 1       ;
-; spiSlave:UUT|dout_q[0]~1   ; 1       ;
+; spiSlave:UUT|dout_q[6]     ; 1       ;
+; spiSlave:UUT|dout_q[7]~1   ; 1       ;
 ; spiSlave:UUT|dout_q~0      ; 1       ;
 ; spiSlave:UUT|data_d[7]~0   ; 1       ;
-; LEDG~0                     ; 1       ;
-; LEDR~7                     ; 1       ;
-; LEDR~6                     ; 1       ;
-; LEDR~5                     ; 1       ;
-; LEDR~4                     ; 1       ;
-; LEDR~3                     ; 1       ;
-; LEDR~2                     ; 1       ;
-; LEDR~1                     ; 1       ;
-; LEDR~0                     ; 1       ;
-; spiSlave:UUT|miso_d~1      ; 1       ;
-; spiSlave:UUT|miso_d~0      ; 1       ;
+; spiSlave:UUT|dout_q[7]     ; 1       ;
+; spiSlave:UUT|miso_q~1      ; 1       ;
+; spiSlave:UUT|miso_q~0      ; 1       ;
 ; spiSlave:UUT|data_q[7]     ; 1       ;
-; LEDG[0]~reg0               ; 1       ;
-; LEDR[7]~reg0               ; 1       ;
-; LEDR[6]~reg0               ; 1       ;
-; LEDR[5]~reg0               ; 1       ;
-; LEDR[4]~reg0               ; 1       ;
-; LEDR[3]~reg0               ; 1       ;
-; LEDR[2]~reg0               ; 1       ;
-; LEDR[1]~reg0               ; 1       ;
-; LEDR[0]~reg0               ; 1       ;
 +----------------------------+---------+
 
 
@@ -1066,60 +1035,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-----------------------+
 ; Other Routing Resource Type ; Usage                 ;
 +-----------------------------+-----------------------+
-; Block interconnects         ; 42 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 3 / 2,100 ( < 1 % )   ;
-; C4 interconnects            ; 22 / 36,000 ( < 1 % ) ;
-; Direct links                ; 22 / 54,004 ( < 1 % ) ;
+; Block interconnects         ; 43 / 54,004 ( < 1 % ) ;
+; C16 interconnects           ; 1 / 2,100 ( < 1 % )   ;
+; C4 interconnects            ; 4 / 36,000 ( < 1 % )  ;
+; Direct links                ; 34 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 1 / 16 ( 6 % )        ;
-; Local interconnects         ; 22 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 3 / 1,900 ( < 1 % )   ;
-; R4 interconnects            ; 7 / 46,920 ( < 1 % )  ;
+; Local interconnects         ; 13 / 18,752 ( < 1 % ) ;
+; R24 interconnects           ; 1 / 1,900 ( < 1 % )   ;
+; R4 interconnects            ; 5 / 46,920 ( < 1 % )  ;
 +-----------------------------+-----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.25) ; Number of LABs  (Total = 4) ;
+; Number of Logic Elements  (Average = 10.00) ; Number of LABs  (Total = 3) ;
 +---------------------------------------------+-----------------------------+
-; 1                                           ; 1                           ;
+; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
 ; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
+; 7                                           ; 1                           ;
+; 8                                           ; 1                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
-; 12                                          ; 2                           ;
+; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 1                           ;
+; 15                                          ; 1                           ;
+; 16                                          ; 0                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.50) ; Number of LABs  (Total = 4) ;
+; LAB-wide Signals  (Average = 1.33) ; Number of LABs  (Total = 3) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 4                           ;
+; 1 Clock                            ; 3                           ;
 ; 1 Clock enable                     ; 1                           ;
-; 1 Sync. load                       ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 18.75) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced  (Average = 18.00) ; Number of LABs  (Total = 3) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 1                           ;
+; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
@@ -1128,70 +1096,73 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 8                                            ; 0                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
+; 11                                           ; 1                           ;
 ; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
+; 16                                           ; 1                           ;
 ; 17                                           ; 0                           ;
-; 18                                           ; 1                           ;
+; 18                                           ; 0                           ;
 ; 19                                           ; 0                           ;
 ; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
 ; 22                                           ; 0                           ;
-; 23                                           ; 1                           ;
+; 23                                           ; 0                           ;
 ; 24                                           ; 0                           ;
 ; 25                                           ; 0                           ;
 ; 26                                           ; 0                           ;
-; 27                                           ; 0                           ;
-; 28                                           ; 0                           ;
-; 29                                           ; 0                           ;
-; 30                                           ; 0                           ;
-; 31                                           ; 0                           ;
-; 32                                           ; 1                           ;
+; 27                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 7.00) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced Out  (Average = 9.00) ; Number of LABs  (Total = 3) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
+; 1                                               ; 0                           ;
 ; 2                                               ; 0                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 1                           ;
+; 5                                               ; 1                           ;
+; 6                                               ; 0                           ;
 ; 7                                               ; 0                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 1                           ;
+; 8                                               ; 1                           ;
+; 9                                               ; 0                           ;
 ; 10                                              ; 0                           ;
 ; 11                                              ; 0                           ;
-; 12                                              ; 1                           ;
+; 12                                              ; 0                           ;
+; 13                                              ; 0                           ;
+; 14                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 7.00) ; Number of LABs  (Total = 4) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 2                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 1                           ;
-+---------------------------------------------+-----------------------------+
++----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                        ;
++----------------------------------------------+-----------------------------+
+; Number of Distinct Inputs  (Average = 11.33) ; Number of LABs  (Total = 3) ;
++----------------------------------------------+-----------------------------+
+; 0                                            ; 0                           ;
+; 1                                            ; 0                           ;
+; 2                                            ; 0                           ;
+; 3                                            ; 0                           ;
+; 4                                            ; 0                           ;
+; 5                                            ; 1                           ;
+; 6                                            ; 0                           ;
+; 7                                            ; 0                           ;
+; 8                                            ; 0                           ;
+; 9                                            ; 0                           ;
+; 10                                           ; 0                           ;
+; 11                                           ; 0                           ;
+; 12                                           ; 1                           ;
+; 13                                           ; 0                           ;
+; 14                                           ; 0                           ;
+; 15                                           ; 0                           ;
+; 16                                           ; 0                           ;
+; 17                                           ; 1                           ;
++----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1256,11 +1227,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X38_Y0 to location X50_Y13
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X25_Y14 to location X37_Y27
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 11 output pins without output pin load capacitance assignment
     Info (306007): Pin "miso" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1277,12 +1248,12 @@ Warning (306006): Found 11 output pins without output pin load capacitance assig
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/SPI/mojo-base-project-master/output_files/Test_MOJO_SPI.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4839 megabytes
-    Info: Processing ended: Mon Nov 14 19:14:26 2022
+    Info: Processing ended: Fri Nov 18 12:56:28 2022
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

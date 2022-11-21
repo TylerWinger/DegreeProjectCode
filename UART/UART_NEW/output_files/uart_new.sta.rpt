@@ -1,0 +1,1125 @@
+TimeQuest Timing Analyzer report for uart_new
+Sat Nov 19 18:22:04 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; uart_new                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 205.89 MHz ; 205.89 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.857 ; -236.317      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -99.391               ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                               ;
++--------+------------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.857 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.889      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.839 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.871      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.836 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.868      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.802 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.834      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[0]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[1]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[2]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[3]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[4]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[5]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[6]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.790 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[7]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.822      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.760 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.792      ;
+; -3.753 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.753 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.753 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.753 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.752 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.784      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.656 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.688      ;
+; -3.549 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]   ; clk          ; clk         ; 1.000        ; 0.006      ; 4.593      ;
+; -3.549 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]   ; clk          ; clk         ; 1.000        ; 0.006      ; 4.593      ;
+; -3.549 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]   ; clk          ; clk         ; 1.000        ; 0.006      ; 4.593      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.539 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.571      ;
+; -3.538 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]   ; clk          ; clk         ; 1.000        ; 0.006      ; 4.582      ;
+; -3.538 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]   ; clk          ; clk         ; 1.000        ; 0.006      ; 4.582      ;
+; -3.538 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]   ; clk          ; clk         ; 1.000        ; 0.006      ; 4.582      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.530 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.562      ;
+; -3.520 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]   ; clk          ; clk         ; 1.000        ; -0.001     ; 4.557      ;
+; -3.520 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]   ; clk          ; clk         ; 1.000        ; -0.001     ; 4.557      ;
+; -3.520 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]   ; clk          ; clk         ; 1.000        ; -0.001     ; 4.557      ;
+; -3.520 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]   ; clk          ; clk         ; 1.000        ; -0.001     ; 4.557      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.487 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.006     ; 4.519      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[0]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[1]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[2]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[3]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[4]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[5]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[6]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
+; -3.477 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[7]                         ; clk          ; clk         ; 1.000        ; -0.006     ; 4.509      ;
++--------+------------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                    ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                    ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_START ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_START ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[7]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[7]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[13]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.906      ;
+; 0.622 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ; impl_top:impl_top_Inst|led_reg[2]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.908      ;
+; 0.625 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.911      ;
+; 0.631 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ; impl_top:impl_top_Inst|led_reg[4]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.917      ;
+; 0.632 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.633 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.665 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_STOP  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.951      ;
+; 0.726 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg_0           ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.012      ;
+; 0.770 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[7]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.771 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 0.772 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.058      ;
+; 0.776 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[0]     ; impl_top:impl_top_Inst|led_reg[0]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.778 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[3]     ; impl_top:impl_top_Inst|led_reg[3]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.813 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.099      ;
+; 0.814 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 0.814 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 0.859 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ; impl_top:impl_top_Inst|led_reg[6]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.145      ;
+; 0.947 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.233      ;
+; 0.960 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.246      ;
+; 0.963 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.249      ;
+; 0.966 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.252      ;
+; 0.968 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.970 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ; impl_top:impl_top_Inst|led_reg[5]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.256      ;
+; 0.972 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.975 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.261      ;
+; 0.977 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[7]     ; impl_top:impl_top_Inst|led_reg[7]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.978 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ; impl_top:impl_top_Inst|led_reg[1]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.264      ;
+; 0.980 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.981 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.983 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_STOP  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
+; 0.983 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
+; 0.984 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.985 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[7]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[7]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 0.986 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.272      ;
+; 1.011 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.297      ;
+; 1.014 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.015 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[8]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.301      ;
+; 1.016 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ; clk          ; clk         ; 0.000        ; -0.006     ; 1.296      ;
+; 1.019 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.020 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.306      ;
+; 1.022 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.023 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.023 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[6]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.027 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.313      ;
+; 1.027 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.313      ;
+; 1.033 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.319      ;
+; 1.047 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.333      ;
+; 1.169 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_STOP  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.192 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.196 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ; clk          ; clk         ; 0.000        ; -0.006     ; 1.476      ;
+; 1.196 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; clk          ; clk         ; 0.000        ; 0.001      ; 1.483      ;
+; 1.210 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.238 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.238 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.240 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.247 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.533      ;
+; 1.253 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ; clk          ; clk         ; 0.000        ; -0.006     ; 1.533      ;
+; 1.284 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.570      ;
+; 1.314 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[7]    ; clk          ; clk         ; 0.000        ; -0.001     ; 1.599      ;
+; 1.318 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.603      ;
+; 1.398 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.684      ;
+; 1.404 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.690      ;
+; 1.404 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.690      ;
+; 1.404 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.690      ;
+; 1.404 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.690      ;
+; 1.407 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.693      ;
+; 1.412 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.698      ;
+; 1.413 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.699      ;
+; 1.416 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.702      ;
+; 1.416 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.702      ;
+; 1.416 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.702      ;
+; 1.420 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ; clk          ; clk         ; 0.000        ; -0.006     ; 1.700      ;
+; 1.426 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.712      ;
+; 1.437 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ; clk          ; clk         ; 0.000        ; -0.006     ; 1.717      ;
+; 1.447 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.733      ;
+; 1.448 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.734      ;
+; 1.449 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.449 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.452 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.738      ;
+; 1.452 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.738      ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[0]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[0]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[1]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[1]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[2]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[2]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[3]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[3]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[4]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[4]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[5]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[5]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[6]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[6]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[7]                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[7]                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_STOP  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_STOP  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[7]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[7]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; sw        ; clk        ; 1.672 ; 1.672 ; Rise       ; clk             ;
+; uart_RX   ; clk        ; 4.455 ; 4.455 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; sw        ; clk        ; 0.674  ; 0.674  ; Rise       ; clk             ;
+; uart_RX   ; clk        ; -4.207 ; -4.207 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 8.624 ; 8.624 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 7.711 ; 7.711 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.037 ; 8.037 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 8.087 ; 8.087 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.476 ; 8.476 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 8.624 ; 8.624 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 8.422 ; 8.422 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 8.452 ; 8.452 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 8.602 ; 8.602 ; Rise       ; clk             ;
+; uart_TX   ; clk        ; 8.297 ; 8.297 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 7.711 ; 7.711 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 7.711 ; 7.711 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.037 ; 8.037 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 8.087 ; 8.087 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.476 ; 8.476 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 8.624 ; 8.624 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 8.422 ; 8.422 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 8.452 ; 8.452 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 8.602 ; 8.602 ; Rise       ; clk             ;
+; uart_TX   ; clk        ; 8.297 ; 8.297 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.946 ; -47.328       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -81.380               ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                               ;
++--------+------------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.946 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.971      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.933 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.958      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.920 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.945      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.916 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.941      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[0]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[1]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[2]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[3]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[4]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[5]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[6]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.910 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|led_reg[7]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.935      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.906 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.931      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.899 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.924      ;
+; -0.885 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.917      ;
+; -0.885 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.917      ;
+; -0.885 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.917      ;
+; -0.885 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10] ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.917      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.854 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.879      ;
+; -0.829 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]   ; clk          ; clk         ; 1.000        ; 0.006      ; 1.867      ;
+; -0.829 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]   ; clk          ; clk         ; 1.000        ; 0.006      ; 1.867      ;
+; -0.829 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]   ; clk          ; clk         ; 1.000        ; 0.006      ; 1.867      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[0]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[1]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[2]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[3]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[4]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[5]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[6]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|led_reg[7]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.848      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]   ; clk          ; clk         ; 1.000        ; 0.006      ; 1.861      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]   ; clk          ; clk         ; 1.000        ; 0.006      ; 1.861      ;
+; -0.823 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]   ; clk          ; clk         ; 1.000        ; 0.006      ; 1.861      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.811 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 1.836      ;
+; -0.798 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.830      ;
+; -0.798 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.830      ;
+; -0.798 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.830      ;
+; -0.798 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.830      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[0]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[1]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[2]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[3]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[4]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[5]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[6]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.796 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]  ; impl_top:impl_top_Inst|led_reg[7]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.821      ;
+; -0.793 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|led_reg[0]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.818      ;
+; -0.793 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|led_reg[1]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.818      ;
+; -0.793 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|led_reg[2]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.818      ;
+; -0.793 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|led_reg[3]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.818      ;
+; -0.793 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|led_reg[4]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.818      ;
+; -0.793 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11] ; impl_top:impl_top_Inst|led_reg[5]                         ; clk          ; clk         ; 1.000        ; -0.007     ; 1.818      ;
++--------+------------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                    ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                    ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_START ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_START ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[7]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[7]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.238 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[13]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.390      ;
+; 0.240 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ; impl_top:impl_top_Inst|led_reg[2]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.245 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ; impl_top:impl_top_Inst|led_reg[4]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.247 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.262 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_STOP  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.414      ;
+; 0.292 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg_0           ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.444      ;
+; 0.295 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[7]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.447      ;
+; 0.295 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.447      ;
+; 0.296 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.448      ;
+; 0.317 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[0]     ; impl_top:impl_top_Inst|led_reg[0]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.469      ;
+; 0.318 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[3]     ; impl_top:impl_top_Inst|led_reg[3]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.470      ;
+; 0.327 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ; impl_top:impl_top_Inst|led_reg[6]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.335 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.487      ;
+; 0.337 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.489      ;
+; 0.338 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.338 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.358 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.360 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[2]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_STOP  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ; impl_top:impl_top_Inst|led_reg[5]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[6]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.366 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[7]     ; impl_top:impl_top_Inst|led_reg[7]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.367 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ; impl_top:impl_top_Inst|led_reg[1]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.369 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[7]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[7]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.371 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[8]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[1]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.376 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[5]     ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|data_to_send[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.379 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[6]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.393 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_SEND  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.545      ;
+; 0.410 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ; clk          ; clk         ; 0.000        ; -0.007     ; 0.555      ;
+; 0.443 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.446 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_IDLE  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; clk          ; clk         ; 0.000        ; 0.001      ; 0.599      ;
+; 0.449 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|fsm_state.FSM_STOP  ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.601      ;
+; 0.452 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.604      ;
+; 0.452 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.604      ;
+; 0.457 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ; clk          ; clk         ; 0.000        ; -0.007     ; 0.602      ;
+; 0.460 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.612      ;
+; 0.467 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.619      ;
+; 0.481 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.633      ;
+; 0.488 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.640      ;
+; 0.495 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[0]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ; clk          ; clk         ; 0.000        ; -0.007     ; 0.641      ;
+; 0.496 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.498 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[1]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.501 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.505 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.505 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.511 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[8]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[9]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[10]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[11]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[12]   ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.513 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.665      ;
+; 0.514 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.517 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[3]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[4]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[5]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.519 ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.671      ;
+; 0.519 ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[6]    ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|cycle_counter[7]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.671      ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[0]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[0]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[1]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[1]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[2]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[2]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[3]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[3]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[4]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[4]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[5]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[5]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[6]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[6]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[7]                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|led_reg[7]                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_counter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|bit_sample          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[13]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[8]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|cycle_counter[9]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_IDLE  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_RECV  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_START ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_STOP  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|fsm_state.FSM_STOP  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|recieved_data[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|rxd_reg_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_rx:i_uart_rx|uart_rx_data[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; impl_top:impl_top_Inst|uart_tx:i_uart_tx|bit_counter[0]      ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; sw        ; clk        ; 0.127 ; 0.127 ; Rise       ; clk             ;
+; uart_RX   ; clk        ; 2.039 ; 2.039 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; sw        ; clk        ; 0.828  ; 0.828  ; Rise       ; clk             ;
+; uart_RX   ; clk        ; -1.919 ; -1.919 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 4.468 ; 4.468 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 4.038 ; 4.038 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 4.196 ; 4.196 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 4.369 ; 4.369 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 4.468 ; 4.468 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 4.332 ; 4.332 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 4.349 ; 4.349 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 4.458 ; 4.458 ; Rise       ; clk             ;
+; uart_TX   ; clk        ; 4.361 ; 4.361 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 4.038 ; 4.038 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 4.038 ; 4.038 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 4.196 ; 4.196 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 4.369 ; 4.369 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 4.468 ; 4.468 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 4.332 ; 4.332 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 4.349 ; 4.349 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 4.458 ; 4.458 ; Rise       ; clk             ;
+; uart_TX   ; clk        ; 4.361 ; 4.361 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.857   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -3.857   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -236.317 ; 0.0   ; 0.0      ; 0.0     ; -99.391             ;
+;  clk             ; -236.317 ; 0.000 ; N/A      ; N/A     ; -99.391             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; sw        ; clk        ; 1.672 ; 1.672 ; Rise       ; clk             ;
+; uart_RX   ; clk        ; 4.455 ; 4.455 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; sw        ; clk        ; 0.828  ; 0.828  ; Rise       ; clk             ;
+; uart_RX   ; clk        ; -1.919 ; -1.919 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 8.624 ; 8.624 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 7.711 ; 7.711 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.037 ; 8.037 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 8.087 ; 8.087 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.476 ; 8.476 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 8.624 ; 8.624 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 8.422 ; 8.422 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 8.452 ; 8.452 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 8.602 ; 8.602 ; Rise       ; clk             ;
+; uart_TX   ; clk        ; 8.297 ; 8.297 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 4.038 ; 4.038 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 4.038 ; 4.038 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 4.196 ; 4.196 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 4.369 ; 4.369 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 4.468 ; 4.468 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 4.332 ; 4.332 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 4.349 ; 4.349 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 4.458 ; 4.458 ; Rise       ; clk             ;
+; uart_TX   ; clk        ; 4.361 ; 4.361 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2249     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2249     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 81    ; 81   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Nov 19 18:22:04 2022
+Info: Command: quartus_sta uart_new -c uart_new
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'uart_new.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.857
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.857      -236.317 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -99.391 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.946
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.946       -47.328 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -81.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4536 megabytes
+    Info: Processing ended: Sat Nov 19 18:22:04 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

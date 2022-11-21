@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Test_MOJO_SPI
-Mon Nov 14 19:14:29 2022
+Fri Nov 18 12:56:31 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -106,7 +106,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 324.89 MHz ; 324.89 MHz      ; clk        ;      ;
+; 344.35 MHz ; 344.35 MHz      ; clk        ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; -2.078 ; -33.894       ;
+; clk   ; -1.904 ; -32.907       ;
 +-------+--------+---------------+
 
 
@@ -146,7 +146,7 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; clk   ; -1.631 ; -43.179               ;
+; clk   ; -1.631 ; -30.959               ;
 +-------+--------+-----------------------+
 
 
@@ -155,106 +155,106 @@ No paths to report.
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -2.078 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.116      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.770 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.808      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.583 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.621      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.579 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.617      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.436 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.373 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.330 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.368      ;
-; -1.202 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.240      ;
-; -1.202 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.240      ;
-; -1.202 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.240      ;
-; -1.170 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.208      ;
-; -1.170 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.208      ;
-; -1.170 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.208      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.131 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.169      ;
-; -1.072 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.110      ;
-; -1.072 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.110      ;
-; -1.072 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.110      ;
-; -1.049 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.087      ;
-; -1.048 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.086      ;
-; -1.048 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.086      ;
-; -1.047 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.085      ;
-; -1.047 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.085      ;
-; -1.047 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.085      ;
-; -1.047 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.085      ;
-; -1.047 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.085      ;
-; -1.042 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.080      ;
-; -1.041 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.079      ;
-; -1.041 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.079      ;
-; -1.040 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.078      ;
-; -1.039 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.077      ;
-; -1.037 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.075      ;
-; -1.036 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.074      ;
-; -1.035 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.073      ;
-; -1.012 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; -0.001     ; 2.049      ;
-; -1.008 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.046      ;
-; -1.007 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.045      ;
-; -1.007 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.045      ;
-; -1.006 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.044      ;
-; -1.005 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.043      ;
-; -1.003 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.041      ;
-; -1.002 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.040      ;
-; -1.001 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.039      ;
-; -0.897 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; -0.001     ; 1.934      ;
-; -0.895 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.933      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.904 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.943      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.858 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.897      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.659 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.698      ;
+; -1.505 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.545      ;
+; -1.503 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.543      ;
+; -1.503 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.543      ;
+; -1.502 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.542      ;
+; -1.502 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.542      ;
+; -1.501 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.541      ;
+; -1.500 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.540      ;
+; -1.499 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.539      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.495 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.534      ;
+; -1.446 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.484      ;
+; -1.446 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.484      ;
+; -1.446 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.484      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.377 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.416      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.356 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 2.395      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.331 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.371      ;
+; -1.322 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.360      ;
+; -1.298 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.336      ;
+; -1.206 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.246      ;
+; -1.204 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.244      ;
+; -1.204 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.244      ;
+; -1.203 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.243      ;
+; -1.203 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.243      ;
+; -1.202 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.242      ;
+; -1.201 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.241      ;
+; -1.200 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.240      ;
+; -1.179 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.216      ;
+; -1.179 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.216      ;
+; -1.179 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.216      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.154 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.084 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; 0.000      ; 2.122      ;
+; -1.039 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.079      ;
+; -1.039 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; 0.001      ; 2.078      ;
+; -1.037 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.002      ; 2.077      ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -266,103 +266,103 @@ No paths to report.
 ; 0.445 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; spiSlave:UUT|miso_q      ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; LEDG[1]~reg0             ; LEDG[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
-; 0.770 ; spiSlave:UUT|dout_q[5]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
-; 0.781 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.067      ;
-; 0.783 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.069      ;
-; 0.788 ; spiSlave:UUT|dout_q[1]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
-; 0.791 ; spiSlave:UUT|dout_q[4]   ; LEDR[4]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.077      ;
-; 0.849 ; spiSlave:UUT|dout_q[6]   ; LEDR[6]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.135      ;
-; 0.850 ; spiSlave:UUT|dout_q[1]   ; LEDR[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.136      ;
-; 0.860 ; spiSlave:UUT|dout_q[3]   ; LEDR[3]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.146      ;
-; 0.895 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|sck_old_q   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.181      ;
-; 0.949 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.235      ;
-; 0.953 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.239      ;
-; 0.955 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.241      ;
-; 0.977 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
-; 0.983 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
-; 0.984 ; spiSlave:UUT|dout_q[3]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
-; 0.984 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
-; 0.985 ; spiSlave:UUT|dout_q[6]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
-; 0.991 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.277      ;
-; 0.994 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.280      ;
-; 0.997 ; spiSlave:UUT|dout_q[7]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.283      ;
-; 0.999 ; spiSlave:UUT|dout_q[7]   ; LEDR[7]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.285      ;
-; 1.000 ; spiSlave:UUT|dout_q[2]   ; LEDR[2]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.286      ;
-; 1.002 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.288      ;
-; 1.013 ; spiSlave:UUT|dout_q[5]   ; LEDR[5]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.299      ;
-; 1.023 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
-; 1.023 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
-; 1.026 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.312      ;
-; 1.027 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.313      ;
-; 1.030 ; spiSlave:UUT|dout_q[2]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.316      ;
-; 1.165 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.451      ;
-; 1.179 ; spiSlave:UUT|dout_q[0]   ; LEDR[0]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.465      ;
-; 1.210 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
-; 1.214 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.500      ;
-; 1.214 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.500      ;
-; 1.254 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.540      ;
-; 1.344 ; spiSlave:UUT|dout_q[4]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.630      ;
-; 1.401 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.687      ;
-; 1.402 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.688      ;
-; 1.403 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.689      ;
-; 1.405 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.691      ;
-; 1.406 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.692      ;
-; 1.407 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.693      ;
-; 1.407 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.693      ;
-; 1.408 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.694      ;
-; 1.412 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.698      ;
-; 1.451 ; spiSlave:UUT|data_q[7]   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.736      ;
-; 1.475 ; spiSlave:UUT|dout_q[0]   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.761      ;
-; 1.588 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.873      ;
-; 1.636 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.922      ;
-; 1.647 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.933      ;
-; 1.649 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.934      ;
-; 1.753 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.039      ;
-; 1.754 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.040      ;
-; 1.755 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.041      ;
-; 1.757 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.043      ;
-; 1.758 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.044      ;
-; 1.759 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.045      ;
-; 1.759 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.045      ;
-; 1.760 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.046      ;
-; 1.764 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 2.049      ;
-; 1.787 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.073      ;
-; 1.788 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.074      ;
-; 1.789 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.075      ;
-; 1.791 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.077      ;
-; 1.792 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.078      ;
-; 1.793 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.079      ;
-; 1.793 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.079      ;
-; 1.794 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.080      ;
-; 1.794 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.080      ;
-; 1.795 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.081      ;
-; 1.796 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.082      ;
-; 1.798 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.084      ;
-; 1.799 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.085      ;
-; 1.799 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.085      ;
-; 1.799 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.085      ;
-; 1.799 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.085      ;
-; 1.824 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.110      ;
-; 1.824 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.110      ;
-; 1.824 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.110      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.883 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.922 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.208      ;
-; 1.922 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.208      ;
-; 1.922 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.208      ;
-; 2.082 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
-; 2.082 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
-; 2.082 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
-; 2.082 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
-; 2.082 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
-; 2.082 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
+; 0.622 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|sck_old_q   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.908      ;
+; 0.777 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.063      ;
+; 0.778 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.810 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.095      ;
+; 0.852 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.137      ;
+; 0.856 ; spiSlave:UUT|data_q[7]   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 1.141      ;
+; 0.917 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.203      ;
+; 0.919 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 0.946 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.232      ;
+; 0.953 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.238      ;
+; 0.968 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.984 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.988 ; spiSlave:UUT|dout_q[7]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.275      ;
+; 0.995 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.281      ;
+; 0.997 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.283      ;
+; 0.998 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.283      ;
+; 1.001 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.287      ;
+; 1.003 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.290      ;
+; 1.003 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.288      ;
+; 1.003 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.288      ;
+; 1.004 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; -0.001     ; 1.289      ;
+; 1.012 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.166 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.452      ;
+; 1.170 ; spiSlave:UUT|dout_q[3]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.457      ;
+; 1.186 ; spiSlave:UUT|dout_q[4]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.473      ;
+; 1.187 ; spiSlave:UUT|dout_q[2]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.474      ;
+; 1.201 ; spiSlave:UUT|dout_q[6]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.488      ;
+; 1.202 ; spiSlave:UUT|dout_q[5]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.489      ;
+; 1.203 ; spiSlave:UUT|dout_q[1]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.490      ;
+; 1.278 ; spiSlave:UUT|dout_q[0]   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 1.565      ;
+; 1.626 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.912      ;
+; 1.697 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.983      ;
+; 1.714 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.002      ;
+; 1.715 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.003      ;
+; 1.716 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.004      ;
+; 1.717 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.005      ;
+; 1.717 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.005      ;
+; 1.718 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.006      ;
+; 1.718 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.006      ;
+; 1.720 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.008      ;
+; 1.743 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; -0.001     ; 2.028      ;
+; 1.743 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; -0.001     ; 2.028      ;
+; 1.743 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; -0.001     ; 2.028      ;
+; 1.785 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.073      ;
+; 1.786 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.074      ;
+; 1.787 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.075      ;
+; 1.788 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.076      ;
+; 1.788 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.076      ;
+; 1.789 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.077      ;
+; 1.789 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.077      ;
+; 1.791 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.001      ; 2.078      ;
+; 1.791 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.079      ;
+; 1.836 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.122      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.906 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.931 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; -0.001     ; 2.216      ;
+; 1.931 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; -0.001     ; 2.216      ;
+; 1.931 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; -0.001     ; 2.216      ;
+; 1.952 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.240      ;
+; 1.953 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.241      ;
+; 1.954 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.242      ;
+; 1.955 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.243      ;
+; 1.955 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.243      ;
+; 1.956 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.244      ;
+; 1.956 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.244      ;
+; 1.958 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.002      ; 2.246      ;
+; 2.050 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.336      ;
+; 2.074 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.360      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.108 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.395      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
+; 2.129 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 2.416      ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -372,26 +372,6 @@ No paths to report.
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                   ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------+
 ; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                      ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDG[0]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[0]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDG[1]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[1]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[0]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[0]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[1]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[1]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[2]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[2]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[3]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[3]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[4]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[4]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[5]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[5]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[6]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[6]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; LEDR[7]~reg0             ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[7]~reg0             ;
 ; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; spiSlave:UUT|bit_ct_q[0] ;
 ; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; spiSlave:UUT|bit_ct_q[0] ;
 ; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; spiSlave:UUT|bit_ct_q[1] ;
@@ -440,26 +420,6 @@ No paths to report.
 ; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; spiSlave:UUT|sck_q       ;
 ; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; spiSlave:UUT|ss_q        ;
 ; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; spiSlave:UUT|ss_q        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDG[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDG[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[2]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[2]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[3]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[3]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[4]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[4]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[5]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[5]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[6]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[6]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[7]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[7]~reg0|clk         ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|bit_ct_q[0]|clk      ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|bit_ct_q[0]|clk      ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|bit_ct_q[1]|clk      ;
@@ -471,6 +431,46 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[1]|clk        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[1]|clk        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|miso_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|miso_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|mosi_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|mosi_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|sck_old_q|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|sck_old_q|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|sck_q|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|sck_q|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|ss_q|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|ss_q|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]     ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------+
 
 
@@ -479,10 +479,10 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; mosi      ; clk        ; 4.884 ; 4.884 ; Rise       ; clk             ;
-; rst       ; clk        ; 4.879 ; 4.879 ; Rise       ; clk             ;
-; sck       ; clk        ; 4.529 ; 4.529 ; Rise       ; clk             ;
-; ss        ; clk        ; 4.598 ; 4.598 ; Rise       ; clk             ;
+; mosi      ; clk        ; 3.876 ; 3.876 ; Rise       ; clk             ;
+; rst       ; clk        ; 5.788 ; 5.788 ; Rise       ; clk             ;
+; sck       ; clk        ; 3.465 ; 3.465 ; Rise       ; clk             ;
+; ss        ; clk        ; 4.064 ; 4.064 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -491,10 +491,10 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; mosi      ; clk        ; -4.396 ; -4.396 ; Rise       ; clk             ;
-; rst       ; clk        ; -3.045 ; -3.045 ; Rise       ; clk             ;
-; sck       ; clk        ; -4.281 ; -4.281 ; Rise       ; clk             ;
-; ss        ; clk        ; -4.350 ; -4.350 ; Rise       ; clk             ;
+; mosi      ; clk        ; -3.628 ; -3.628 ; Rise       ; clk             ;
+; rst       ; clk        ; -4.273 ; -4.273 ; Rise       ; clk             ;
+; sck       ; clk        ; -3.217 ; -3.217 ; Rise       ; clk             ;
+; ss        ; clk        ; -3.816 ; -3.816 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -503,19 +503,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; clk        ; 6.934 ; 6.934 ; Rise       ; clk             ;
-;  LEDG[0]  ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
-;  LEDG[1]  ; clk        ; 6.934 ; 6.934 ; Rise       ; clk             ;
-; LEDR[*]   ; clk        ; 7.430 ; 7.430 ; Rise       ; clk             ;
-;  LEDR[0]  ; clk        ; 6.564 ; 6.564 ; Rise       ; clk             ;
-;  LEDR[1]  ; clk        ; 6.861 ; 6.861 ; Rise       ; clk             ;
-;  LEDR[2]  ; clk        ; 7.222 ; 7.222 ; Rise       ; clk             ;
-;  LEDR[3]  ; clk        ; 7.256 ; 7.256 ; Rise       ; clk             ;
-;  LEDR[4]  ; clk        ; 7.430 ; 7.430 ; Rise       ; clk             ;
-;  LEDR[5]  ; clk        ; 7.302 ; 7.302 ; Rise       ; clk             ;
-;  LEDR[6]  ; clk        ; 7.245 ; 7.245 ; Rise       ; clk             ;
-;  LEDR[7]  ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
-; miso      ; clk        ; 8.902 ; 8.902 ; Rise       ; clk             ;
+; miso      ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -524,19 +512,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
-;  LEDG[0]  ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
-;  LEDG[1]  ; clk        ; 6.934 ; 6.934 ; Rise       ; clk             ;
-; LEDR[*]   ; clk        ; 6.564 ; 6.564 ; Rise       ; clk             ;
-;  LEDR[0]  ; clk        ; 6.564 ; 6.564 ; Rise       ; clk             ;
-;  LEDR[1]  ; clk        ; 6.861 ; 6.861 ; Rise       ; clk             ;
-;  LEDR[2]  ; clk        ; 7.222 ; 7.222 ; Rise       ; clk             ;
-;  LEDR[3]  ; clk        ; 7.256 ; 7.256 ; Rise       ; clk             ;
-;  LEDR[4]  ; clk        ; 7.430 ; 7.430 ; Rise       ; clk             ;
-;  LEDR[5]  ; clk        ; 7.302 ; 7.302 ; Rise       ; clk             ;
-;  LEDR[6]  ; clk        ; 7.245 ; 7.245 ; Rise       ; clk             ;
-;  LEDR[7]  ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
-; miso      ; clk        ; 8.902 ; 8.902 ; Rise       ; clk             ;
+; miso      ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -545,7 +521,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; -0.250 ; -2.000        ;
+; clk   ; -0.171 ; -1.573        ;
 +-------+--------+---------------+
 
 
@@ -575,7 +551,7 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; clk   ; -1.380 ; -35.380               ;
+; clk   ; -1.380 ; -25.380               ;
 +-------+--------+-----------------------+
 
 
@@ -584,106 +560,106 @@ No paths to report.
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.250 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.282      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.138 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.170      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.081 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.113      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.077 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.109      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; -0.047 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.079      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.006  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.026      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.007  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
-; 0.036  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.996      ;
-; 0.036  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.996      ;
-; 0.036  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.996      ;
-; 0.074  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
-; 0.074  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
-; 0.074  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.958      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.082  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.950      ;
-; 0.103  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.929      ;
-; 0.103  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.929      ;
-; 0.103  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.929      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.116  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
-; 0.217  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.815      ;
-; 0.218  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.814      ;
-; 0.219  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.813      ;
-; 0.219  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.813      ;
-; 0.220  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.812      ;
-; 0.221  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.811      ;
-; 0.222  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.810      ;
-; 0.223  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.809      ;
-; 0.224  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.808      ;
-; 0.225  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; -0.001     ; 0.806      ;
-; 0.225  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.807      ;
-; 0.226  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.806      ;
-; 0.226  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.806      ;
-; 0.227  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.805      ;
-; 0.228  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.804      ;
-; 0.229  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.803      ;
-; 0.230  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.802      ;
-; 0.261  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.771      ;
-; 0.263  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.769      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.171 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.204      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.162 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.091 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.124      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.054 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.087      ;
+; -0.031 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.063      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; -0.014 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.046      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.000  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.032      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.007  ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 1.026      ;
+; 0.049  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.984      ;
+; 0.049  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.984      ;
+; 0.050  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.983      ;
+; 0.050  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.983      ;
+; 0.050  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.983      ;
+; 0.050  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.983      ;
+; 0.051  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.982      ;
+; 0.052  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.981      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.066  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.966      ;
+; 0.074  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 0.957      ;
+; 0.074  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 0.957      ;
+; 0.074  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 0.957      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.080  ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.952      ;
+; 0.114  ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.918      ;
+; 0.121  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 1.000        ; 0.000      ; 0.911      ;
+; 0.124  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 0.907      ;
+; 0.124  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 0.907      ;
+; 0.124  ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 0.907      ;
+; 0.153  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.880      ;
+; 0.153  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.880      ;
+; 0.154  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.879      ;
+; 0.154  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.879      ;
+; 0.154  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.879      ;
+; 0.154  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.879      ;
+; 0.155  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.878      ;
+; 0.156  ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.877      ;
+; 0.212  ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 1.000        ; 0.001      ; 0.821      ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -695,103 +671,103 @@ No paths to report.
 ; 0.215 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; spiSlave:UUT|miso_q      ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; LEDG[1]~reg0             ; LEDG[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.291 ; spiSlave:UUT|dout_q[5]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
-; 0.303 ; spiSlave:UUT|dout_q[1]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.455      ;
-; 0.311 ; spiSlave:UUT|dout_q[4]   ; LEDR[4]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.463      ;
-; 0.320 ; spiSlave:UUT|dout_q[1]   ; LEDR[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.472      ;
-; 0.320 ; spiSlave:UUT|dout_q[6]   ; LEDR[6]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.472      ;
-; 0.324 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
-; 0.325 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
-; 0.325 ; spiSlave:UUT|dout_q[3]   ; LEDR[3]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
-; 0.345 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|sck_old_q   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.497      ;
-; 0.366 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
-; 0.368 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
-; 0.369 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
-; 0.370 ; spiSlave:UUT|dout_q[6]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
-; 0.371 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
-; 0.371 ; spiSlave:UUT|dout_q[3]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
-; 0.372 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
-; 0.373 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
-; 0.373 ; spiSlave:UUT|dout_q[7]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
-; 0.375 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
-; 0.377 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
-; 0.378 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
-; 0.380 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
-; 0.382 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
-; 0.384 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.536      ;
-; 0.387 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.539      ;
-; 0.388 ; spiSlave:UUT|dout_q[2]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.540      ;
-; 0.395 ; spiSlave:UUT|dout_q[7]   ; LEDR[7]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.547      ;
-; 0.397 ; spiSlave:UUT|dout_q[2]   ; LEDR[2]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.549      ;
-; 0.404 ; spiSlave:UUT|dout_q[5]   ; LEDR[5]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
-; 0.446 ; spiSlave:UUT|dout_q[0]   ; LEDR[0]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.598      ;
-; 0.447 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.599      ;
-; 0.484 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.636      ;
-; 0.489 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.641      ;
-; 0.492 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.644      ;
-; 0.492 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.644      ;
-; 0.516 ; spiSlave:UUT|dout_q[4]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
-; 0.528 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
-; 0.529 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
-; 0.530 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
-; 0.531 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
-; 0.532 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
-; 0.532 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
-; 0.533 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.685      ;
-; 0.534 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
-; 0.538 ; spiSlave:UUT|data_q[7]   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.689      ;
-; 0.546 ; spiSlave:UUT|dout_q[0]   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
-; 0.563 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.715      ;
-; 0.586 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.737      ;
-; 0.616 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.767      ;
-; 0.617 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.769      ;
-; 0.619 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.771      ;
-; 0.650 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.802      ;
-; 0.651 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.803      ;
-; 0.652 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.804      ;
-; 0.653 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.654 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.806      ;
-; 0.654 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.806      ;
-; 0.655 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.807      ;
-; 0.655 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; -0.001     ; 0.806      ;
-; 0.656 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.808      ;
-; 0.657 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.809      ;
-; 0.658 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.810      ;
-; 0.659 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.811      ;
-; 0.660 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.812      ;
-; 0.661 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.813      ;
-; 0.661 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.813      ;
-; 0.662 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.814      ;
-; 0.663 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.815      ;
-; 0.693 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.845      ;
-; 0.694 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.846      ;
-; 0.695 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.847      ;
-; 0.696 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.848      ;
-; 0.697 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.849      ;
-; 0.697 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.849      ;
-; 0.698 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.850      ;
-; 0.699 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.851      ;
-; 0.777 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.929      ;
-; 0.777 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.929      ;
-; 0.777 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.929      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.798 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
-; 0.806 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
-; 0.806 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
-; 0.806 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.958      ;
-; 0.873 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
-; 0.873 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
-; 0.873 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
-; 0.873 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
-; 0.873 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
-; 0.873 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
+; 0.240 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|sck_old_q   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.291 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.292 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.444      ;
+; 0.320 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.472      ;
+; 0.321 ; spiSlave:UUT|data_q[3]   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.473      ;
+; 0.325 ; spiSlave:UUT|data_q[7]   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.353 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.355 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.363 ; spiSlave:UUT|data_q[4]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.368 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; spiSlave:UUT|dout_q[7]   ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.392 ; spiSlave:UUT|data_q[0]   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.544      ;
+; 0.396 ; spiSlave:UUT|mosi_q      ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.548      ;
+; 0.397 ; spiSlave:UUT|data_q[6]   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.549      ;
+; 0.399 ; spiSlave:UUT|data_q[5]   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.551      ;
+; 0.401 ; spiSlave:UUT|data_q[2]   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.553      ;
+; 0.403 ; spiSlave:UUT|data_q[1]   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.555      ;
+; 0.440 ; spiSlave:UUT|dout_q[4]   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.592      ;
+; 0.440 ; spiSlave:UUT|dout_q[2]   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.592      ;
+; 0.442 ; spiSlave:UUT|dout_q[3]   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.594      ;
+; 0.448 ; spiSlave:UUT|dout_q[6]   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.600      ;
+; 0.449 ; spiSlave:UUT|dout_q[5]   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.601      ;
+; 0.450 ; spiSlave:UUT|dout_q[1]   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.602      ;
+; 0.471 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.623      ;
+; 0.481 ; spiSlave:UUT|dout_q[0]   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.633      ;
+; 0.617 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.769      ;
+; 0.644 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.796      ;
+; 0.656 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.809      ;
+; 0.657 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.810      ;
+; 0.658 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.810      ;
+; 0.658 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.811      ;
+; 0.658 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.811      ;
+; 0.658 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.811      ;
+; 0.658 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.811      ;
+; 0.659 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.812      ;
+; 0.659 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.812      ;
+; 0.659 ; spiSlave:UUT|ss_q        ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.001      ; 0.812      ;
+; 0.665 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.818      ;
+; 0.666 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.819      ;
+; 0.667 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.820      ;
+; 0.667 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.820      ;
+; 0.667 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.820      ;
+; 0.667 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.820      ;
+; 0.668 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.821      ;
+; 0.668 ; spiSlave:UUT|bit_ct_q[0] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.821      ;
+; 0.724 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.877      ;
+; 0.725 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.878      ;
+; 0.726 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.879      ;
+; 0.726 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.879      ;
+; 0.726 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.879      ;
+; 0.726 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.879      ;
+; 0.727 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.880      ;
+; 0.727 ; spiSlave:UUT|bit_ct_q[2] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.880      ;
+; 0.756 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.907      ;
+; 0.756 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.907      ;
+; 0.756 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.907      ;
+; 0.759 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|miso_q      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.911      ;
+; 0.766 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.800 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.806 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[0] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.957      ;
+; 0.806 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[1] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.957      ;
+; 0.806 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|bit_ct_q[2] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.957      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.814 ; spiSlave:UUT|sck_q       ; spiSlave:UUT|dout_q[7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.828 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.981      ;
+; 0.829 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.982      ;
+; 0.830 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.983      ;
+; 0.830 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.983      ;
+; 0.830 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.983      ;
+; 0.830 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.983      ;
+; 0.831 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[7]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.984      ;
+; 0.831 ; spiSlave:UUT|bit_ct_q[1] ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.984      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
+; 0.880 ; spiSlave:UUT|sck_old_q   ; spiSlave:UUT|data_q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.032      ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -801,26 +777,6 @@ No paths to report.
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                   ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------+
 ; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDG[0]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[0]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDG[1]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[1]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[0]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[0]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[1]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[1]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[2]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[2]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[3]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[3]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[4]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[4]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[5]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[5]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[6]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[6]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[7]~reg0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[7]~reg0             ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; spiSlave:UUT|bit_ct_q[0] ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; spiSlave:UUT|bit_ct_q[0] ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; spiSlave:UUT|bit_ct_q[1] ;
@@ -869,26 +825,6 @@ No paths to report.
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; spiSlave:UUT|sck_q       ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; spiSlave:UUT|ss_q        ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; spiSlave:UUT|ss_q        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDG[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDG[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDG[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[0]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[1]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[2]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[2]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[3]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[3]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[4]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[4]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[5]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[5]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[6]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[6]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; LEDR[7]~reg0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; LEDR[7]~reg0|clk         ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|bit_ct_q[0]|clk      ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|bit_ct_q[0]|clk      ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|bit_ct_q[1]|clk      ;
@@ -900,6 +836,46 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[1]|clk        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[1]|clk        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|data_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|data_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|dout_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|dout_q[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|miso_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|miso_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|mosi_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|mosi_q|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|sck_old_q|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|sck_old_q|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|sck_q|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|sck_q|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; UUT|ss_q|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; UUT|ss_q|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]     ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------+
 
 
@@ -908,10 +884,10 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; mosi      ; clk        ; 2.223 ; 2.223 ; Rise       ; clk             ;
-; rst       ; clk        ; 2.198 ; 2.198 ; Rise       ; clk             ;
-; sck       ; clk        ; 2.078 ; 2.078 ; Rise       ; clk             ;
-; ss        ; clk        ; 2.120 ; 2.120 ; Rise       ; clk             ;
+; mosi      ; clk        ; 1.751 ; 1.751 ; Rise       ; clk             ;
+; rst       ; clk        ; 2.651 ; 2.651 ; Rise       ; clk             ;
+; sck       ; clk        ; 1.569 ; 1.569 ; Rise       ; clk             ;
+; ss        ; clk        ; 1.795 ; 1.795 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -920,10 +896,10 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; mosi      ; clk        ; -2.059 ; -2.059 ; Rise       ; clk             ;
-; rst       ; clk        ; -1.449 ; -1.449 ; Rise       ; clk             ;
-; sck       ; clk        ; -1.958 ; -1.958 ; Rise       ; clk             ;
-; ss        ; clk        ; -2.000 ; -2.000 ; Rise       ; clk             ;
+; mosi      ; clk        ; -1.631 ; -1.631 ; Rise       ; clk             ;
+; rst       ; clk        ; -1.990 ; -1.990 ; Rise       ; clk             ;
+; sck       ; clk        ; -1.449 ; -1.449 ; Rise       ; clk             ;
+; ss        ; clk        ; -1.675 ; -1.675 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -932,19 +908,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
-;  LEDG[0]  ; clk        ; 3.736 ; 3.736 ; Rise       ; clk             ;
-;  LEDG[1]  ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
-; LEDR[*]   ; clk        ; 4.009 ; 4.009 ; Rise       ; clk             ;
-;  LEDR[0]  ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
-;  LEDR[1]  ; clk        ; 3.709 ; 3.709 ; Rise       ; clk             ;
-;  LEDR[2]  ; clk        ; 3.864 ; 3.864 ; Rise       ; clk             ;
-;  LEDR[3]  ; clk        ; 3.892 ; 3.892 ; Rise       ; clk             ;
-;  LEDR[4]  ; clk        ; 4.009 ; 4.009 ; Rise       ; clk             ;
-;  LEDR[5]  ; clk        ; 3.917 ; 3.917 ; Rise       ; clk             ;
-;  LEDR[6]  ; clk        ; 3.881 ; 3.881 ; Rise       ; clk             ;
-;  LEDR[7]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
-; miso      ; clk        ; 4.600 ; 4.600 ; Rise       ; clk             ;
+; miso      ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -953,19 +917,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; clk        ; 3.736 ; 3.736 ; Rise       ; clk             ;
-;  LEDG[0]  ; clk        ; 3.736 ; 3.736 ; Rise       ; clk             ;
-;  LEDG[1]  ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
-; LEDR[*]   ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
-;  LEDR[0]  ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
-;  LEDR[1]  ; clk        ; 3.709 ; 3.709 ; Rise       ; clk             ;
-;  LEDR[2]  ; clk        ; 3.864 ; 3.864 ; Rise       ; clk             ;
-;  LEDR[3]  ; clk        ; 3.892 ; 3.892 ; Rise       ; clk             ;
-;  LEDR[4]  ; clk        ; 4.009 ; 4.009 ; Rise       ; clk             ;
-;  LEDR[5]  ; clk        ; 3.917 ; 3.917 ; Rise       ; clk             ;
-;  LEDR[6]  ; clk        ; 3.881 ; 3.881 ; Rise       ; clk             ;
-;  LEDR[7]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
-; miso      ; clk        ; 4.600 ; 4.600 ; Rise       ; clk             ;
+; miso      ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -974,10 +926,10 @@ No paths to report.
 +------------------+---------+-------+----------+---------+---------------------+
 ; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -2.078  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
-;  clk             ; -2.078  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
-; Design-wide TNS  ; -33.894 ; 0.0   ; 0.0      ; 0.0     ; -43.179             ;
-;  clk             ; -33.894 ; 0.000 ; N/A      ; N/A     ; -43.179             ;
+; Worst-case Slack ; -1.904  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -1.904  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -32.907 ; 0.0   ; 0.0      ; 0.0     ; -30.959             ;
+;  clk             ; -32.907 ; 0.000 ; N/A      ; N/A     ; -30.959             ;
 +------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -986,10 +938,10 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; mosi      ; clk        ; 4.884 ; 4.884 ; Rise       ; clk             ;
-; rst       ; clk        ; 4.879 ; 4.879 ; Rise       ; clk             ;
-; sck       ; clk        ; 4.529 ; 4.529 ; Rise       ; clk             ;
-; ss        ; clk        ; 4.598 ; 4.598 ; Rise       ; clk             ;
+; mosi      ; clk        ; 3.876 ; 3.876 ; Rise       ; clk             ;
+; rst       ; clk        ; 5.788 ; 5.788 ; Rise       ; clk             ;
+; sck       ; clk        ; 3.465 ; 3.465 ; Rise       ; clk             ;
+; ss        ; clk        ; 4.064 ; 4.064 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -998,10 +950,10 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; mosi      ; clk        ; -2.059 ; -2.059 ; Rise       ; clk             ;
-; rst       ; clk        ; -1.449 ; -1.449 ; Rise       ; clk             ;
-; sck       ; clk        ; -1.958 ; -1.958 ; Rise       ; clk             ;
-; ss        ; clk        ; -2.000 ; -2.000 ; Rise       ; clk             ;
+; mosi      ; clk        ; -1.631 ; -1.631 ; Rise       ; clk             ;
+; rst       ; clk        ; -1.990 ; -1.990 ; Rise       ; clk             ;
+; sck       ; clk        ; -1.449 ; -1.449 ; Rise       ; clk             ;
+; ss        ; clk        ; -1.675 ; -1.675 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1010,19 +962,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; clk        ; 6.934 ; 6.934 ; Rise       ; clk             ;
-;  LEDG[0]  ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
-;  LEDG[1]  ; clk        ; 6.934 ; 6.934 ; Rise       ; clk             ;
-; LEDR[*]   ; clk        ; 7.430 ; 7.430 ; Rise       ; clk             ;
-;  LEDR[0]  ; clk        ; 6.564 ; 6.564 ; Rise       ; clk             ;
-;  LEDR[1]  ; clk        ; 6.861 ; 6.861 ; Rise       ; clk             ;
-;  LEDR[2]  ; clk        ; 7.222 ; 7.222 ; Rise       ; clk             ;
-;  LEDR[3]  ; clk        ; 7.256 ; 7.256 ; Rise       ; clk             ;
-;  LEDR[4]  ; clk        ; 7.430 ; 7.430 ; Rise       ; clk             ;
-;  LEDR[5]  ; clk        ; 7.302 ; 7.302 ; Rise       ; clk             ;
-;  LEDR[6]  ; clk        ; 7.245 ; 7.245 ; Rise       ; clk             ;
-;  LEDR[7]  ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
-; miso      ; clk        ; 8.902 ; 8.902 ; Rise       ; clk             ;
+; miso      ; clk        ; 6.888 ; 6.888 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1031,19 +971,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; clk        ; 3.736 ; 3.736 ; Rise       ; clk             ;
-;  LEDG[0]  ; clk        ; 3.736 ; 3.736 ; Rise       ; clk             ;
-;  LEDG[1]  ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
-; LEDR[*]   ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
-;  LEDR[0]  ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
-;  LEDR[1]  ; clk        ; 3.709 ; 3.709 ; Rise       ; clk             ;
-;  LEDR[2]  ; clk        ; 3.864 ; 3.864 ; Rise       ; clk             ;
-;  LEDR[3]  ; clk        ; 3.892 ; 3.892 ; Rise       ; clk             ;
-;  LEDR[4]  ; clk        ; 4.009 ; 4.009 ; Rise       ; clk             ;
-;  LEDR[5]  ; clk        ; 3.917 ; 3.917 ; Rise       ; clk             ;
-;  LEDR[6]  ; clk        ; 3.881 ; 3.881 ; Rise       ; clk             ;
-;  LEDR[7]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
-; miso      ; clk        ; 4.600 ; 4.600 ; Rise       ; clk             ;
+; miso      ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1052,7 +980,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 161      ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 152      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1062,7 +990,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 161      ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 152      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1087,9 +1015,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 26    ; 26   ;
-; Unconstrained Output Ports      ; 11    ; 11   ;
-; Unconstrained Output Port Paths ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 15    ; 15   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
 
 
@@ -1099,7 +1027,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Nov 14 19:14:28 2022
+    Info: Processing started: Fri Nov 18 12:56:30 2022
 Info: Command: quartus_sta Test_MOJO_SPI -c Test_MOJO_SPI
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1112,10 +1040,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.078
+Info (332146): Worst-case setup slack is -1.904
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.078       -33.894 clk 
+    Info (332119):    -1.904       -32.907 clk 
 Info (332146): Worst-case hold slack is 0.445
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1125,14 +1053,14 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.631
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.631       -43.179 clk 
+    Info (332119):    -1.631       -30.959 clk 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.250
+Info (332146): Worst-case setup slack is -0.171
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.250        -2.000 clk 
+    Info (332119):    -0.171        -1.573 clk 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1142,13 +1070,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380       -35.380 clk 
+    Info (332119):    -1.380       -25.380 clk 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4537 megabytes
-    Info: Processing ended: Mon Nov 14 19:14:29 2022
+    Info: Processing ended: Fri Nov 18 12:56:31 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

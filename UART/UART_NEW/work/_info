@@ -1,0 +1,157 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\UART\UART_TESTING
+vimpl_top
+!i10b 1
+!s100 [;ge2];kVGlb^j]zz?VcX0
+IY:Q>`E[E:aP@aznNQ7bRO3
+VM^ZmU^G4]I;5cS=LTYhe10
+Z1 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\UART\UART_NEW
+w1668892017
+Z2 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/impl_top.v
+Z3 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/impl_top.v
+L0 12
+Z4 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1668892046.250000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/impl_top.v|
+Z5 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/impl_top.v|
+!s101 -O0
+Z6 o-work work -O0
+vrx_tb
+Z7 !s100 NnbQzdEm8cQMR6j^D7NF?2
+Z8 IUn=SWGd;aANj:S]gaL9KL2
+Z9 V1olIUnE0VP8<mlN@49ZHE1
+R1
+Z10 w1668891175
+Z11 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/rx_tb.v
+Z12 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/rx_tb.v
+L0 12
+R4
+r1
+31
+Z13 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/rx_tb.v|
+R6
+Z14 !s108 1668892046.040000
+Z15 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/rx_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb
+Z16 I[6@bLX1I0:g>_]laN8TcQ2
+Z17 VV@Xn<HnSRM[I5c1?BH]3a3
+R1
+Z18 w1668890967
+Z19 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tb.v
+Z20 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tb.v
+L0 12
+R4
+r1
+31
+R6
+Z21 !s100 :N@C;0EgMf`7HMdAjH_^<1
+Z22 !s108 1668891158.412000
+Z23 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tb.v|
+Z24 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtx_tb
+Z25 !s100 S>X0K3W[;jk?d<7j6hM2i2
+Z26 IfjCg?Z9W5Df56<A6:QgJQ1
+Z27 V80BEi<7<T@S?f3gIT6Bg80
+R1
+Z28 w1668891511
+Z29 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/tx_tb.v
+Z30 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/tx_tb.v
+L0 13
+R4
+r1
+31
+Z31 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/tx_tb.v|
+R6
+Z32 !s108 1668892046.081000
+Z33 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/tx_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vuart_rx
+Z34 !s100 eXOdU?^IR:g7`HJnKK4ik0
+Z35 I3DSjY3=m=nzj2E5a_QQ3N1
+Z36 V:Mk]obO5BhjX1GaXafC9?1
+R1
+Z37 w1668891643
+Z38 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v
+Z39 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v
+L0 9
+R4
+r1
+31
+Z40 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v|
+R6
+!i10b 1
+!s85 0
+Z41 !s108 1668892046.208000
+Z42 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v|
+!s101 -O0
+vuart_tb
+Z43 I6c[CboL4@3G<[ZD2^YDZ31
+Z44 VZzYO6HjR<]<2_bm?EhR?51
+R1
+Z45 w1668892044
+R19
+R20
+L0 12
+R4
+r1
+31
+R24
+R6
+Z46 !s100 ^jif2kKh9SU5=I7`SWL4G0
+Z47 !s108 1668892046.123000
+R23
+!i10b 1
+!s85 0
+!s101 -O0
+vuart_top
+Z48 !s100 Kj>kD8o;h6>U4@O8z53Qh2
+Z49 IO3E4aJ7S0AdPTb?jE_l_c1
+Z50 VO5P_bezCgGMk_g_K[2H^W2
+R1
+Z51 w1668890677
+Z52 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_top.v
+Z53 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_top.v
+L0 2
+R4
+r1
+31
+Z54 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_top.v|
+R6
+Z55 !s108 1668891645.543000
+Z56 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_top.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vuart_tx
+Z57 !s100 ?eKVe:h2Z]LeMbjAAB`en0
+Z58 I_8P8@@MCzcX=fimN;g0LQ1
+Z59 VLe0G]ai;F_IaFNWa=G5ii1
+R1
+Z60 w1668891454
+Z61 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v
+Z62 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v
+L0 12
+R4
+r1
+31
+Z63 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v|
+R6
+Z64 !s108 1668892046.165000
+Z65 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v|
+!i10b 1
+!s85 0
+!s101 -O0
