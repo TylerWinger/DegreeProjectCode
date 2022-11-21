@@ -21,6 +21,10 @@ wire [2:0] rgb3 ;   // RGB Led 3.
 wire [3:0] led  ;   // Green Leds
 reg  uart_rxd   ;   // UART Recieve pin.
 
+
+wire uart_rx_valid;
+wire uart_rx_en;
+
 //
 // Bit rate of the UART line we are testing.
 localparam BIT_RATE = 11520;
@@ -90,30 +94,32 @@ initial begin
     uart_rxd = 1'b1;
     #40 resetn = 1'b1;
     
-    $dumpfile("./work/waves-sys.vcd");     
-    $dumpvars(0,uart_tb);
+//    $dumpfile("./work/waves-sys.vcd");     
+//    $dumpvars(0,uart_tb);
     
-    send_byte("A");
-    send_byte("1");
-    
-    send_byte("B");
-    send_byte("2");
-    
-    send_byte("C");
-    send_byte("3");
-    
-    send_byte("D");
-    send_byte("4");
-    
-    send_byte(0);
+ //   send_byte("A");
+//    send_byte("1");
+//    
+//    send_byte("B");
+//    send_byte("2");
+//    
+//    send_byte("C");
+//    send_byte("3");
+//    
+//    send_byte("D");
+//    send_byte("4");
+//    
+//    send_byte(0);
+//
+//    send_byte("a");
+//    send_byte("b");
+//    send_byte("c");
+//    send_byte("d");
+//    
+//    send_byte(0);
+//    send_byte(0);
 
-    send_byte("a");
-    send_byte("b");
-    send_byte("c");
-    send_byte("d");
-    
-    send_byte(0);
-    send_byte(0);
+write_register("10101010","00011111");
 
     $display("Finish simulation at time %d", $time);
     $finish();
@@ -121,14 +127,16 @@ end
 
 //
 // Instance the top level implementation module.
-impl_top #(
+impl_top_tb #(
 .BIT_RATE(BIT_RATE),
 .CLK_HZ  (CLK_HZ  )
 ) i_dut (
 .clk      (clk     ),   // Top level system clock input.
 .sw_0     (sw      ),   // Slide switches.
 .led      (led     ),   // Green Leds
-.uart_rxd (uart_rxd)    // UART Recieve pin.
+.uart_rxd (uart_rxd),    // UART Recieve pin.
+.uart_rx_valid (uart_rx_valid),
+.uart_rx_en(uart_rx_en)
 );
 
 endmodule
