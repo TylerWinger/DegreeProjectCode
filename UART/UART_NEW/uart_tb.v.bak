@@ -94,8 +94,8 @@ initial begin
     uart_rxd = 1'b1;
     #40 resetn = 1'b1;
     
-    $dumpfile("./work/waves-sys.vcd");     
-    $dumpvars(0,uart_tb);
+//    $dumpfile("./work/waves-sys.vcd");     
+//    $dumpvars(0,uart_tb);
     
  //   send_byte("A");
 //    send_byte("1");
@@ -119,7 +119,7 @@ initial begin
 //    send_byte(0);
 //    send_byte(0);
 
-write_register("10101010","00011111");
+write_register(10101010,00011111);
 
     $display("Finish simulation at time %d", $time);
     $finish();

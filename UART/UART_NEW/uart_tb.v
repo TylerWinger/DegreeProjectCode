@@ -119,10 +119,10 @@ initial begin
 //    send_byte(0);
 //    send_byte(0);
 
-write_register("10101010","00011111");
+write_register(10101010,00011111);
 
     $display("Finish simulation at time %d", $time);
-    $finish();
+    //$finish();
 end
 
 //

@@ -1,0 +1,41 @@
+`timescale 1ns/1ns
+
+
+module 64In_TB ();
+    reg clk;
+
+    // Incoming data 8 bytes
+    reg [7:0] uart_DataIn [0:7];
+    uart_DataIn[0] = 8'b1010101010;
+    uart_DataIn[1] = 8'b1010101010;
+    uart_DataIn[2] = 8'b1111111111;
+    uart_DataIn[3] = 8'b1010101010;
+    uart_DataIn[4] = 8'b1010101010;
+    uart_DataIn[5] = 8'b0000000000;
+    uart_DataIn[6] = 8'b1010101010;
+    uart_DataIn[7] = 8'b1010101010;
+    
+    reg [63:0] dataIn;
+    reg [3:0] byteCnt = 4'b0;
+    reg dataInValid = 1'b0;
+    reg uart_rx_valid = 1'b0;
+
+    parameter CLK_HZ = 1000000;
+    parameter CLK_P = 1000000000 / CLK_HZ;
+
+    always begin #(CLK_P/2) assign clk = ~clk; end
+
+    always @(posedge clk ) begin
+        uart_rx_valid <= ~uart_rx_valid;
+    end
+
+        always @(uart_rx_valid)begin
+        if (byteCnt < 8)begin
+             dataIn = {dataIn , uart_DataIn}; //append and shift (concatenation)
+             dataInValid = 1'b0;
+             byteCnt = byteCnt + 1;
+        end 
+        else dataInValid = 1'b1;
+    end
+
+endmodule
