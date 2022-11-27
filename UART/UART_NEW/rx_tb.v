@@ -86,7 +86,7 @@ initial begin
     #40 resetn = 1'b1;
     
     $dumpfile(`WAVES_FILE);
-    $dumpvars(0,tb);
+    $dumpvars(0,rx_tb);
 
     uart_rx_en = 1'b1;
 

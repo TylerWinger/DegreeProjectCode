@@ -19,13 +19,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	uart_tb
 
-} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_rx.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module uart_rx
-
-Top level modules:
-	uart_rx
-
 } {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/UART/UART_NEW/uart_tx.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module uart_tx

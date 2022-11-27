@@ -5,12 +5,12 @@ module input64_TB (
     output reg clk,
     output reg uart_rxd,
     output reg reset ,
-    wire [2:0] fsm_state,
+    wire [1:0] fsm_state,
     wire [3:0] byteCnt,
-    wire [63:0] dataInput
+    wire [63:0] dataInput,
+    wire [7:0] uart_rx_data
 );
     reg [7:0] uart_DataIn [0:7];
-    reg uart_rx_valid;
 
     //Clock
     parameter CLK_HZ = 50000000;
@@ -21,7 +21,10 @@ module input64_TB (
     parameter BIT_P = (1000000000/BIT_RATE);
       
     initial begin
+        reset = 1'b1;
         clk = 1'b0;
+        uart_rxd = 1'b1;
+        #480;
         reset = 1'b0;
 
         uart_DataIn[0] = 8'b10101010;
@@ -36,12 +39,9 @@ module input64_TB (
         #10;
 
         repeat (8)begin
-            send_byte(8'hFF);
+            send_byte(8'hAA);
+            $display("Send data to RX pin");
         end
-    end
-
-    always @(posedge clk ) begin
-        uart_rx_valid <= ~uart_rx_valid;
     end
 
     input64 input64_Inst(
@@ -50,7 +50,8 @@ module input64_TB (
         .reset(reset),
         .fsm_state(fsm_state),
         .byteCnt(byteCnt),
-        .dataInput(dataInput)
+        .dataInput(dataInput),
+        .uart_rx_data(uart_rx_data)
     );
 
     // Sends a single byte down the UART line.
@@ -77,13 +78,16 @@ endmodule
 module input64 (
     input clk, //50MHz clock
     input uart_rx_pin, //Hardware pin connected to UART_RX
-    input reset, //Reset pin active HIGH
-    output reg fsm_state,
+    input reset, //Reset pin active low
+    output reg [1:0] fsm_state,
     output reg [3:0] byteCnt, //Counting the number of byte recieved from UART
-    output reg [63:0] dataInput //8bytes of data from UART
+    output reg [63:0] dataInput, //8bytes of data from UART
+    wire [7:0] uart_rx_data
 );
     reg dataIn64Done;
     reg dataInputFull;
+
+
 
     //Finite state machine parameters
     parameter IDLE   = 2'b00;
@@ -93,7 +97,7 @@ module input64 (
     //Instantiation of UART RX
     uart_rx #() i_uart_rx(
     .clk          (clk          ), // Top level system clock input.
-    .resetn       (sw_0         ), // Asynchronous active low reset.
+    .resetn       (!reset      ), // Asynchronous active low reset.
     .uart_rxd     (uart_rx_pin  ), // UART Recieve pin.
     .uart_rx_en   (1'b1         ), // Recieve enable
     .uart_rx_break(uart_rx_break), // Did we get a BREAK message?
@@ -109,7 +113,7 @@ module input64 (
         else 
             case (fsm_state)
                 IDLE :
-                    if (dataInput == 64'hFFFFFFFF) fsm_state <= ACTIVE;
+                    if (dataInput == 64'hAAAAAAAAAAAAAAAA) fsm_state <= ACTIVE;
 
                 ACTIVE :
                     if (byteCnt == 4'd8)            fsm_state <= FINISH;
@@ -121,6 +125,9 @@ module input64 (
     end
 
     always @(posedge uart_rx_valid) begin
+        if (fsm_state == IDLE) begin
+            dataInput <= {dataInput, uart_rx_data};
+        end
         if (fsm_state == ACTIVE) begin
             if (byteCnt < 8) begin
                 dataInput <= {dataInput, uart_rx_data};

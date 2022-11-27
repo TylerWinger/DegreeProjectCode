@@ -78,6 +78,7 @@ localparam FSM_STOP = 3;
 assign uart_rx_break = uart_rx_valid && ~|recieved_data;
 assign uart_rx_valid = fsm_state == FSM_STOP && n_fsm_state == FSM_IDLE; //true if: fsm_state=FSM_STOP & n_fsm_state=DSM_IDLE
 
+
 always @(posedge clk) begin
     if(!resetn) begin
         uart_rx_data  <= {PAYLOAD_BITS{1'b0}};
