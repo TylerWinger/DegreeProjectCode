@@ -13,6 +13,7 @@ entity input64 is
         fsm_state       : out    vl_logic_vector(1 downto 0);
         byteCnt         : out    vl_logic_vector(3 downto 0);
         dataInput       : out    vl_logic_vector(63 downto 0);
+        dataIn64Done    : out    vl_logic;
         uart_rx_data    : out    vl_logic_vector(7 downto 0)
     );
     attribute mti_svvh_generic_type : integer;

@@ -1,5 +1,5 @@
 
-// 
+// Ben Marshall
 // Module: uart_rx 
 // 
 // Notes:

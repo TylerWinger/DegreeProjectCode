@@ -8,9 +8,11 @@ module input64_TB (
     wire [1:0] fsm_state,
     wire [3:0] byteCnt,
     wire [63:0] dataInput,
-    wire [7:0] uart_rx_data
+    wire [7:0] uart_rx_data,
+    wire dataIn64Done
 );
     reg [7:0] uart_DataIn [0:7];
+    integer i;
 
     //Clock
     parameter CLK_HZ = 50000000;
@@ -39,9 +41,18 @@ module input64_TB (
         #10;
 
         repeat (8)begin
-            send_byte(8'hAA);
-            $display("Send data to RX pin");
+            send_byte(8'hAA); //activate the fsm
         end
+        $display("Activate fsm")
+        for (i = 0; i < 8; i = i + 1) begin
+            send_byte(uart_DataIn[i]);
+            $display("Sending data...");
+        end
+        repeat (8)begin
+            send_byte(8'h55); //idle the fsm
+        end  
+        $display("Idle fsm");
+
     end
 
     input64 input64_Inst(
@@ -51,7 +62,8 @@ module input64_TB (
         .fsm_state(fsm_state),
         .byteCnt(byteCnt),
         .dataInput(dataInput),
-        .uart_rx_data(uart_rx_data)
+        .uart_rx_data(uart_rx_data),
+        .dataIn64Done(dataIn64Done)
     );
 
     // Sends a single byte down the UART line.
@@ -82,12 +94,9 @@ module input64 (
     output reg [1:0] fsm_state,
     output reg [3:0] byteCnt, //Counting the number of byte recieved from UART
     output reg [63:0] dataInput, //8bytes of data from UART
+    output reg dataIn64Done, //Pulses high when dataInput is new (only in ACTIVE mode)
     wire [7:0] uart_rx_data
 );
-    reg dataIn64Done;
-    reg dataInputFull;
-
-
 
     //Finite state machine parameters
     parameter IDLE   = 2'b00;
@@ -113,17 +122,19 @@ module input64 (
         else 
             case (fsm_state)
                 IDLE :
-                    if (dataInput == 64'hAAAAAAAAAAAAAAAA) fsm_state <= ACTIVE;
+                    if (dataInput == 64'hAAAAAAAAAAAAAAAA)                    fsm_state <= ACTIVE;
 
                 ACTIVE :
-                    if (byteCnt == 4'd8)            fsm_state <= FINISH;
+                    if (byteCnt == 4'd8 && dataInput == 64'h5555555555555555) fsm_state <= IDLE;
+                    else if (byteCnt == 4'd8)                                 fsm_state <= FINISH;
 
-                FINISH :                            fsm_state <= ACTIVE;
+                FINISH :                                                      fsm_state <= ACTIVE;
 
-                default:                            fsm_state <= IDLE;
+                default:                                                      fsm_state <= IDLE;
             endcase
     end
 
+// Run everytime a byte is recieved
     always @(posedge uart_rx_valid) begin
         if (fsm_state == IDLE) begin
             dataInput <= {dataInput, uart_rx_data};
@@ -131,10 +142,8 @@ module input64 (
         if (fsm_state == ACTIVE) begin
             if (byteCnt < 8) begin
                 dataInput <= {dataInput, uart_rx_data};
-                dataInputFull <= 1'b0;
-                byteCnt <= byteCnt + 1;
+                byteCnt <= byteCnt + 1'b1;
             end
-            else dataInputFull <= 1'b1;
         end
 
     end
@@ -148,14 +157,17 @@ module input64 (
             byteCnt <= 4'b0;
             dataIn64Done <= 1'b0;
         end
+        else if (fsm_state == ACTIVE) begin
+            dataIn64Done <= 1'b0;
+        end        
         else if (fsm_state == FINISH) begin
             dataIn64Done <= 1'b1;
             byteCnt <= 4'b0;
         end 
-        else begin
-            dataIn64Done <= 1'b0;
-            byteCnt <= 4'b0;
-        end 
+    end
+
+    always @(posedge dataIn64Done) begin
+        $display("data input done");
     end
 
 endmodule
