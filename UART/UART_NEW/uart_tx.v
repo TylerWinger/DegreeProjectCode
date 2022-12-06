@@ -15,7 +15,7 @@ input  wire         resetn      , // Asynchronous active low reset.
 output wire         uart_txd    , // UART transmit pin.
 output wire         uart_tx_busy, // Module busy sending previous item.
 input  wire         uart_tx_en  , // Send the data on uart_tx_data
-input  wire [8-1:0]   uart_tx_data  // The data to be sent
+input  wire [7:0]   uart_tx_data  // The data to be sent
 );
 
 // --------------------------------------------------------------------------- 
