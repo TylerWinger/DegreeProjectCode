@@ -91,7 +91,7 @@ always @(posedge dataIn64Done) begin
     codeWord[i] = dataIn[i-8];
     end
 
-  $display("P7=%b, P6=%b, P5=%b, P4=%b, P3=%b, P2-%b, P1=%b, P0=%b",parity[6],parity[5],parity[4],parity[3],parity[2],parity[1],parity[0],zeroParity);
+  //$display("P7=%b, P6=%b, P5=%b, P4=%b, P3=%b, P2-%b, P1=%b, P0=%b",parity[6],parity[5],parity[4],parity[3],parity[2],parity[1],parity[0],zeroParity);
 
 end
 //====================================================================================================================
