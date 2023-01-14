@@ -1,13 +1,14 @@
 
 module writingFileTest (
+input SW,
+output LED
 );
-integer file;
-reg [63:0] data = 64'b1010101010101010101010101010101010101010101010101010101010101010;
+
+assign LED = SW;
+
 
 initial begin
-    file = $fopen("dataOut.txt","w");
-    $fwrite(file,"%b",data);
-    $fclose(file);
+
 end
     
 endmodule

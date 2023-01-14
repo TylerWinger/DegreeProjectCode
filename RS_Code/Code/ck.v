@@ -9,7 +9,7 @@ module ck(
     reg [3:0] codeWordVector [14:0]; //C(X) = [X^(n-k)]M(X) + CK(X)
     reg [3:0] shiftRegister [14:0]; 
     reg [3:0] shiftRegisterOld [14:0]; 
-    reg [3:0] vectorTemp;
+    reg [4:0] vectorTemp;
     
     integer i,j,k;
 //====================================================================================================================    
@@ -55,19 +55,45 @@ module ck(
       shiftRegister[i] = 0;
     end
     //Case 1 through k=9
-    for (i = 0; i < 9; i = i + 1) begin
+    for (i = 8; i > -1; i = i - 1) begin
       for (k = 0; k < 15; k = k + 1) begin
         shiftRegisterOld[k] = shiftRegister[k];
       end
 
-      //X^0
-      vectorTemp = addition(shiftRegisterOld[5], messageIn[8]);
-      shiftRegister[0] = vectorTemp != 15 ? vectorTemp + 4'd6 : 4'b0; 
+      //X^0 = (X^5_old + M_i(X))alpha^6
+      vectorTemp = addition(shiftRegisterOld[5], messageIn[i]); 
+      vectorTemp = vectorTemp != 15 ? vectorTemp + 4'd6 : 4'b0; 
+      shiftRegister[0] = vectorTemp % 15; //Finite Field
 
-      //X^1
-      vectorTemp = addition(shiftRegisterOld[5], messageIn[8]);
+      //X^1 = X^0_old + (X^5_old + M_i(X))alpha^9
+      vectorTemp = addition(shiftRegisterOld[5], messageIn[i]);
       vectorTemp = addition(shiftRegisterOld[0], galoisField[vectorTemp]);
-      shiftRegister[1] = vectorTemp != 15 ? vectorTemp + 4'd6 : 4'b0;
+      vectorTemp = vectorTemp != 15 ? vectorTemp + 4'd9 : 4'b0; 
+      shiftRegister[1] = vectorTemp % 15;
+
+      //X^2 = X^1_old + (X^5_old + M_i(X))alpha^6
+      vectorTemp = addition(shiftRegisterOld[5], messageIn[i]);
+      vectorTemp = addition(shiftRegisterOld[1], galoisField[vectorTemp]);
+      vectorTemp = vectorTemp != 15 ? vectorTemp + 4'd6 : 4'b0;
+      shiftRegister[2] = vectorTemp % 15;
+
+      //X^3 = X^2_old + (X^5_old + M_i(X))alpha^3
+      vectorTemp = addition(shiftRegisterOld[5], messageIn[i]);
+      vectorTemp = addition(shiftRegisterOld[1], galoisField[vectorTemp]);
+      vectorTemp = vectorTemp != 15 ? vectorTemp + 4'd4 : 4'b0;
+      shiftRegister[3] = vectorTemp % 15;
+      
+      //X^4 = X^3_old + (X^5_old + M_i(X))alpha^14
+      vectorTemp = addition(shiftRegisterOld[5], messageIn[i]);
+      vectorTemp = addition(shiftRegisterOld[1], galoisField[vectorTemp]);
+      vectorTemp = vectorTemp != 15 ? vectorTemp + 4'd14 : 4'b0;
+      shiftRegister[4] = vectorTemp % 15;
+
+      //X^5 = X^4_old + (X^5_old + M_i(X))alpha^10
+      vectorTemp = addition(shiftRegisterOld[5], messageIn[i]);
+      vectorTemp = addition(shiftRegisterOld[1], galoisField[vectorTemp]);
+      vectorTemp = vectorTemp != 15 ? vectorTemp + 4'd10 : 4'b0;
+      shiftRegister[5] = vectorTemp % 15;
 
       for (j = 0; j < 15; j = j + 1) begin //Checking and fixing for finite field
         shiftRegister[j] = shiftRegister[j] % 15;
