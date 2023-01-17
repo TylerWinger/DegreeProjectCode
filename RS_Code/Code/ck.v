@@ -18,7 +18,9 @@ module ck(
       for(i = 0; i < 9; i = i+1) begin
         messageIn[i] = 4'd15;
       end  
-      messageIn[1] = 4'd11;
+      //messageIn[1] = 4'd11;
+      messageIn[1] = 4'd3;
+      messageIn[0] = 4'd10;
 
       // Establishing GF elements (alpha_i values)
       galoisField[0] = 4'b0001; //alpha^0
@@ -93,31 +95,32 @@ module ck(
 
   end
 
-       input [3:0] a, b;
-       reg [3:0] temp;
-      begin
-        temp = a ^ b;
-        $display("a: %4b, b: %4b, temp: %4b",a,b,temp);
-        case (temp)
-          4'b0000 : addition = 15;
-          4'b0001 : addition = 0;
-          4'b0010 : addition = 1;
-          4'b0100 : addition = 2;
-          4'b1000 : addition = 3;
-          4'b0011 : addition = 4;
-          4'b0110 : addition = 5;
-          4'b1100 : addition = 6;
-          4'b1011 : addition = 7;
-          4'b0101 : addition = 8;
-          4'b1010 : addition = 9;
-          4'b0111 : addition = 10;
-          4'b1110 : addition = 11;
-          4'b1111 : addition = 12;
-          4'b1101 : addition = 13;
-          4'b1001 : addition = 14;
-          
-        endcase
-      end
-    endfunction
+  function [3:0] addition; // Galois field addition
+      input [3:0] a, b;
+      reg [3:0] temp;
+    begin
+      temp = a ^ b;
+      $display("a: %4b, b: %4b, temp: %4b",a,b,temp);
+      case (temp)
+        4'b0000 : addition = 15;
+        4'b0001 : addition = 0;
+        4'b0010 : addition = 1;
+        4'b0100 : addition = 2;
+        4'b1000 : addition = 3;
+        4'b0011 : addition = 4;
+        4'b0110 : addition = 5;
+        4'b1100 : addition = 6;
+        4'b1011 : addition = 7;
+        4'b0101 : addition = 8;
+        4'b1010 : addition = 9;
+        4'b0111 : addition = 10;
+        4'b1110 : addition = 11;
+        4'b1111 : addition = 12;
+        4'b1101 : addition = 13;
+        4'b1001 : addition = 14;
+        
+      endcase
+    end
+  endfunction
 endmodule
 

@@ -18,7 +18,9 @@ module ck(
       for(i = 0; i < 9; i = i+1) begin
         messageIn[i] = 4'd15;
       end  
-      messageIn[1] = 4'd11;
+      //messageIn[1] = 4'd11;
+      messageIn[0] = 4'd3;
+      messageIn[1] = 4'd10;
 
       // Establishing GF elements (alpha_i values)
       galoisField[0] = 4'b0001; //alpha^0
@@ -67,27 +69,27 @@ module ck(
       //X^1 = X^0_old + (X^5_old + M_i(X))alpha^9
       vectorTemp = addition(galoisField[shiftRegisterOld[5]], galoisField[messageIn[i]]);
       vectorTemp = vectorTemp != 15 ? (vectorTemp + 4'd9) % 15 : 4'd15; 
-      shiftRegister[1] = addition(shiftRegisterOld[0], galoisField[vectorTemp]);
+      shiftRegister[1] = addition(galoisField[shiftRegisterOld[0]], galoisField[vectorTemp]);
 
       //X^2 = X^1_old + (X^5_old + M_i(X))alpha^6
       vectorTemp = addition(galoisField[shiftRegisterOld[5]], galoisField[messageIn[i]]);
-      vectorTemp = addition(galoisField[shiftRegisterOld[1]], galoisField[vectorTemp]);
-      shiftRegister[2] = vectorTemp != 15 ? (vectorTemp + 4'd6) % 15 : 4'd15;
+      vectorTemp = vectorTemp != 15 ? (vectorTemp + 4'd6) % 15 : 4'd15;
+      shiftRegister[2] = addition(galoisField[shiftRegisterOld[1]], galoisField[vectorTemp]);
 
       //X^3 = X^2_old + (X^5_old + M_i(X))alpha^3
       vectorTemp = addition(galoisField[shiftRegisterOld[5]], galoisField[messageIn[i]]);
-      vectorTemp = addition(galoisField[shiftRegisterOld[2]], galoisField[vectorTemp]);
-      shiftRegister[3] = vectorTemp != 15 ? (vectorTemp + 4'd4) % 15 : 4'd15;
+      vectorTemp = vectorTemp != 15 ? (vectorTemp + 4'd4) % 15 : 4'd15;
+      shiftRegister[3] = addition(galoisField[shiftRegisterOld[2]], galoisField[vectorTemp]);
       
       //X^4 = X^3_old + (X^5_old + M_i(X))alpha^14
       vectorTemp = addition(galoisField[shiftRegisterOld[5]], galoisField[messageIn[i]]);
-      vectorTemp = addition(galoisField[shiftRegisterOld[3]], galoisField[vectorTemp]);
-      shiftRegister[4] = vectorTemp != 15 ? (vectorTemp + 4'd14) % 15 : 4'd15;
+      vectorTemp = vectorTemp != 15 ? (vectorTemp + 4'd14) % 15 : 4'd15;
+      shiftRegister[4] = addition(galoisField[shiftRegisterOld[3]], galoisField[vectorTemp]);
 
       //X^5 = X^4_old + (X^5_old + M_i(X))alpha^10
       vectorTemp = addition(galoisField[shiftRegisterOld[5]], galoisField[messageIn[i]]);
-      vectorTemp = addition(galoisField[shiftRegisterOld[4]], galoisField[vectorTemp]);
-      shiftRegister[5] = vectorTemp != 15 ? (vectorTemp + 4'd10) % 15 : 4'd15;
+      vectorTemp = vectorTemp != 15 ? (vectorTemp + 4'd10) % 15 : 4'd15;
+      shiftRegister[5] = addition(galoisField[shiftRegisterOld[4]], galoisField[vectorTemp]);
     end
     
 
