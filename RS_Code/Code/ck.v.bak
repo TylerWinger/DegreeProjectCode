@@ -3,24 +3,26 @@ module ck(
 ); 
 //====================================================================================================================
     reg [3:0] galoisField [15:0]; // n = 15 GF elements of length m = 4
-    reg [3:0] genPoly [6:0]; //g(X) of power FCR+2t-1 = 6
-    reg [3:0] parityInfo [7:0]; //CK(X)
-    reg [3:0] messageIn [8:0]; //M(X)
+    reg [3:0] parityInfo = 0[14:0] ; //CK(X)
+    reg [3:0] messageIn [14:0]; //M(X)
     reg [3:0] codeWordVector [14:0]; //C(X) = [X^(n-k)]M(X) + CK(X)
-    reg [3:0] shiftRegister [14:0]; 
-    reg [3:0] shiftRegisterOld [14:0]; 
+    reg [3:0] shiftRegister [5:0]; 
+    reg [3:0] shiftRegisterOld [5:0]; 
     reg [4:0] vectorTemp;
     
     integer i,j,k;
 //====================================================================================================================    
   initial begin
-        //testing
+
+    //Initialization
+      
+
       for(i = 0; i < 9; i = i+1) begin
         messageIn[i] = 4'd15;
       end  
-      //messageIn[1] = 4'd11;
-      messageIn[0] = 4'd3;
-      messageIn[1] = 4'd10;
+      messageIn[1] = 4'd11;
+      //messageIn[1] = 4'd3;
+      //messageIn[0] = 4'd10;
 
       // Establishing GF elements (alpha_i values)
       galoisField[0] = 4'b0001; //alpha^0
@@ -40,15 +42,6 @@ module ck(
       galoisField[14] = 4'b1001; //alpha^14
       galoisField[15] = 4'b0000; //zero
       
-      // Giving g(X) appropriate magnitudes from hand calculations 
-      genPoly[0] = galoisField[6];
-      genPoly[1] = galoisField[9];
-      genPoly[2] = galoisField[6];
-      genPoly[3] = galoisField[4];
-      genPoly[4] = galoisField[14];
-      genPoly[5] = galoisField[10];
-      genPoly[6] = galoisField[0];
-
 
     //-------------------------------------------------------------------------
     // Following Appendix A from Tutorial on Reed-Solomon Error Correction Coding
@@ -91,8 +84,24 @@ module ck(
       vectorTemp = vectorTemp != 15 ? (vectorTemp + 4'd10) % 15 : 4'd15;
       shiftRegister[5] = addition(galoisField[shiftRegisterOld[4]], galoisField[vectorTemp]);
     end
-    
 
+    for (i = 0; i < 6; i = i + 1) begin //Switch from exponent form to vector form
+      parityInfo[i] = galoisField[shiftRegister[i]];
+    end
+
+    //C(X) = X^{n-k}M(X) + CK(X), n-k = 6
+    for (i = 8; i > -1; i = i - 1) begin //Switch from exponent form to vector form
+      messageIn[i] = galoisField[messageIn[i]];
+    end
+    for (i = 0; i < 6 ;i = i + 1 ) begin //shift messageIn by X^{n-k} << 6
+      for (j = 8; j > -1; j = j - 1) begin
+        messageIn[j] = j == 0 ? 4'b0 : messageIn[j-1];
+      end
+    end
+    for (i = 0; i < 15; i = i + 1) begin
+      codeWordVector[i] = messageIn[i] + parityInfo[i];
+    end
+ 
   end
 
   function [3:0] addition; // Galois field addition
@@ -100,7 +109,7 @@ module ck(
       reg [3:0] temp;
     begin
       temp = a ^ b;
-      $display("a: %4b, b: %4b, temp: %4b",a,b,temp);
+      //$display("a: %4b, b: %4b, temp: %4b",a,b,temp);
       case (temp)
         4'b0000 : addition = 15;
         4'b0001 : addition = 0;
