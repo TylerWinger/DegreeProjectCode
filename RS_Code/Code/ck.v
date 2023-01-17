@@ -18,9 +18,9 @@ module ck(
       for(i = 0; i < 9; i = i+1) begin
         messageIn[i] = 4'd15;
       end  
-      //messageIn[1] = 4'd11;
-      messageIn[1] = 4'd3;
-      messageIn[0] = 4'd10;
+      messageIn[1] = 4'd11;
+      //messageIn[1] = 4'd3;
+      //messageIn[0] = 4'd10;
 
       // Establishing GF elements (alpha_i values)
       galoisField[0] = 4'b0001; //alpha^0
