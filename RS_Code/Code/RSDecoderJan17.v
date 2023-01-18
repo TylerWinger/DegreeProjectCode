@@ -4,7 +4,7 @@ module RSDecoderJan17(
 reg [3:0] galoisField[14:0];
 reg [3:0] recievedMessage[14:0];
 reg [3:0] syndromeComponent[6:0];
-    
+reg [3:0] S2;    
 integer i,j,k;
 //====================================================================================================================    
 initial begin
@@ -55,16 +55,20 @@ initial begin
   //--------------------------------------------------
       
   //Calculating syndrome components Si
-  for(i = 1; i < 6; i = i+1) begin
+  //*****Want to alter code to start at i = 0
+  for(i = 1; i < 7; i = i+1) begin
     for(j = 0; j < 15; j = j+1) begin
       if ((j*i) < 15) begin
         syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[j],galoisField[j*i]); 
       end
       else begin
-        syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[j],galoisField[(j*i)%14]);
+        syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[j],galoisField[(j*i)%15]);
       end
     end
-  end   
+  end
+
+
+
 end
       
 
