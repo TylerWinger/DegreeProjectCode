@@ -57,7 +57,7 @@ module RSDecoderJan17(
       //Calculating syndrome components Si
       for(i = 0; i < 6; i = i+1) begin
         for(j = 0; j < 15; j = j+1) begin
-        syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[1+j],galoisField[(1+j+i)]);
+        syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[1+j],galoisField[(1+j+i)%14]);
         end
         syndromeComponent[i] = syndromeComponent[i] ^ recievedMessage[0];
         $display("syndromeComponent[%d] = %s", i, syndromeComponent[i]);
