@@ -78,7 +78,7 @@ initial begin
   //Calculating error locator polynomial (Method 2)
 
   //Condition for T = 1 errors 
-  if((syndromeComponent[1]/syndromeComponent[0])==(syndromeComponent[2]/syndromeComponent[1])==(syndromeComponent[3]/syndromeComponent[2])==(syndromeComponent[4]/syndromeComponent[3])==(syndromeComponent[5]/syndromeComponent[4])) begin
+  if(divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) begin
     errorLocator[0] = divide(syndromeComponent[1],syndromeComponent[0]);
   end
 
