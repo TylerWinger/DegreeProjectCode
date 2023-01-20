@@ -1,10 +1,11 @@
 module RSDecoderJan17(
 ); 
 //====================================================================================================================
-reg [3:0] galoisField[14:0];
-reg [3:0] recievedMessage[14:0];
-reg [3:0] syndromeComponent[6:0];
-reg [3:0] S2;    
+reg [3:0] galoisField[14:0]; //GF(15)
+reg [3:0] recievedMessage[14:0]; //R(X)
+reg [3:0] syndromeComponent[5:0]; //S_i
+reg [3:0] errorLocator[3:0]; //sigma_i
+    
 integer i,j,k;
 //====================================================================================================================    
 initial begin
@@ -15,7 +16,7 @@ initial begin
     recievedMessage[i] = 4'b0000;
   end
     
-  for (i = 0; i < 15; i = i + 1) begin
+  for (i = 0; i < 6; i = i + 1) begin
     syndromeComponent[i] = 4'b0000;
   end
 
@@ -54,17 +55,31 @@ initial begin
       
   //--------------------------------------------------
       
-  //Calculating syndrome components Si
-  //*****Want to alter code to start at i = 0
+  //Calculating syndrome components (Method 1)
+  //Note: S1 to S6 used in the reference paper
+
   for(i = 1; i < 7; i = i+1) begin
     for(j = 0; j < 15; j = j+1) begin
-      if ((j*i) < 15) begin
-        syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[j],galoisField[j*i]); 
+      if((j*i) < 15) begin
+        syndromeComponent[i-1] = syndromeComponent[i-1] ^ multiply(recievedMessage[j],galoisField[j*i]); 
       end
       else begin
-        syndromeComponent[i] = syndromeComponent[i] ^ multiply(recievedMessage[j],galoisField[(j*i)%15]);
+        syndromeComponent[i-1] = syndromeComponent[i-1] ^ multiply(recievedMessage[j],galoisField[(j*i)%15]);
       end
     end
+  end
+
+  //When all Si are 0, there are no errors
+  if(syndromeComponent[0]==syndromeComponent[1]==syndromeComponent[2]==syndromeComponent[3]==syndromeComponent[4]==syndromeComponent[5]==0) begin
+    //Want to recycle code here
+  end
+
+
+  //Calculating error locator polynomial (Method 2)
+
+  //Condition for T = 1 errors 
+  if((syndromeComponent[1]/syndromeComponent[0])==(syndromeComponent[2]/syndromeComponent[1])==(syndromeComponent[3]/syndromeComponent[2])==(syndromeComponent[4]/syndromeComponent[3])==(syndromeComponent[5]/syndromeComponent[4])) begin
+    errorLocator[0] = divide(syndromeComponent[1],syndromeComponent[0]);
   end
 
 
@@ -72,13 +87,23 @@ initial begin
 end
       
 
-  function [3:0] multiply; //GF multiplication using 
+  function [3:0] multiply; //GF multiplication
     input [3:0] a, b;
     begin
-      multiply[3] = (a[0]&b[3]) ^ (a[1]&b[2]) ^ (a[2]&b[1]) ^ (a[3]&b[0]) ^ (a[3]&b[3]);
-      multiply[2] = (a[0]&b[2]) ^ (a[1]&b[1]) ^ (a[2]&b[0]) ^ (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]);
-      multiply[1] = (a[0]&b[1]) ^ (a[1]&b[0]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
-      multiply[0] = (a[0]&b[0]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
+      multiply[3] = (a[3]&b[3]) ^ (a[3]&b[0]) ^ (a[2]&b[1]) ^ (a[1]&b[2]) ^ (a[0]&b[3]);
+      multiply[2] = (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[2]&b[0]) ^ (a[1]&b[1]) ^ (a[0]&b[2]);
+      multiply[1] = (a[3]&b[2]) ^ (a[3]&b[1]) ^ (a[2]&b[3]) ^ (a[2]&b[2]) ^ (a[1]&b[3]) ^ (a[1]&b[0]) ^ (a[0]&b[1]);
+      multiply[0] = (a[3]&b[1]) ^ (a[2]&b[2]) ^ (a[1]&b[3]) ^ (a[0]&b[0]);
+    end
+  endfunction
+
+  function [3:0] divide; //GF division
+    input [3:0] a, b;
+    begin
+      divide[3] = (a[3]&b[0]) ^ (a[3]&b[3]) ^ (a[2]&b[2]) ^ (a[1]&b[1]) ^ (a[0]&b[0]);
+      divide[2] = (a[3]&b[0]) ^ (a[3]&b[1]) ^ (a[2]&b[0]) ^ (a[2]&b[3]) ^ (a[1]&b[2]) ^ (a[0]&b[1]);
+      divide[1] = (a[3]&b[1]) ^ (a[2]&b[0]) ^ (a[3]&b[2]) ^ (a[2]&b[1]) ^ (a[1]&b[0]) ^ (a[1]&b[3]) ^ (a[0]&b[2]);
+      divide[0] = (a[3]&b[2]) ^ (a[2]&b[1]) ^ (a[1]&b[0]) ^ (a[0]&b[3]);
     end
   endfunction
 
