@@ -1,3 +1,7 @@
+// Things to do:
+// 1. don't use so many bits for parityInfo and message in. 
+// 2. rewrite using the multiplication function
+
 module codeWord_MUL_Function(
 //input [3:0]messageIn [8:0], output reg [14:0]codeWord
 ); 

@@ -4,119 +4,179 @@ K3
 cModel Technology
 Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\UART\UART_NEW
 vck
-!i10b 1
-!s100 ?G0PWIc`JEDgLmGel0z>02
-IHKK7gak57If7hJYcQAZIo0
-Z1 V^JRA8cIVl1dQE32DJ`3SY2
-Z2 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding
-w1673971421
-Z3 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v
-Z4 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v
+Z1 IHKK7gak57If7hJYcQAZIo0
+Z2 V^JRA8cIVl1dQE32DJ`3SY2
+Z3 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding
+Z4 w1673971421
+Z5 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v
+Z6 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v
 L0 1
-Z5 OV;L;10.1d;51
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v|
+Z9 o-work work -O0
+Z10 !s100 ?G0PWIc`JEDgLmGel0z>02
+Z11 !s108 1673971424.758000
+Z12 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcodeWord
+Z13 !s100 o3CZjj44NJ[`1j=3HL50D2
+Z14 IRT>1>aWcX1?Y4:PAZ]39o2
+Z15 V48bGfeIbgA1IcPco<I_If1
+R3
+Z16 w1674054175
+Z17 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord.v
+Z18 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord.v
+L0 1
+R7
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord.v|
+R9
+Z20 ncode@word
+Z21 !s108 1674487582.412000
+Z22 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcodeWord_MUL_Function
+Z23 !s100 3NzZN47P2EHLM;9hdhOF]1
+Z24 I4MW7:<F<A@o9YNIG14f=G1
+Z25 V7^]BYTI>MFjZE?F_[6PZ70
+R3
+Z26 w1674055846
+Z27 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord_MUL_Function.v
+Z28 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord_MUL_Function.v
+L0 5
+R7
+r1
+31
+Z29 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord_MUL_Function.v|
+R9
+Z30 ncode@word_@m@u@l_@function
+Z31 !s108 1674487582.367000
+Z32 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord_MUL_Function.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdivideTB
+!i10b 1
+!s100 nU9B22agB65mZjXknYmYn3
+IWRYRk^LLT2YGW;o1zO3OM3
+Z33 Vz1<bz0iDz1N4V`dFcV]m>2
+R3
+w1674487721
+Z34 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/divideTask.v
+Z35 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/divideTask.v
+L0 1
+R7
 r1
 !s85 0
 31
-!s108 1673971424.758000
-!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v|
-Z6 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/ck.v|
+!s108 1674487723.472000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/divideTask.v|
+Z36 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/divideTask.v|
 !s101 -O0
-Z7 o-work work -O0
+R9
+Z37 ndivide@t@b
 vEncodingTB
-Z8 II^7UE2MzcU3HPoh[9B;QS0
-Z9 VF;4TXS9W4K=fN@<j?f9MT2
-R2
-Z10 w1670346455
-Z11 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v
-Z12 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v
+Z38 II^7UE2MzcU3HPoh[9B;QS0
+Z39 VF;4TXS9W4K=fN@<j?f9MT2
+R3
+Z40 w1670346455
+Z41 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v
+Z42 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v
 L0 4
-R5
+R7
 r1
 31
-Z13 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v|
-R7
-Z14 n@encoding@t@b
-Z15 !s100 cYH3Znil9WG17Ond7`o2a0
-Z16 !s108 1670349201.681000
-Z17 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v|
+Z43 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v|
+R9
+Z44 n@encoding@t@b
+Z45 !s100 cYH3Znil9WG17Ond7`o2a0
+Z46 !s108 1670349201.681000
+Z47 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/EncodingTB.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vHammingEncoding64
-Z18 I9_z`KUPCAgd;f]]XdLF0A1
-Z19 V^4XDXL4c0o_[@c3VfHbYK3
-R2
-Z20 w1670350629
-Z21 8C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v
-Z22 FC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v
+Z48 I9_z`KUPCAgd;f]]XdLF0A1
+Z49 V^4XDXL4c0o_[@c3VfHbYK3
+R3
+Z50 w1670350629
+Z51 8C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v
+Z52 FC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v
 L0 10
-R5
+R7
 r1
 31
-Z23 !s90 -reportprogress|300|-work|work|C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v|
-R7
-Z24 n@hamming@encoding64
-Z25 !s100 EDoz@OG=;4DO1NTg7>M7P2
-Z26 !s108 1670350633.814000
-Z27 !s107 C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v|
+Z53 !s90 -reportprogress|300|-work|work|C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v|
+R9
+Z54 n@hamming@encoding64
+Z55 !s100 EDoz@OG=;4DO1NTg7>M7P2
+Z56 !s108 1670350633.814000
+Z57 !s107 C:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\TestingEncoding\HammingEncoding64.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vHammingEncoding64_Run
-Z28 Iec`gnJYBTLjIHcYKlQ:le3
-Z29 VJzS9e`XVkE2kdR@hdlhTg2
-R2
-Z30 w1667327024
-Z31 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v
-Z32 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v
+Z58 Iec`gnJYBTLjIHcYKlQ:le3
+Z59 VJzS9e`XVkE2kdR@hdlhTg2
+R3
+Z60 w1667327024
+Z61 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v
+Z62 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v
 L0 10
-R5
+R7
 r1
 31
-R7
-Z33 n@hamming@encoding64_@run
-Z34 !s100 2CB1KSY[gTbo;IHeITVTU0
-Z35 !s108 1670344824.038000
-Z36 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v|
-Z37 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v|
+R9
+Z63 n@hamming@encoding64_@run
+Z64 !s100 2CB1KSY[gTbo;IHeITVTU0
+Z65 !s108 1670344824.038000
+Z66 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v|
+Z67 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/HammingEncoding64.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vinput64
-Z38 INIf;;;=>B38ZdJ``H<_Dd1
-Z39 VGgP9TZaZjG9?Lo_?9^IhX2
-R2
-Z40 w1670345849
-Z41 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v
-Z42 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v
+Z68 INIf;;;=>B38ZdJ``H<_Dd1
+Z69 VGgP9TZaZjG9?Lo_?9^IhX2
+R3
+Z70 w1670345849
+Z71 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v
+Z72 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v
 L0 1
-R5
+R7
 r1
 31
-Z43 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v|
-R7
-Z44 !s100 :4deJEY[<E<RRZ`5=8H<j3
-Z45 !s108 1670345852.271000
-Z46 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v|
+Z73 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v|
+R9
+Z74 !s100 :4deJEY[<E<RRZ`5=8H<j3
+Z75 !s108 1670345852.271000
+Z76 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/input64.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vuart_rx
-Z47 IezzI5zBM4T@6?Q;4zUX=U3
-Z48 V:Mk]obO5BhjX1GaXafC9?1
-R2
-Z49 w1669922895
-Z50 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v
-Z51 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v
+Z77 IezzI5zBM4T@6?Q;4zUX=U3
+Z78 V:Mk]obO5BhjX1GaXafC9?1
+R3
+Z79 w1669922895
+Z80 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v
+Z81 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v
 L0 9
-R5
+R7
 r1
 31
-R7
-Z52 !s100 VdFL_Zl:>2MaTl[fmW2TV3
-Z53 !s108 1670344824.130000
-Z54 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v|
-Z55 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v|
+R9
+Z82 !s100 VdFL_Zl:>2MaTl[fmW2TV3
+Z83 !s108 1670344824.130000
+Z84 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v|
+Z85 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/TestingEncoding/uart_rx.v|
 !i10b 1
 !s85 0
 !s101 -O0
