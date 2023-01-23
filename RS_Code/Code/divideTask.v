@@ -1,20 +1,23 @@
 module divideTB;
   reg [3:0] dividend = 4'b0111; //a^10
-  reg [3:0] divisor =  4'b0110; //a^4
-  reg [4:0] answer;
+  reg [3:0] divisor =  4'b0011; //a^4
+  reg [4:0] answer; //should be a^6=1100
 
-initial divide(dividend, divisor, answer);
+initial begin
+  divide(dividend, divisor, answer);
+  if (answer[4]) $display("Division by zero error");
+end
 
 task divide; //Check bit4 for division by zero error
     input [3:0] dividend, divisor;
     output [4:0] quotient;
     reg [3:0] Idivisor; //inverse divisor
     begin
-        if (divisor == 4'b0000) quotient = 5'b10000;
+        if (divisor == 4'b0000) quotient = 5'b10000; // a/0 = undefined (error)
 
         //Find inverse of the divisor
-        else    case (divisor)
-                4'b0000 : Idivisor = 4'b0000;
+        else if(dividend != 4'b0000)begin // a/b -> good to compute quotient
+               case (divisor)
                 4'b0001 : Idivisor = 4'b0001; //a^0 
                 4'b0010 : Idivisor = 4'b1001; //a^1 -> a^-1 = a^14
                 4'b0100 : Idivisor = 4'b1101; //a^2 -> a^-2 = a^13
@@ -37,6 +40,9 @@ task divide; //Check bit4 for division by zero error
             quotient[2] = (dividend[0]&Idivisor[2]) ^ (dividend[1]&Idivisor[1]) ^ (dividend[2]&Idivisor[0]) ^ (dividend[3]&Idivisor[3]) ^ (dividend[3]&Idivisor[2]) ^ (dividend[2]&Idivisor[3]);
             quotient[1] = (dividend[0]&Idivisor[1]) ^ (dividend[1]&Idivisor[0]) ^ (dividend[3]&Idivisor[2]) ^ (dividend[2]&Idivisor[3]) ^ (dividend[1]&Idivisor[3]) ^ (dividend[2]&Idivisor[2]) ^ (dividend[3]&Idivisor[1]);
             quotient[0] = (dividend[0]&Idivisor[0]) ^ (dividend[1]&Idivisor[3]) ^ (dividend[2]&Idivisor[2]) ^ (dividend[3]&Idivisor[1]);
+        end
+        else quotient = 4'b0000; // 0/a = 0
+
     end
 endtask   
 endmodule
