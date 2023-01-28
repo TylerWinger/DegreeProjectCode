@@ -4,9 +4,11 @@ module RSDecoder(
 reg [3:0] galoisField[14:0]; //GF(15)
 reg [3:0] recievedMessage[14:0]; //R(X)
 reg [3:0] syndromeComponent[5:0]; //S_i
-reg [3:0] errorLocator[3:0]; //sigma_i
-    
-integer i,j,k;
+reg [3:0] errorLocator[2:0]; //sigma_i
+reg [3:0] errorTemp;
+reg [3:0] errorPosition[2:0]; //z_i
+
+integer i,j,k,T;
 //====================================================================================================================    
 initial begin
 
@@ -23,6 +25,8 @@ initial begin
   for (i = 0; i < 4; i = i + 1) begin
     errorLocator[i] = 0;
   end
+
+  errorTemp = 0;
 
   //Establishing GF elements (alpha_i values)
   galoisField[0] = 4'b0001; //alpha^0
@@ -79,25 +83,57 @@ initial begin
   //end
 
 
-  //Calculating error locator polynomial (Method 2)
+  //Calculating error locator polynomial using linear recursion 
 
-  //Condition for T = 1 errors 
+  //Condition for 1 error 
   if(divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) begin
     errorLocator[0] = divide(syndromeComponent[1],syndromeComponent[0]);
+    T = 1;
   end
 
-  //Condition for T = 2 errors 
+  //Condition for 2 errors 
   else if((syndromeComponent[0]&syndromeComponent[2] ^ syndromeComponent[1]&syndromeComponent[1]) != 0) begin //If the determinant of generated equations is not 0
     errorLocator[0] = divide((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),(multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])));
     errorLocator[1] = divide((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),(multiply(syndromeComponent[1],syndromeComponent[1]) ^ multiply(syndromeComponent[0],syndromeComponent[2])));  
+    T = 2;
   end
 
-  //Condition for T = 3 errors
+  //Condition for 3 errors
   else begin
     errorLocator[0] = divide((multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[5]) ^ multiply((multiply(syndromeComponent[1],syndromeComponent[2]) ^ multiply(syndromeComponent[0],syndromeComponent[3])),syndromeComponent[4]) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[4]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
-    
+    errorLocator[1] = divide((multiply((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),syndromeComponent[5]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),syndromeComponent[4]) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[3]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
+    errorLocator[2] = divide((multiply((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),syndromeComponent[5]) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[3]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
+    T = 3;
   end
 
+  //Finding error positions
+  j = 0;
+  for(i = 0; i < 15; i = i+1) begin
+    if(T == 1) begin
+      errorTemp = galoisField[i] ^ errorLocator[0];
+        if(errorTemp == 0) begin
+          errorPosition[0] = galoisField[i];
+        end
+    end
+
+    if(T == 2) begin
+      errorTemp = multiply(galoisField[i],galoisField[i]) ^ multiply(errorLocator[0],galoisField[i]) ^ errorLocator[1];
+        if(errorTemp == 0) begin
+          errorPosition[j] = galoisField[i];
+          j = j+1;
+        end
+    end
+
+    if(T == 3) begin
+      errorTemp = multiply(galoisField[i],multiply(galoisField[i],galoisField[i])) ^ multiply(errorLocator[0],multiply(galoisField[i],galoisField[i])) ^ multiply(errorLocator[1],galoisField[i]) ^ errorLocator[2];
+        if(errorTemp == 0) begin
+          errorPosition[j] = galoisField[i];
+          j = j+1;
+        end
+    end
+  end
+
+  //Finding error values 
 
 end
       
