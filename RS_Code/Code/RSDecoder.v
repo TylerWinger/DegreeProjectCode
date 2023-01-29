@@ -8,8 +8,12 @@ reg [3:0] errorLocator[2:0]; //sigma_i
 reg [3:0] errorTemp;
 reg [3:0] errorPosition[2:0]; //z_i
 reg [3:0] errorValue[2:0]; //y_i
+reg [3:0] errorWord[14:0];
+reg [3:0] codeWord[14:0];
 
-integer i,j,k,T;
+integer i,j,k;
+integer T; //Used for # of errors
+integer loc[2:0]; //Used to know decimal location of error
 //====================================================================================================================    
 initial begin
 
@@ -17,6 +21,8 @@ initial begin
     
   for (i = 0; i < 15; i = i + 1) begin
     recievedMessage[i] = 0;
+    errorWord[i] = 0;
+    codeWord[i] = 0;
   end
     
   for (i = 0; i < 6; i = i + 1) begin
@@ -27,6 +33,7 @@ initial begin
     errorLocator[i] = 0;
     errorPosition[i] = 0;
     errorValue[i] = 0;
+    loc[i] = 0;
   end
 
   errorTemp = 0;
@@ -116,6 +123,7 @@ initial begin
       errorTemp = galoisField[i] ^ errorLocator[0];
         if(errorTemp == 0) begin
           errorPosition[0] = galoisField[i];
+          loc[0] = i;
         end
     end
 
@@ -123,6 +131,7 @@ initial begin
       errorTemp = multiply(galoisField[i],galoisField[i]) ^ multiply(errorLocator[0],galoisField[i]) ^ errorLocator[1];
         if(errorTemp == 0) begin
           errorPosition[j] = galoisField[i];
+          loc[j] = i;
           j = j+1;
         end
     end
@@ -131,6 +140,7 @@ initial begin
       errorTemp = multiply(galoisField[i],multiply(galoisField[i],galoisField[i])) ^ multiply(errorLocator[0],multiply(galoisField[i],galoisField[i])) ^ multiply(errorLocator[1],galoisField[i]) ^ errorLocator[2];
         if(errorTemp == 0) begin
           errorPosition[j] = galoisField[i];
+          loc[j] = i;
           j = j+1;
         end
     end
@@ -151,8 +161,29 @@ initial begin
     errorValue[1] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[1],multiply(errorLocator[1],errorPosition[1])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[1]))));
     errorValue[2] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2])) ^ multiply((errorPosition[1] ^ errorPosition[0]),multiply(errorPosition[2],errorPosition[2])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[2]))));
   end
-end
-      
+
+  //Decoding the error word 
+  if(T == 1) begin
+    errorWord[loc[0]] = errorValue[0]; 
+  end
+
+  if(T == 2) begin
+    errorWord[loc[0]] = errorValue[0]; 
+    errorWord[loc[1]] = errorValue[1];
+  end
+
+  if(T == 3) begin
+    errorWord[loc[0]] = errorValue[0]; 
+    errorWord[loc[1]] = errorValue[1];
+    errorWord[loc[2]] = errorValue[2];
+  end
+
+  //Decoding the code word
+  for(i = 0; i < 15; i = i+1) begin
+    codeWord[i] = recievedMessage[i] ^ errorWord[i];
+  end
+
+end   
 
   function [3:0] multiply; //Returns a*b
     input [3:0] a, b;
