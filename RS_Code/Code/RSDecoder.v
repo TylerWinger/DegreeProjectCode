@@ -7,6 +7,7 @@ reg [3:0] syndromeComponent[5:0]; //S_i
 reg [3:0] errorLocator[2:0]; //sigma_i
 reg [3:0] errorTemp;
 reg [3:0] errorPosition[2:0]; //z_i
+reg [3:0] errorValue[2:0]; //y_i
 
 integer i,j,k,T;
 //====================================================================================================================    
@@ -22,8 +23,10 @@ initial begin
     syndromeComponent[i] = 0;
   end
 
-  for (i = 0; i < 4; i = i + 1) begin
+  for (i = 0; i < 3; i = i + 1) begin
     errorLocator[i] = 0;
+    errorPosition[i] = 0;
+    errorValue[i] = 0;
   end
 
   errorTemp = 0;
@@ -134,7 +137,20 @@ initial begin
   end
 
   //Finding error values 
+  if(T == 1) begin
+    errorValue[0] = divide(syndromeComponent[0],errorPosition[0]);
+  end
 
+  if(T == 2) begin
+    errorValue[0] = divide((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),(multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])));
+    errorValue[1] = divide((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),(multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])));
+  end
+
+  if(T == 3) begin
+    errorValue[0] = divide((multiply((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[1]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[1],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[0],multiply(errorLocator[0],errorPosition[1])) ^ multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2]))));
+    errorValue[1] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[1],multiply(errorLocator[1],errorPosition[1])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[1]))));
+    errorValue[2] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2])) ^ multiply((errorPosition[1] ^ errorPosition[0]),multiply(errorPosition[2],errorPosition[2])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[2]))));
+  end
 end
       
 
