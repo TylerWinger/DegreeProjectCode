@@ -125,6 +125,8 @@ initial begin
           errorPosition[0] = galoisField[i];
           loc[0] = i;
         end
+      errorValue[0] = divide(syndromeComponent[0],errorPosition[0]); //Finding error values
+      errorWord[loc[0]] = errorValue[0]; //Decoding the error word 
     end
 
     if(T == 2) begin
@@ -134,6 +136,10 @@ initial begin
           loc[j] = i;
           j = j+1;
         end
+      errorValue[0] = divide((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),(multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])));
+      errorValue[1] = divide((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),(multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])));
+      errorWord[loc[0]] = errorValue[0]; 
+      errorWord[loc[1]] = errorValue[1];
     end
 
     if(T == 3) begin
@@ -141,41 +147,15 @@ initial begin
         if(errorTemp == 0) begin
           errorPosition[j] = galoisField[i];
           loc[j] = i;
+          errorValue[0] = divide((multiply((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[1]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[1],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[0],multiply(errorLocator[0],errorPosition[1])) ^ multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2]))));
+          errorValue[1] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[1],multiply(errorLocator[1],errorPosition[1])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[1]))));
+          errorValue[2] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2])) ^ multiply((errorPosition[1] ^ errorPosition[0]),multiply(errorPosition[2],errorPosition[2])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[2]))));
           j = j+1;
         end
+      errorWord[loc[0]] = errorValue[0]; 
+      errorWord[loc[1]] = errorValue[1];
+      errorWord[loc[2]] = errorValue[2];
     end
-  end
-
-  //Finding error values 
-  if(T == 1) begin
-    errorValue[0] = divide(syndromeComponent[0],errorPosition[0]);
-  end
-
-  if(T == 2) begin
-    errorValue[0] = divide((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),(multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])));
-    errorValue[1] = divide((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),(multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])));
-  end
-
-  if(T == 3) begin
-    errorValue[0] = divide((multiply((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[1]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[1],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[0],multiply(errorLocator[0],errorPosition[1])) ^ multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2]))));
-    errorValue[1] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[1],multiply(errorLocator[1],errorPosition[1])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[1]))));
-    errorValue[2] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2])) ^ multiply((errorPosition[1] ^ errorPosition[0]),multiply(errorPosition[2],errorPosition[2])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[2]))));
-  end
-
-  //Decoding the error word 
-  if(T == 1) begin
-    errorWord[loc[0]] = errorValue[0]; 
-  end
-
-  if(T == 2) begin
-    errorWord[loc[0]] = errorValue[0]; 
-    errorWord[loc[1]] = errorValue[1];
-  end
-
-  if(T == 3) begin
-    errorWord[loc[0]] = errorValue[0]; 
-    errorWord[loc[1]] = errorValue[1];
-    errorWord[loc[2]] = errorValue[2];
   end
 
   //Decoding the code word
@@ -185,39 +165,40 @@ initial begin
 
 end   
 
-  function [3:0] multiply; //Returns a*b
-    input [3:0] a, b;
-    begin
-      multiply[3] = (a[3]&b[3]) ^ (a[3]&b[0]) ^ (a[2]&b[1]) ^ (a[1]&b[2]) ^ (a[0]&b[3]);
-      multiply[2] = (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[2]&b[0]) ^ (a[1]&b[1]) ^ (a[0]&b[2]);
-      multiply[1] = (a[3]&b[2]) ^ (a[3]&b[1]) ^ (a[2]&b[3]) ^ (a[2]&b[2]) ^ (a[1]&b[3]) ^ (a[1]&b[0]) ^ (a[0]&b[1]);
-      multiply[0] = (a[3]&b[1]) ^ (a[2]&b[2]) ^ (a[1]&b[3]) ^ (a[0]&b[0]);
-    end
-  endfunction
+function [3:0] multiply; //Returns a*b
+  input [3:0] a, b;
+  begin
+    multiply[3] = (a[3]&b[3]) ^ (a[3]&b[0]) ^ (a[2]&b[1]) ^ (a[1]&b[2]) ^ (a[0]&b[3]);
+    multiply[2] = (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[2]&b[0]) ^ (a[1]&b[1]) ^ (a[0]&b[2]);
+    multiply[1] = (a[3]&b[2]) ^ (a[3]&b[1]) ^ (a[2]&b[3]) ^ (a[2]&b[2]) ^ (a[1]&b[3]) ^ (a[1]&b[0]) ^ (a[0]&b[1]);
+    multiply[0] = (a[3]&b[1]) ^ (a[2]&b[2]) ^ (a[1]&b[3]) ^ (a[0]&b[0]);
+  end
+endfunction
 
-  function [3:0] divide; //Returns a*(b^-1) = a/b
-    input [3:0] a, b;
-    reg [3:0] inv_b;
-    begin
-      case(b)         
-        4'b0001 : inv_b = 4'b0001; //alpha^0 
-        4'b0010 : inv_b = 4'b1001; //alpha^1 -> alpha^-1 = alpha^14
-        4'b0100 : inv_b = 4'b1101; //alpha^2 -> alpha^-2 = alpha^13
-        4'b1000 : inv_b = 4'b1111; //alpha^3 -> alpha^-3
-        4'b0011 : inv_b = 4'b1110; //alpha^4 -> alpha^-4
-        4'b0110 : inv_b = 4'b0111; //alpha^5 -> alpha^-5
-        4'b1100 : inv_b = 4'b1010; //alpha^6 -> alpha^-6
-        4'b1011 : inv_b = 4'b0101; //alpha^7 -> alpha^-7
-        4'b0101 : inv_b = 4'b1011; //alpha^8 -> alpha^-8
-        4'b1010 : inv_b = 4'b1100; //alpha^9 -> alpha^-9
-        4'b0111 : inv_b = 4'b0110; //alpha^10 -> alpha^-10
-        4'b1110 : inv_b = 4'b0011; //alpha^11 -> alpha^-11
-        4'b1111 : inv_b = 4'b1000; //alpha^12 -> alpha^-12
-        4'b1101 : inv_b = 4'b0100; //alpha^13 -> alpha^-13
-        4'b1001 : inv_b = 4'b0001; //alpha^14 -> alpha^-14
-        4'b0000 : inv_b = 4'b0000; //Will result in multiply = 0
-      endcase
-      divide = multiply(a,inv_b);
-    end
-  endfunction
+function [3:0] divide; //Returns a*(b^-1) = a/b
+  input [3:0] a, b;
+  reg [3:0] inv_b;
+  begin
+    case(b)         
+    4'b0001 : inv_b = 4'b0001; //alpha^0 
+    4'b0010 : inv_b = 4'b1001; //alpha^1 -> alpha^-1 = alpha^14
+    4'b0100 : inv_b = 4'b1101; //alpha^2 -> alpha^-2 = alpha^13
+    4'b1000 : inv_b = 4'b1111; //alpha^3 -> alpha^-3
+    4'b0011 : inv_b = 4'b1110; //alpha^4 -> alpha^-4
+    4'b0110 : inv_b = 4'b0111; //alpha^5 -> alpha^-5
+    4'b1100 : inv_b = 4'b1010; //alpha^6 -> alpha^-6
+    4'b1011 : inv_b = 4'b0101; //alpha^7 -> alpha^-7
+    4'b0101 : inv_b = 4'b1011; //alpha^8 -> alpha^-8
+    4'b1010 : inv_b = 4'b1100; //alpha^9 -> alpha^-9
+    4'b0111 : inv_b = 4'b0110; //alpha^10 -> alpha^-10
+    4'b1110 : inv_b = 4'b0011; //alpha^11 -> alpha^-11
+    4'b1111 : inv_b = 4'b1000; //alpha^12 -> alpha^-12
+    4'b1101 : inv_b = 4'b0100; //alpha^13 -> alpha^-13
+    4'b1001 : inv_b = 4'b0001; //alpha^14 -> alpha^-14
+    4'b0000 : inv_b = 4'b0000; //Will result in multiply = 0
+    endcase
+    divide = multiply(a,inv_b);
+  end
+endfunction
 endmodule
+
