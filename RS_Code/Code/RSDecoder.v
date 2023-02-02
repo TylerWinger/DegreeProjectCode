@@ -10,6 +10,7 @@ reg [3:0] errorPosition[2:0]; //z_i
 reg [3:0] errorValue[2:0]; //y_i
 reg [3:0] errorWord[14:0];
 reg [3:0] codeWord[14:0];
+reg [3:0] test;
 
 integer i,j,k;
 integer T; //Used for # of errors
@@ -162,6 +163,8 @@ initial begin
   for(i = 0; i < 15; i = i+1) begin
     codeWord[i] = recievedMessage[i] ^ errorWord[i];
   end
+
+  test = (galoisField[12]^galoisField[8]^galoisField[8]^galoisField[4]^galoisField[7]^galoisField[11]^galoisField[14]^galoisField[12]);
 
 end   
 
