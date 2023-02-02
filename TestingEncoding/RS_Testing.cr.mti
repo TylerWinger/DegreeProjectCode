@@ -5,11 +5,11 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	codeWord
 
-} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord_MUL_Function.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/codeWord_MUL_Function.v
+} {} {}} C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/divideTask.v {1 {vlog -work work C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/divideTask.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module codeWord_MUL_Function
+-- Compiling module divideTB
 
 Top level modules:
-	codeWord_MUL_Function
+	divideTB
 
 } {} {}}
