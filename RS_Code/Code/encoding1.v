@@ -1,8 +1,4 @@
-// Things to do:
-// 1. don't use so many bits for parityInfo and message in. 
-// 2. rewrite using the multiplication function
-
-module codeWord_MUL_Function(
+module encoding1( 
 //input [3:0]messageIn [8:0], output reg [14:0]codeWord
 ); 
 //====================================================================================================================
@@ -113,8 +109,6 @@ module codeWord_MUL_Function(
     for (i = 0; i < 15; i = i + 1) begin
       codeWordVector[i] = messageIn[i] + parityInfo[i];
     end
-    vectorTemp = multiply(galoisField[5],galoisField[4]);
-    vectorTemp = (4'd13 + 4'd5) % 15;
  
   end
 
@@ -145,16 +139,5 @@ module codeWord_MUL_Function(
       endcase
     end
   endfunction
-
-    function [3:0] multiply; //GF multiplication
-    input [3:0] a, b;
-    begin
-        multiply[3] = (a[0]&b[3]) ^ (a[1]&b[2]) ^ (a[2]&b[1]) ^ (a[3]&b[0]) ^ (a[3]&b[3]);
-        multiply[2] = (a[0]&b[2]) ^ (a[1]&b[1]) ^ (a[2]&b[0]) ^ (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]);
-        multiply[1] = (a[0]&b[1]) ^ (a[1]&b[0]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
-        multiply[0] = (a[0]&b[0]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
-    end
-    endfunction
-
 endmodule
 

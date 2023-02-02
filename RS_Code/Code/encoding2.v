@@ -1,4 +1,4 @@
-module codeWordV2(
+module encoding2(
 //input [3:0]messageIn [8:0], output reg [14:0]codeWord
 ); 
 //====================================================================================================================
@@ -62,31 +62,31 @@ module codeWordV2(
 
       //X^0 = (X^5_old + M_i(X))alpha^6
       vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
-      multiply(vectorTemp, 4'b1100, shiftRegister[0]);
+      shiftRegister[0] = multiply(vectorTemp, 4'b1100); 
 
       //X^1 = X^0_old + (X^5_old + M_i(X))alpha^9
       vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
-      multiply(vectorTemp, 4'b1010, vectorTemp);
+      vectorTemp = multiply(vectorTemp, 4'b1010);
       shiftRegister[1] = shiftRegisterOld[0] ^ vectorTemp;
 
       //X^2 = X^1_old + (X^5_old + M_i(X))alpha^6
       vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
-      multiply(vectorTemp, 4'b1100, vectorTemp);
+      vectorTemp = multiply(vectorTemp, 4'b1100);
       shiftRegister[2] = shiftRegisterOld[1] ^ vectorTemp;
 
       //X^3 = X^2_old + (X^5_old + M_i(X))alpha^4
       vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
-      multiply(vectorTemp, 4'b0011, vectorTemp);
+      vectorTemp = multiply(vectorTemp, 4'b0011);
       shiftRegister[3] = shiftRegisterOld[2] ^ vectorTemp;
 
       //X^4 = X^3_old + (X^5_old + M_i(X))alpha^14
       vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
-      multiply(vectorTemp, 4'b1001, vectorTemp);
+      vectorTemp = multiply(vectorTemp, 4'b1001);
       shiftRegister[4] = shiftRegisterOld[3] ^ vectorTemp;
 
       //X^5 = X^4_old + (X^5_old + M_i(X))alpha^10
       vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
-      multiply(vectorTemp, 4'b0111, vectorTemp);
+      vectorTemp = multiply(vectorTemp, 4'b0111);
       shiftRegister[5] = shiftRegisterOld[4] ^ vectorTemp;      
     end
     //C(X) = X^{n-k}*M(X) + CK(X)
@@ -96,17 +96,14 @@ module codeWordV2(
     end
   end
 
-  task multiply;
-    input [3:0] a, b;
-    output reg [3:0] product;
+  function [3:0] multiply; //GF multiplication
+  input [3:0] a, b;
     begin
-      product[3] <= (a[0]&b[3]) ^ (a[1]&b[2]) ^ (a[2]&b[1]) ^ (a[3]&b[0]) ^ (a[3]&b[3]);
-      product[2] <= (a[0]&b[2]) ^ (a[1]&b[1]) ^ (a[2]&b[0]) ^ (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]);
-      product[1] <= (a[0]&b[1]) ^ (a[1]&b[0]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
-      product[0] <= (a[0]&b[0]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
+        multiply[3] = (a[0]&b[3]) ^ (a[1]&b[2]) ^ (a[2]&b[1]) ^ (a[3]&b[0]) ^ (a[3]&b[3]);
+        multiply[2] = (a[0]&b[2]) ^ (a[1]&b[1]) ^ (a[2]&b[0]) ^ (a[3]&b[3]) ^ (a[3]&b[2]) ^ (a[2]&b[3]);
+        multiply[1] = (a[0]&b[1]) ^ (a[1]&b[0]) ^ (a[3]&b[2]) ^ (a[2]&b[3]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
+        multiply[0] = (a[0]&b[0]) ^ (a[1]&b[3]) ^ (a[2]&b[2]) ^ (a[3]&b[1]);
     end
-  endtask
-
-
+  endfunction
 endmodule
 
