@@ -17,22 +17,18 @@ output reg encoderBusy
     integer i,j;
 //====================================================================================================================    
   initial begin
-
+    encoderBusy = 0;
     //Initialization
       for (i = 0; i < 15; i = i + 1) begin
         parityInfo[i] = 4'b0;
       end
-      //for (i = 0; i < 15; i = i + 1) begin
-      //  messageIn[i] = 4'b0;
-      //end
+
       for (i = 0; i < 15; i = i + 1) begin
         codeWord[i] = 4'b0;
       end
 
-      //messageIn[1] = 4'b1110; //a^11
-
-      // Establishing GF elements (alpha_i values)
-      galoisField[0] = 4'b0001; //alpha^0
+       // Establishing GF elements (alpha_i values)
+/*      galoisField[0] = 4'b0001; //alpha^0
       galoisField[1] = 4'b0010; //alpha^1
       galoisField[2] = 4'b0100; //alpha^2
       galoisField[3] = 4'b1000; //alpha^3
@@ -47,19 +43,14 @@ output reg encoderBusy
       galoisField[12] = 4'b1111; //alpha^12
       galoisField[13] = 4'b1101; //alpha^13
       galoisField[14] = 4'b1001; //alpha^14
-      galoisField[15] = 4'b0000; //zero
+      galoisField[15] = 4'b0000; //zero */
   end
   always @(posedge encodeMessage)begin  
+    encoderBusy = 1;
     //Unpack message
-    messageIn[0] = {message[3:0]};
-    messageIn[1] = {message[7:4]};
-    messageIn[2] = {message[11:8]};
-    messageIn[3] = {message[15:12]};
-    messageIn[4] = {message[19:16]};
-    messageIn[5] = {message[23:20]};
-    messageIn[6] = {message[27:24]};
-    messageIn[7] = {message[31:28]};
-    messageIn[8] = {message[35:32]};
+    for (i = 0; i <= 8; i = i + 1) begin
+      messageIn[i] = message[4*i +: 4]; //[<start_bit> +: <width>] indexed part select
+    end
   
     //-------------------------------------------------------------------------
     // Following Appendix A from Tutorial on Reed-Solomon Error Correction Coding
@@ -107,9 +98,13 @@ output reg encoderBusy
       if (i < 6) codeWord[i] = shiftRegister[i];        
       else codeWord[i] = messageIn[i - 6];
     end
+    
     //Pack codeWord
-    codeWordVector = {codeWord[8],codeWord[7],codeWord[6],codeWord[5],codeWord[4],codeWord[3],codeWord[2],codeWord[1],codeWord[0]};
-  end 
+    for (i = 0; i <= 14; i = i + 1) begin
+      codeWordVector[4*i +: 4] = codeWord[i]; //[<start_bit> +: <width>] indexed part select
+    end
+    encoderBusy = 0;
+  end
 
   function [3:0] multiply; //GF multiplication
   input [3:0] a, b;

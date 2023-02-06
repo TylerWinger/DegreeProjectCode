@@ -16,12 +16,24 @@ module encodingTB;
         .encoderBusy(encoderBusy),
         .encodeMessage(encodeMessage)
     );
-    task outputMessage;
+    task outputMessage1; //alpha^11*X
       begin
-        message[7] <= 1'b1;
-        message[6] <= 1'b1;
-        message[5] <= 1'b1;
-        message[4] <= 1'b0;
+        message[7] = 1'b1;
+        message[6] = 1'b1;
+        message[5] = 1'b1;
+        message[4] = 1'b0;
+      end
+    endtask
+        task outputMessage2; //alpha^3*X+alpha^10
+      begin
+        message[7] = 1'b1;
+        message[6] = 1'b0;
+        message[5] = 1'b0;
+        message[4] = 1'b0;
+        message[3] = 1'b0;
+        message[2] = 1'b1;
+        message[1] = 1'b1;
+        message[0] = 1'b1;
       end
     endtask
 
@@ -31,8 +43,21 @@ module encodingTB;
     always #10 clk = ~clk; //50MHz clk
 
     initial begin
-        outputMessage;
+      #1;
+      if (!encoderBusy) begin
+        outputMessage1;
         encodeMessage = 1;
+        #1;
+        encodeMessage = 0;
+        #1;
+      end  
+      if (!encoderBusy) begin
+        outputMessage2;
+        encodeMessage = 1;
+        #1;
+        encodeMessage = 0;
+        #1;
+      end    
     end
 endmodule
 
