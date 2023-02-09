@@ -22,7 +22,7 @@ module testing64In (
     );
 
     //Intake 64bit dataWord byte by byte
-        always @(uart_rx_valid)begin
+        always @(sw)begin
         if (byteCnt < 8)begin
              dataIn = {dataIn , uart_DataIn[byteCnt]}; //append and shift (concatenation)
              dataInValid = 1'b0;

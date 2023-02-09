@@ -7,14 +7,16 @@ module encodingTB;
     reg encodeMessage = 0;
     wire [59:0] codeWordVector;
     wire encoderBusy;
+    wire [23:0] shiftRegisterPacked;
     integer i;
 
-    encodingCont encodingContInst (
+    encodingContV2 encodingContV2Inst (
         .message(message),
         .clk(clk),
         .codeWordVector(codeWordVector),
         .encoderBusy(encoderBusy),
-        .encodeMessage(encodeMessage)
+        .encodeMessage(encodeMessage),
+        .shiftRegisterPacked(shiftRegisterPacked)
     );
     task outputMessage2; //alpha^11*X
       begin
@@ -22,6 +24,10 @@ module encodingTB;
         message[6] = 1'b1;
         message[5] = 1'b1;
         message[4] = 1'b0;
+        message[3] = 1'b0;
+        message[2] = 1'b0;
+        message[1] = 1'b0;
+        message[0] = 1'b0;
       end
     endtask
         task outputMessage1; //alpha^3*X+alpha^10
@@ -57,7 +63,8 @@ module encodingTB;
         #1;
         encodeMessage = 0;
         #1;
-      end    
+      end  
+      $stop;  
     end
 endmodule
 
