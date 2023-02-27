@@ -1,14 +1,14 @@
 module encodingCont(
-input [35:0] message,
+input [35:0] messageIn,
 input clk,
 input encodeMessage,
-output reg [59:0] codeWordVector,
+output reg [59:0] codeWordOut,
 output reg encoderBusy
 ); 
 //====================================================================================================================
     reg [3:0] galoisField [15:0]; // n = 15 GF elements of length m = 4
     reg [3:0] parityInfo [5:0] ; //CK(X)
-    reg [3:0] messageIn [8:0]; //M(X)
+    reg [3:0] message [8:0]; //M(X)
     reg [3:0] codeWord [14:0]; //C(X) = [X^(n-k)]M(X) + CK(X)
     reg [3:0] shiftRegister [5:0]; 
     reg [3:0] shiftRegisterOld [5:0]; 
@@ -49,7 +49,7 @@ output reg encoderBusy
     encoderBusy = 1;
     //Unpack message
     for (i = 0; i <= 8; i = i + 1) begin
-      messageIn[i] = message[4*i +: 4]; //[<start_bit> +: <width>] indexed part select
+      message[i] = messageIn[4*i +: 4]; //[<start_bit> +: <width>] indexed part select
     end
   
     //-------------------------------------------------------------------------
@@ -65,43 +65,43 @@ output reg encoderBusy
       end
 
       //X^0 = (X^5_old + M_i(X))alpha^6
-      vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
+      vectorTemp = shiftRegisterOld[5] ^ message[i];
       shiftRegister[0] = multiply(vectorTemp, 4'b1100); 
 
       //X^1 = X^0_old + (X^5_old + M_i(X))alpha^9
-      vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
+      vectorTemp = shiftRegisterOld[5] ^ message[i];
       vectorTemp = multiply(vectorTemp, 4'b1010);
       shiftRegister[1] = shiftRegisterOld[0] ^ vectorTemp;
 
       //X^2 = X^1_old + (X^5_old + M_i(X))alpha^6
-      vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
+      vectorTemp = shiftRegisterOld[5] ^ message[i];
       vectorTemp = multiply(vectorTemp, 4'b1100);
       shiftRegister[2] = shiftRegisterOld[1] ^ vectorTemp;
 
       //X^3 = X^2_old + (X^5_old + M_i(X))alpha^4
-      vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
+      vectorTemp = shiftRegisterOld[5] ^ message[i];
       vectorTemp = multiply(vectorTemp, 4'b0011);
       shiftRegister[3] = shiftRegisterOld[2] ^ vectorTemp;
 
       //X^4 = X^3_old + (X^5_old + M_i(X))alpha^14
-      vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
+      vectorTemp = shiftRegisterOld[5] ^ message[i];
       vectorTemp = multiply(vectorTemp, 4'b1001);
       shiftRegister[4] = shiftRegisterOld[3] ^ vectorTemp;
 
       //X^5 = X^4_old + (X^5_old + M_i(X))alpha^10
-      vectorTemp = shiftRegisterOld[5] ^ messageIn[i];
+      vectorTemp = shiftRegisterOld[5] ^ message[i];
       vectorTemp = multiply(vectorTemp, 4'b0111);
       shiftRegister[5] = shiftRegisterOld[4] ^ vectorTemp;      
     end
     //C(X) = X^{n-k}*M(X) + CK(X)
     for (i = 0; i < 15; i = i + 1) begin
       if (i < 6) codeWord[i] = shiftRegister[i];        
-      else codeWord[i] = messageIn[i - 6];
+      else codeWord[i] = message[i - 6];
     end
     
     //Pack codeWord
     for (i = 0; i <= 14; i = i + 1) begin
-      codeWordVector[4*i +: 4] = codeWord[i]; //[<start_bit> +: <width>] indexed part select
+      codeWordOut[4*i +: 4] = codeWord[i]; //[<start_bit> +: <width>] indexed part select
     end
     encoderBusy = 0;
   end
