@@ -6,7 +6,7 @@
     reg decodeMessage = 0;
     reg [3:0] galoisField [14:0];
     wire decoderBusy;
-    wire [35:0] messageOut;
+    wire messageOut;
 
     integer i;
 
@@ -63,7 +63,6 @@
       decodeMessage = 0;
       #1;
     end
-    $stop;
   end
 
 

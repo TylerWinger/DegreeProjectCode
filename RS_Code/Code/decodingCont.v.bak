@@ -1,7 +1,8 @@
-module RSDecoder(
-    input recievedMessageIn[59:0],
+module decodingCont(
+    input [59:0] recievedMessageIn,
     input decodeMessage,
-    output messageOut [35:0]
+    output reg [35:0] messageOut ,
+    output reg decoderBusy
 ); 
 //====================================================================================================================
 reg [3:0] galoisField[14:0]; //GF(15)
@@ -18,8 +19,31 @@ integer i,j,k;
 integer T; //Used for # of errors
 integer loc[2:0]; //Used to know decimal location of error
 //====================================================================================================================    
-always @(posedge decodeMessage)begin
+initial begin
+  decoderBusy = 0;
 
+  //Establishing GF elements (alpha_i values)
+  galoisField[0] = 4'b0001; //alpha^0
+  galoisField[1] = 4'b0010; //alpha^1
+  galoisField[2] = 4'b0100; //alpha^2
+  galoisField[3] = 4'b1000; //alpha^3
+  galoisField[4] = 4'b0011; //alpha^4
+  galoisField[5] = 4'b0110; //alpha^5
+  galoisField[6] = 4'b1100; //alpha^6
+  galoisField[7] = 4'b1011; //alpha^7
+  galoisField[8] = 4'b0101; //alpha^8
+  galoisField[9] = 4'b1010; //alpha^9
+  galoisField[10] = 4'b0111; //alpha^10
+  galoisField[11] = 4'b1110; //alpha^11
+  galoisField[12] = 4'b1111; //alpha^12
+  galoisField[13] = 4'b1101; //alpha^13
+  galoisField[14] = 4'b1001; //alpha^14
+
+end
+
+
+always @(posedge decodeMessage)begin
+  decoderBusy = 1;
   //Initialization
     
   for (i = 0; i < 15; i = i + 1) begin
@@ -43,7 +67,7 @@ always @(posedge decodeMessage)begin
 
   //Unpack recievedMessageIn
   for (i = 0; i <= 14 ;i = i + 1) begin
-    recievedMessage[i] = recievedMessageIn[4*i:4];
+    recievedMessage[i] = recievedMessageIn[4*i +: 4];
   end
    
   //--------------------------------------------------
@@ -138,11 +162,12 @@ always @(posedge decodeMessage)begin
     codeWord[i] = recievedMessage[i] ^ errorWord[i];
   end
   //Seperate the message and pack it
-  for (i = 0; i <= 8; i = i + 1) begin
-    messageOut[4*i +: 4] = codeWord[i];
-  end
+  for (i = 7; i <= 14; i = i + 1) begin
+    messageOut[4*(i-7) +: 4] = codeWord[i];
 
-end   
+  end
+  decoderBusy = 0;
+end    
 
 function [3:0] multiply; //Returns a*b
   input [3:0] a, b;
