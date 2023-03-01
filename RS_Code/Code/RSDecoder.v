@@ -60,14 +60,14 @@ test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9
       
   recievedMessage[0] = galoisField[12];
   recievedMessage[1] = galoisField[8];
-  recievedMessage[2] = galoisField[14];
+  recievedMessage[2] = galoisField[3];
   recievedMessage[3] = galoisField[4];
   recievedMessage[4] = galoisField[10];
   recievedMessage[5] = galoisField[8];
   recievedMessage[6] = 0;
   recievedMessage[7] = galoisField[11];
-  recievedMessage[8] = 0;
-  recievedMessage[9] = galoisField[6];
+  recievedMessage[8] = 0;//galoisField[0];
+  recievedMessage[9] = 0;
   recievedMessage[10] = 0;
   recievedMessage[11] = 0;
   recievedMessage[12] = 0;
@@ -91,7 +91,7 @@ test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9
   end
 
   //When all Si are 0, there are no errors
-  if(syndromeComponent[0]==syndromeComponent[1]==syndromeComponent[2]==syndromeComponent[3]==syndromeComponent[4]==syndromeComponent[5]==0) begin
+  if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
     T = 0;
   end
 
@@ -118,9 +118,9 @@ test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9
     T = 3;
   end
 
-  else begin
-    T = 4;
-  end
+  //else begin
+  //  T = 4;
+  //end
 
   //Finding error positions
   if(T == 1 || T == 2 || T == 3) begin
