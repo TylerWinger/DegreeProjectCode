@@ -4,6 +4,7 @@ K3
 cModel Technology
 Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code\Code\EncodingTB_Work
 vdecodingCont
+<<<<<<< Updated upstream
 !i10b 1
 !s100 5NWCEV[K>_F^Xo98jU?hE0
 If2a<a_<zIJXJ6ZT7YP?nS2
@@ -12,18 +13,36 @@ Z2 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code
 w1677686719
 Z3 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
 Z4 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
+=======
+Z1 !s100 hYLh>goMZXnUANdG=M``j1
+Z2 IL5QLhAAcnEF33e0h<gfhU3
+Z3 VCF:zH^3=0DL3dM3O3URRX3
+Z4 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code\Code\DecodingTB_Work
+Z5 w1677681837
+Z6 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
+Z7 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
+>>>>>>> Stashed changes
 L0 1
-Z5 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
+31
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
+Z10 o-work work -O0
+Z11 ndecoding@cont
+Z12 !s108 1677682430.644000
+Z13 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
+!i10b 1
 !s85 0
+<<<<<<< Updated upstream
 31
 !s108 1677686729.582000
 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
 Z6 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
+=======
+>>>>>>> Stashed changes
 !s101 -O0
-Z7 o-work work -O0
-Z8 ndecoding@cont
 vdecodingTB
+<<<<<<< Updated upstream
 Z9 !s100 fZV;K=jLcZ;gIaI:[C79d0
 Z10 I_EYbHLXQD?G1HFhchPDm;2
 Z11 V66`ld:XX3enlL<`36Ql@l3
@@ -31,19 +50,37 @@ R2
 Z12 w1677683470
 Z13 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
 Z14 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
+=======
+Z14 IUXDl@m6lIlAY^j8?fY<4b0
+Z15 V66`ld:XX3enlL<`36Ql@l3
+R4
+Z16 w1677682716
+Z17 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
+Z18 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
+>>>>>>> Stashed changes
 L0 3
-R5
+R8
 r1
 31
+<<<<<<< Updated upstream
 Z15 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
 R7
 Z16 ndecoding@t@b
 Z17 !s108 1677683538.150000
 Z18 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
+=======
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
+R10
+Z20 ndecoding@t@b
+Z21 !s100 NV`3NZo9ThE^a6BbC=45B2
+Z22 !s108 1677682741.127000
+Z23 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vRSDecoder
+<<<<<<< Updated upstream
 Z19 IhHVYY>HeG]64[KTEi8FjV3
 Z20 VkCN@6l`H<W?LCGkDQbCSN3
 R2
@@ -62,4 +99,24 @@ Z26 !s100 44QJFP3<E3cRAP3hN:1]82
 !s85 0
 Z27 !s108 1677684877.719000
 Z28 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
+=======
+!i10b 1
+!s100 KI^YNmMzR;z^F3>h4Yf<D1
+INjoPzI9>PXE`NzG@Mi^7j2
+Z24 VkCN@6l`H<W?LCGkDQbCSN3
+R4
+w1677683155
+Z25 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v
+Z26 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1677683159.681000
+!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
+Z27 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
+>>>>>>> Stashed changes
 !s101 -O0
+R10
+Z28 n@r@s@decoder
