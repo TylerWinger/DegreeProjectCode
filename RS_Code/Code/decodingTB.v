@@ -21,13 +21,13 @@
     begin
       recievedMessage[0] = galoisField[12];
       recievedMessage[1] = galoisField[8];
-      recievedMessage[2] = galoisField[3];
+      recievedMessage[2] = galoisField[3];//error
       recievedMessage[3] = galoisField[4];
       recievedMessage[4] = galoisField[10];
       recievedMessage[5] = galoisField[8];
       recievedMessage[6] = 0;
       recievedMessage[7] = galoisField[11];
-      recievedMessage[8] = galoisField[0];
+      recievedMessage[8] = galoisField[0];//error
       recievedMessage[9] = 0;
       recievedMessage[10] = 0;
       recievedMessage[11] = 0;
@@ -46,14 +46,14 @@
     begin
       recievedMessage[0] = galoisField[12];
       recievedMessage[1] = galoisField[8];
-      recievedMessage[2] = galoisField[3];
+      recievedMessage[2] = galoisField[3]; //error
       recievedMessage[3] = galoisField[4];
       recievedMessage[4] = galoisField[10];
       recievedMessage[5] = galoisField[8];
       recievedMessage[6] = 0;
       recievedMessage[7] = galoisField[11];
-      recievedMessage[8] = galoisField[0];
-      recievedMessage[9] = 0;
+      recievedMessage[8] = galoisField[0]; //error
+      recievedMessage[9] = galoisField[1]; //error
       recievedMessage[10] = 0;
       recievedMessage[11] = 0;
       recievedMessage[12] = 0;
@@ -105,6 +105,4 @@
     end
     $stop;
   end
-
-
-    endmodule
+endmodule

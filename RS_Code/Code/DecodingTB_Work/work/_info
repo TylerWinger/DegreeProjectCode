@@ -2,26 +2,15 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code\Code\EncodingTB_Work
+Z0 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code\Code\DecodingTB_Work
 vdecodingCont
-<<<<<<< Updated upstream
-!i10b 1
-!s100 5NWCEV[K>_F^Xo98jU?hE0
-If2a<a_<zIJXJ6ZT7YP?nS2
-Z1 VCF:zH^3=0DL3dM3O3URRX3
-Z2 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code\Code\DecodingTB_Work
-w1677686719
-Z3 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
-Z4 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
-=======
-Z1 !s100 hYLh>goMZXnUANdG=M``j1
-Z2 IL5QLhAAcnEF33e0h<gfhU3
+Z1 !s100 C`]XIbogg5<5Ggi<8S]QI0
+Z2 Ih[TzY3So[RV:C]9G]R0XO1
 Z3 VCF:zH^3=0DL3dM3O3URRX3
 Z4 dC:\Users\4tyle\OneDrive\!School\Degree\github\code\DegreeProjectCode\RS_Code\Code\DecodingTB_Work
-Z5 w1677681837
+Z5 w1677688231
 Z6 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
 Z7 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v
->>>>>>> Stashed changes
 L0 1
 Z8 OV;L;10.1d;51
 r1
@@ -29,83 +18,38 @@ r1
 Z9 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
 Z10 o-work work -O0
 Z11 ndecoding@cont
-Z12 !s108 1677682430.644000
+Z12 !s108 1677775855.576000
 Z13 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
 !i10b 1
 !s85 0
-<<<<<<< Updated upstream
-31
-!s108 1677686729.582000
-!s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
-Z6 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v|
-=======
->>>>>>> Stashed changes
 !s101 -O0
 vdecodingTB
-<<<<<<< Updated upstream
-Z9 !s100 fZV;K=jLcZ;gIaI:[C79d0
-Z10 I_EYbHLXQD?G1HFhchPDm;2
-Z11 V66`ld:XX3enlL<`36Ql@l3
-R2
-Z12 w1677683470
-Z13 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
-Z14 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
-=======
-Z14 IUXDl@m6lIlAY^j8?fY<4b0
-Z15 V66`ld:XX3enlL<`36Ql@l3
+Z14 !s100 1z[S3=4MaSjJkAZG_n]YE2
+Z15 IcR_CZz3AbE;oh6b88fRbL1
+Z16 V66`ld:XX3enlL<`36Ql@l3
 R4
-Z16 w1677682716
-Z17 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
-Z18 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
->>>>>>> Stashed changes
+Z17 w1677696903
+Z18 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
+Z19 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v
 L0 3
 R8
 r1
 31
-<<<<<<< Updated upstream
-Z15 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
-R7
-Z16 ndecoding@t@b
-Z17 !s108 1677683538.150000
-Z18 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
-=======
-Z19 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
 R10
-Z20 ndecoding@t@b
-Z21 !s100 NV`3NZo9ThE^a6BbC=45B2
-Z22 !s108 1677682741.127000
+Z21 ndecoding@t@b
+Z22 !s108 1677775855.628000
 Z23 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingTB.v|
->>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vRSDecoder
-<<<<<<< Updated upstream
-Z19 IhHVYY>HeG]64[KTEi8FjV3
-Z20 VkCN@6l`H<W?LCGkDQbCSN3
-R2
-Z21 w1677684875
-Z22 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v
-Z23 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v
-L0 1
-R5
-r1
-31
-Z24 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
-R7
-Z25 n@r@s@decoder
 !i10b 1
-Z26 !s100 44QJFP3<E3cRAP3hN:1]82
-!s85 0
-Z27 !s108 1677684877.719000
-Z28 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
-=======
-!i10b 1
-!s100 KI^YNmMzR;z^F3>h4Yf<D1
-INjoPzI9>PXE`NzG@Mi^7j2
+!s100 N;5dS_hSE6GP>d5:J<FAf0
+IKY=Pien`Ya@78SW:_TVf81
 Z24 VkCN@6l`H<W?LCGkDQbCSN3
 R4
-w1677683155
+w1677775897
 Z25 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v
 Z26 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v
 L0 1
@@ -113,10 +57,29 @@ R8
 r1
 !s85 0
 31
-!s108 1677683159.681000
+!s108 1677775899.550000
 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
 Z27 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
->>>>>>> Stashed changes
 !s101 -O0
 R10
 Z28 n@r@s@decoder
+vRSDecoderOld
+Z29 !s100 SN4YOKRhf7NT>:^7[7i=H1
+Z30 IadMaF14W^Eg?fkK28kbPU1
+Z31 VlKdO1Q]GEfAWF>Q_ioOd72
+R4
+Z32 w1677773539
+Z33 8C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoderOld.v
+Z34 FC:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoderOld.v
+L0 1
+R8
+r1
+31
+Z35 !s90 -reportprogress|300|-work|work|C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoderOld.v|
+R10
+Z36 n@r@s@decoder@old
+Z37 !s108 1677775855.719000
+Z38 !s107 C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/RSDecoderOld.v|
+!i10b 1
+!s85 0
+!s101 -O0

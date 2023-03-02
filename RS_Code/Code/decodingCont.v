@@ -100,7 +100,7 @@ always @(posedge decodeMessage)begin
   end
 
   //Condition for 2 errors 
-  else if((syndromeComponent[0]&syndromeComponent[2] ^ syndromeComponent[1]&syndromeComponent[1]) != 0) begin //If the determinant of generated equations is not 0
+  else if(((syndromeComponent[0]&syndromeComponent[2] ^ syndromeComponent[1]&syndromeComponent[1])) != 0) begin //If the determinant of generated equations is not 0
     errorLocator[0] = divide((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),(multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])));
     errorLocator[1] = divide((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),(multiply(syndromeComponent[1],syndromeComponent[1]) ^ multiply(syndromeComponent[0],syndromeComponent[2])));  
     T = 2;

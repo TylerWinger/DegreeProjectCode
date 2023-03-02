@@ -15,7 +15,7 @@ for i = 1:n
     fprintf('X^%d: %4s \n',j,dec2bin(code.x(i),4));
 end
 
-errors = gf([0 0 0 0 0 0 2 0 0 15 0 0 0 0 0],m);
-noisycode = code + errors;
+errors = gf([0 0 0 0 0 1 1 0 0 0 0 0 1 0 0],m);
+noisycode = code + errors
 
 [rxcode,numCorrectedErrors] = rsdec(noisycode,n,k)
