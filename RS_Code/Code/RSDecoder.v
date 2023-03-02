@@ -62,6 +62,7 @@ initial begin
   recievedMessage[0] = galoisField[12];
   recievedMessage[1] = galoisField[8];
   recievedMessage[2] = galoisField[3]; //error
+
   recievedMessage[3] = galoisField[4];
   recievedMessage[4] = galoisField[10];
   recievedMessage[5] = galoisField[8];
@@ -69,12 +70,12 @@ initial begin
   recievedMessage[7] = galoisField[11];
   recievedMessage[8] = galoisField[0]; //error
   recievedMessage[9] = galoisField[0]; //error
+
   recievedMessage[10] = 0;
   recievedMessage[11] = 0;
   recievedMessage[12] = 0;
   recievedMessage[13] = 0;
   recievedMessage[14] = 0;
-      
   //--------------------------------------------------
     
   test = galoisField[3]^galoisField[1]^galoisField[10]^galoisField[3]^galoisField[3]^galoisField[10]^galoisField[7]^galoisField[10]^galoisField[12];  
@@ -115,6 +116,7 @@ initial begin
 
   //Condition for 2 errors 
   if(det[0] != 0) begin //If the determinant of generated equations is not 0
+
     errorLocator[0] = divide((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),(multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])));
     errorLocator[1] = divide((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),(multiply(syndromeComponent[1],syndromeComponent[1]) ^ multiply(syndromeComponent[0],syndromeComponent[2])));  
     T = 2;
@@ -127,6 +129,12 @@ initial begin
     errorLocator[2] = divide((multiply((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),syndromeComponent[5]) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[3]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
     T = 3;
   end
+
+
+  //else begin
+  //  T = 4;
+  //end
+
 
   //Finding error positions
   if(T == 1 || T == 2 || T == 3) begin
@@ -190,6 +198,7 @@ initial begin
       codeWord[i] = 1;
     end
   end
+  $stop;
 end   
 
 
