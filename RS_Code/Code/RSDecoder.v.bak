@@ -19,7 +19,6 @@ integer loc[2:0]; //Used to know decimal location of error
 //====================================================================================================================    
 initial begin
 
-test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9]^galoisField[12];
 
   //Initialization
     
@@ -61,20 +60,22 @@ test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9
       
   recievedMessage[0] = galoisField[12];
   recievedMessage[1] = galoisField[8];
-  recievedMessage[2] = galoisField[4]; //error
+  recievedMessage[2] = galoisField[3]; //error
   recievedMessage[3] = galoisField[4];
   recievedMessage[4] = galoisField[10];
   recievedMessage[5] = galoisField[8];
   recievedMessage[6] = 0;
   recievedMessage[7] = galoisField[11];
   recievedMessage[8] = galoisField[0]; //error
-  recievedMessage[9] = galoisField[2]; //error
+  recievedMessage[9] = galoisField[0]; //error
   recievedMessage[10] = 0;
   recievedMessage[11] = 0;
   recievedMessage[12] = 0;
   recievedMessage[13] = 0;
   recievedMessage[14] = 0;
   //--------------------------------------------------
+    
+  test = galoisField[9]^galoisField[8]^galoisField[3]^galoisField[13]^galoisField[14]^galoisField[7]^galoisField[5]^galoisField[9]^galoisField[12];  
       
   //Calculating syndrome components (Method 1)
   //Note: S1 to S6 used in the reference paper
@@ -110,7 +111,7 @@ test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9
     T = 2;
   end
 
-  //Condition for 3 errors //Need to add if
+  //Condition for 3 errors
   else begin
     errorLocator[0] = divide((multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[5]) ^ multiply((multiply(syndromeComponent[1],syndromeComponent[2]) ^ multiply(syndromeComponent[0],syndromeComponent[3])),syndromeComponent[4]) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[4]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
     errorLocator[1] = divide((multiply((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),syndromeComponent[5]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),syndromeComponent[4]) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[3]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
@@ -185,6 +186,7 @@ test = galoisField[1]^galoisField[3]^galoisField[6]^galoisField[7]^galoisField[9
     end
   end
   $stop;
+
 end   
 
 

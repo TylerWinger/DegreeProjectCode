@@ -65,11 +65,7 @@ module HammingDecodingJan10(
         codeWord[i+6] = messageIn[i];  
       end
       
-      //assign messageInt = {messageIn[7],messageIn[6],messageIn[5],messageIn[4],messageIn[3],messageIn[2],messageIn[1],messageIn[0]}; 
-      //assign genInt = {genPoly[6],genPoly[5],genPoly[4],genPoly[3],genPoly[2],genPoly[1],genPoly[0]};
-      
       // Calculating CK(X)   
-      
       for (i = 0; i < 6; i=i+1) begin
         parityInfo[i] = codeWord[i] % genPoly[i];
       end
