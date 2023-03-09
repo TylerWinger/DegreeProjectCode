@@ -99,17 +99,14 @@ module encodingDecodingTB;
       #1;
       if (!encoderBusy) begin
         outputMessage1;
-        encodeMessage = 1;
+        encodeMessage = ~encodeMessage;
         #1;
-        encodeMessage = 0;
-        #1;
+
         //$stop;
       end  
       if (!decoderBusy) begin
         addError;
-        decodeMessage = 1;
-        #1;
-        decodeMessage = 1;
+        decodeMessage = ~decodeMessage;
         #1;
         $stop;
       end  

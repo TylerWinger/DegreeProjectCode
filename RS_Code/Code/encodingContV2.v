@@ -34,7 +34,7 @@ output reg encoderBusy
   end
 
 //==============================================================================================  
-  always @(posedge encodeMessage)begin  
+  always @(encodeMessage)begin  
     encoderBusy = 1;
     //Unpack message
     for (i = 0; i <= 8; i = i + 1) begin

@@ -43,7 +43,7 @@ initial begin
 end
 
 
-always @(posedge decodeMessage)begin
+always @(decodeMessage)begin
   decoderBusy = 1;
   //Initialization
     
