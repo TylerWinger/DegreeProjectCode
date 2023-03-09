@@ -94,7 +94,6 @@ initial begin
 
 
   //Calculating error locator polynomial using linear recursion 
-
   det[0] = multiply(syndromeComponent[2],syndromeComponent[4]) ^ multiply(syndromeComponent[3],syndromeComponent[3]); // Represents det3,4
   det[1] = multiply(syndromeComponent[1],syndromeComponent[4]) ^ multiply(syndromeComponent[3],syndromeComponent[2]); // Represents det2,4
   det[2] = multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2]); // Represents det2,3

@@ -7,11 +7,9 @@ TODO: Make code more efficent
 
 module encodingContV2(
 input [35:0] message,
-input clk,
 input encodeMessage,
-output reg [59:0] codeWordVector,
-output reg encoderBusy,
-output reg [23:0] shiftRegisterPacked 
+output reg [59:0] encodedMessage,
+output reg encoderBusy
 ); 
 //==============================================================================================
     reg [3:0] galoisField [15:0]; // n = 15 GF elements of length m = 4
@@ -88,7 +86,7 @@ output reg [23:0] shiftRegisterPacked
     
     //Pack codeWord
     for (i = 0; i <= 14; i = i + 1) begin
-      codeWordVector[4*i +: 4] = codeWord[i]; //[<start_bit> +: <width>] indexed part select
+      encodedMessage[4*i +: 4] = codeWord[i]; //[<start_bit> +: <width>] indexed part select
     end
     encoderBusy = 0;
   end
