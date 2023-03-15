@@ -114,10 +114,6 @@ always @(posedge decodeMessage)begin
     T = 3;
   end
 
-  //else begin
-  //  T = 4;
-  //end
-
   //Finding error positions
   if(T == 1 || T == 2 || T == 3) begin
     j = 0;
