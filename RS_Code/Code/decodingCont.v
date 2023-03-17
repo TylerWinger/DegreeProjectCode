@@ -2,7 +2,8 @@ module decodingCont(
     input [59:0] recievedMessageIn,
     input decodeMessage,
     output reg [35:0] messageOut ,
-    output reg decoderBusy
+    output reg decoderBusy,
+    output integer T
 ); 
 //====================================================================================================================
 reg [3:0] galoisField[14:0]; //GF(15)
@@ -16,7 +17,7 @@ reg [3:0] errorWord[14:0];
 reg [3:0] codeWord[14:0];
 
 integer i,j,k;
-integer T; //Used for # of errors
+//integer T; //Used for # of errors
 integer loc[2:0]; //Used to know decimal location of error
 //====================================================================================================================    
 initial begin
@@ -85,6 +86,8 @@ always @(posedge decodeMessage)begin
       end
     end
   end
+
+  T = 4; // Set initial condition to error overload (will be rewritten if not
 
   //When all Si are 0, there are no errors
   if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
