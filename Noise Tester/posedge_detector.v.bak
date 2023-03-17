@@ -1,0 +1,21 @@
+/*
+ This module will be used to sync the start and reset buttons to 
+ the clk signal
+*/
+module posedge_detector(clk_200, in, out);
+
+input clk ;
+input in ;
+output out ;
+
+reg delay_sig =0;
+reg out =0;
+
+always @(posedge clk or posedge in) 
+	begin
+		delay_sig <= in ;
+	end
+
+assign out = in & ~delay_sig;
+
+endmodule 

@@ -1,0 +1,78 @@
+{C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/display.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/display.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module display
+
+Top level modules:
+	display
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module clk_gen_200khz_mid
+
+Top level modules:
+	clk_gen_200khz_mid
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module noise_test_top
+
+Top level modules:
+	noise_test_top
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/binary_to_bcd.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/binary_to_bcd.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module binary_to_bcd
+
+Top level modules:
+	binary_to_bcd
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/signal_gen.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/signal_gen.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module signal_gen
+
+Top level modules:
+	signal_gen
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/sync_1bit.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/sync_1bit.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sync_1bit
+
+Top level modules:
+	sync_1bit
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/X_OR.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/X_OR.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module X_OR
+
+Top level modules:
+	X_OR
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_100hkz.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_100hkz.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module clk_gen_100khz
+
+Top level modules:
+	clk_gen_100khz
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module clk_gen_200khz
+
+Top level modules:
+	clk_gen_200khz
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/error_counter.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/error_counter.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module error_counter
+
+Top level modules:
+	error_counter
+
+} {} {}} {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top._tb.v} {1 {vlog -work work {C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top._tb.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module noise_test_top_tb
+
+Top level modules:
+	noise_test_top_tb
+
+} {} {}}
