@@ -24,7 +24,7 @@ output reg encoderBusy
   initial begin
     encoderBusy = 0;
     //Initialization
-      for (i = 0; i < 15; i = i + 1) begin
+      for (i = 0; i < 6; i = i + 1) begin
         parityInfo[i] = 4'b0;
       end
 
@@ -49,7 +49,7 @@ output reg encoderBusy
     end
     //Case 1 through k=9
     for (i = 8; i > -1; i = i - 1) begin
-      for (j = 0; j < 15; j = j + 1) begin
+      for (j = 0; j < 6; j = j + 1) begin
         shiftRegisterOld[j] = shiftRegister[j];
       end
 

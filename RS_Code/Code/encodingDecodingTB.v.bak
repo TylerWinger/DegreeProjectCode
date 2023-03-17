@@ -53,13 +53,13 @@ module encodingDecodingTB;
         error[0] = 0;
         error[1] = 0;
         error[2] = 4'b0001;
-        error[3] = 0;
-        error[4] = 0;
+        error[3] = 4'b0001;
+        error[4] = 4'b1000;
         error[5] = 0;
         error[6] = 0;
         error[7] = 0;
         error[8] = 4'b0000;
-        error[9] = 4'b1101;
+        error[9] = 4'b0000;
         error[10] = 4'b0000;
         error[11] = 4'b0000;
         error[12] = 0;
@@ -99,17 +99,14 @@ module encodingDecodingTB;
       #1;
       if (!encoderBusy) begin
         outputMessage1;
-        encodeMessage = 1;
+        encodeMessage = ~encodeMessage;
         #1;
-        encodeMessage = 0;
-        #1;
+
         //$stop;
       end  
       if (!decoderBusy) begin
         addError;
-        decodeMessage = 1;
-        #1;
-        decodeMessage = 1;
+        decodeMessage = ~decodeMessage;
         #1;
         $stop;
       end  
