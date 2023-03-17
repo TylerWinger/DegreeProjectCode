@@ -1,17 +1,14 @@
 module decodingCont(
-    input [59:0] recievedMessageIn,
+    input [59:0] recievedWordIn,
     input decodeMessage,
-    output reg [35:0] messageOut ,
+    output reg [35:0] messageRecieved ,
     output reg decoderBusy
 ); 
 //====================================================================================================================
 reg [3:0] galoisField[14:0]; //GF(15)
-reg [3:0] recievedMessage[14:0]; //R(X)
+reg [3:0] recievedWord[14:0]; //R(X)
 reg [3:0] syndromeComponent[5:0]; //S_i
-<<<<<<< Updated upstream
-=======
-reg [3:0] det [4:0]; //determinants
->>>>>>> Stashed changes
+reg [3:0] det [3:0]; //determinants
 reg [3:0] errorLocator[2:0]; //sigma_i
 reg [3:0] errorTemp;
 reg [3:0] errorPosition[2:0]; //z_i
@@ -46,12 +43,12 @@ initial begin
 end
 
 
-always @(decodeMessage)begin
+always @(posedge decodeMessage)begin
   decoderBusy = 1;
   //Initialization
     
   for (i = 0; i < 15; i = i + 1) begin
-    recievedMessage[i] = 0;
+    recievedWord[i] = 0;
     errorWord[i] = 0;
     codeWord[i] = 0;
   end
@@ -69,30 +66,28 @@ always @(decodeMessage)begin
 
   errorTemp = 0;
 
-  //Unpack recievedMessageIn
+  //Unpack recievedWordIn
   for (i = 0; i <= 14 ;i = i + 1) begin
-    recievedMessage[i] = recievedMessageIn[4*i +: 4];
+    recievedWord[i] = recievedWordIn[4*i +: 4];
   end
    
   //--------------------------------------------------
       
-  //Calculating syndrome components (Method 1 4.2.1)
+  //Calculating syndrome components (Method 1)
   //Note: S1 to S6 used in the reference paper
 
   for(i = 1; i < 7; i = i+1) begin
     for(j = 0; j < 15; j = j+1) begin
       if((j*i) < 15) begin
-        syndromeComponent[i-1] = syndromeComponent[i-1] ^ multiply(recievedMessage[j],galoisField[j*i]); 
+        syndromeComponent[i-1] = syndromeComponent[i-1] ^ multiply(recievedWord[j],galoisField[j*i]); 
       end
       else begin
-        syndromeComponent[i-1] = syndromeComponent[i-1] ^ multiply(recievedMessage[j],galoisField[(j*i)%15]);
+        syndromeComponent[i-1] = syndromeComponent[i-1] ^ multiply(recievedWord[j],galoisField[(j*i)%15]);
       end
     end
   end
 
-<<<<<<< Updated upstream
-=======
-  //Calculating error locator polynomial using linear recursion 4.3.2
+  //Calculating error locator polynomial using linear recursion 
   det[0] = multiply(syndromeComponent[2],syndromeComponent[4]) ^ multiply(syndromeComponent[3],syndromeComponent[3]); // Represents det3,4
   det[1] = multiply(syndromeComponent[1],syndromeComponent[4]) ^ multiply(syndromeComponent[3],syndromeComponent[2]); // Represents det2,4
   det[2] = multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2]); // Represents det2,3
@@ -100,48 +95,30 @@ always @(decodeMessage)begin
 
   T = 4; //Initially T is set as too many errors, if this is not true, it will be corrected below 
 
->>>>>>> Stashed changes
   //When all Si are 0, there are no errors
   if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
     T = 0;
   end
 
-<<<<<<< Updated upstream
-  //Calculating error locator polynomial using linear recursion 
+//Condition for 1 error 
 
-  //Condition for 1 error 
-=======
-//Condition for 1 error, this condition is also true when all syndromes are zero, thus we used else if //! do we need to check all cases or will one suffice
->>>>>>> Stashed changes
   else if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
     errorLocator[0] = divide(syndromeComponent[1],syndromeComponent[0]);
     T = 1;
   end
 
   //Condition for 2 errors 
-<<<<<<< Updated upstream
-  else if((syndromeComponent[0]&syndromeComponent[2] ^ syndromeComponent[1]&syndromeComponent[1]) != 0) begin //If the determinant of generated equations is not 0
-=======
-  if(det[0] != 0) begin //If the determinant of generated equations is not 0
->>>>>>> Stashed changes
+  else if(det[0] != 0) begin //If the determinant of generated equations is not 0
     errorLocator[0] = divide((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),(multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])));
     errorLocator[1] = divide((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),(multiply(syndromeComponent[1],syndromeComponent[1]) ^ multiply(syndromeComponent[0],syndromeComponent[2])));  
     T = 2;
   end
 
-<<<<<<< Updated upstream
-  //Condition for 3 errors //Need to add if
-  else begin
-    errorLocator[0] = divide((multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[5]) ^ multiply((multiply(syndromeComponent[1],syndromeComponent[2]) ^ multiply(syndromeComponent[0],syndromeComponent[3])),syndromeComponent[4]) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[4]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
-    errorLocator[1] = divide((multiply((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),syndromeComponent[5]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),syndromeComponent[4]) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[3]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
-    errorLocator[2] = divide((multiply((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),syndromeComponent[5]) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[3]))),(multiply((multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])),syndromeComponent[4]) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[3])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[2],syndromeComponent[2]))));
-=======
     //Condition for T = 3
-  if(det[3] != 0) begin
+  else if(det[3] != 0) begin
     errorLocator[0] = divide(multiply(multiply(syndromeComponent[0],syndromeComponent[2]),syndromeComponent[5]) ^ multiply(multiply(syndromeComponent[0],syndromeComponent[3]),syndromeComponent[4]) ^ multiply(multiply(syndromeComponent[1],syndromeComponent[1]),syndromeComponent[5]) ^ multiply(multiply(syndromeComponent[1],syndromeComponent[2]),syndromeComponent[4]) ^ multiply(multiply(syndromeComponent[3],syndromeComponent[3]),syndromeComponent[1]) ^ multiply(multiply(syndromeComponent[2],syndromeComponent[2]),syndromeComponent[3]),det[3]);
     errorLocator[1] = divide(multiply(syndromeComponent[0],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[5])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[5])) ^ multiply(syndromeComponent[4],multiply(syndromeComponent[2],syndromeComponent[2])), det[3]);
     errorLocator[2] = divide(multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[5])) ^ multiply(syndromeComponent[5],multiply(syndromeComponent[2],syndromeComponent[2])),det[3]);
->>>>>>> Stashed changes
     T = 3;
   end
 
@@ -159,8 +136,6 @@ always @(decodeMessage)begin
           errorPosition[0] = galoisField[i];
           loc[0] = i;
         end
-        errorValue[0] = divide(syndromeComponent[0],errorPosition[0]); //Finding error values
-        errorWord[loc[0]] = errorValue[0]; //Decoding the error word 
       end
 
       if(T == 2) begin
@@ -170,10 +145,6 @@ always @(decodeMessage)begin
             loc[j] = i;
             j = j+1;
           end
-        errorValue[0] = divide((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),(multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])));
-        errorValue[1] = divide((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),(multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])));
-        errorWord[loc[0]] = errorValue[0]; 
-        errorWord[loc[1]] = errorValue[1];
       end
 
       if(T == 3) begin
@@ -181,31 +152,22 @@ always @(decodeMessage)begin
           if(errorTemp == 0) begin
             errorPosition[j] = galoisField[i];
             loc[j] = i;
-            errorValue[0] = divide((multiply((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[1]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[1],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[0],multiply(errorLocator[0],errorPosition[1])) ^ multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2]))));
-            errorValue[1] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[2]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply((multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])),errorPosition[2]) ^ multiply(errorPosition[1],multiply(errorLocator[1],errorPosition[1])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[1]))));
-            errorValue[2] = divide((multiply((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),errorPosition[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]),(multiply(errorPosition[2],multiply(errorPosition[2],errorPosition[2])) ^ multiply((errorPosition[1] ^ errorPosition[0]),multiply(errorPosition[2],errorPosition[2])) ^ multiply(errorPosition[0],multiply(errorPosition[1],errorPosition[2]))));
-            j = j+1;
+           j = j+1;
           end
-        errorWord[loc[0]] = errorValue[0]; 
-        errorWord[loc[1]] = errorValue[1];
-        errorWord[loc[2]] = errorValue[2];
       end
     end
-<<<<<<< Updated upstream
-=======
     
-    if (T == 1) begin //4.5.1 Direct Method
+    if (T == 1) begin
       errorValue[0] = divide(syndromeComponent[0],errorPosition[0]); //Finding error values
       errorWord[loc[0]] = errorValue[0]; //Decoding the error word 
     end
-    if (T == 2) begin //4.5.1 Direct Method
-      det[4] = multiply(multiply(errorPosition[1],errorPosition[1]),errorPosition[0]) ^ multiply(multiply(errorPosition[0],errorPosition[0]),errorPosition[1]);
-      errorValue[0] = divide(multiply(syndromeComponent[0],multiply(errorPosition[1],errorPosition[1])) ^ multiply(syndromeComponent[1],errorPosition[1]) , det[4]);
-      errorValue[1] = divide(multiply(errorPosition[0],syndromeComponent[1]) ^ multiply(multiply(errorPosition[0],errorPosition[0]),syndromeComponent[0]) , det[4]);
+    if (T == 2) begin
+      errorValue[0] = divide((multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]),(multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])));
+      errorValue[1] = divide((multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]),(multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])));
       errorWord[loc[0]] = errorValue[0]; 
       errorWord[loc[1]] = errorValue[1];
     end
-    if(T == 3)begin //4.5.1 Direct Method
+    if(T == 3)begin
       errorValue[0] = divide(multiply(errorPosition[2],multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]) ^ multiply(syndromeComponent[1],errorPosition[1]) ^ syndromeComponent[2]  ,  multiply(errorPosition[2],multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])) ^ multiply(multiply(errorPosition[0],errorPosition[0]),errorPosition[1]) ^ multiply(multiply(errorPosition[0],errorPosition[0]),errorPosition[0]));
       errorValue[1] = divide(multiply(errorPosition[2],multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]  ,  multiply(errorPosition[2],multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])) ^ multiply(multiply(errorPosition[1],errorPosition[1]),errorPosition[1]) ^ multiply(multiply(errorPosition[1],errorPosition[1]),errorPosition[0]));
       errorValue[2] = divide(multiply(errorPosition[1],multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]  ,  multiply(multiply(errorPosition[2],errorPosition[2]),errorPosition[2]) ^ multiply(multiply(errorPosition[2],errorPosition[2]),errorPosition[1] ^ errorPosition[0]) ^ multiply(multiply(errorPosition[0],errorPosition[1]),errorPosition[2]));
@@ -213,16 +175,15 @@ always @(decodeMessage)begin
       errorWord[loc[1]] = errorValue[1];
       errorWord[loc[2]] = errorValue[2];
     end
->>>>>>> Stashed changes
 
     //Decoding the code word
     for(i = 0; i < 15; i = i+1) begin
-      codeWord[i] = recievedMessage[i] ^ errorWord[i];
+      codeWord[i] = recievedWord[i] ^ errorWord[i];
     end
 
     //Seperate the message and pack it
     for (i = 6; i <= 14; i = i + 1) begin
-      messageOut[4*(i-6) +: 4] = codeWord[i];
+      messageRecieved[4*(i-6) +: 4] = codeWord[i];
     end
   end 
 
@@ -230,11 +191,11 @@ always @(decodeMessage)begin
   //! Should be able to compress this
   if(T == 0) begin
     for(i = 0; i < 15; i = i+1) begin
-      codeWord[i] = recievedMessage[i];
+      codeWord[i] = recievedWord[i];
     end
     //Seperate the message and pack it
     for (i = 6; i <= 14; i = i + 1) begin
-      messageOut[4*(i-6) +: 4] = codeWord[i];
+      messageRecieved[4*(i-6) +: 4] = codeWord[i];
     end
   end
 

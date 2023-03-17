@@ -1,68 +1,68 @@
 `timescale 1ns/1ps  
   
   module decodingTB;
-    reg [3:0] recievedMessage [14:0];
-    reg [59:0] recievedMessageIn;
+    reg [3:0] recievedWord [14:0];
+    reg [59:0] recievedWordIn;
     reg decodeMessage = 0;
     reg [3:0] galoisField [14:0];
     wire decoderBusy;
-    wire [35:0] messageOut;
+    wire [35:0] messageRecieved;
 
     integer i;
 
     decodingCont decodingInst(
-      .recievedMessageIn(recievedMessageIn),
+      .recievedWordIn(recievedWordIn),
       .decodeMessage(decodeMessage),
       .decoderBusy(decoderBusy),
-      .messageOut(messageOut)
+      .messageRecieved(messageRecieved)
     );
 
-  task outputRecievedMessage1;
+  task outputrecievedWord1;
     begin
-      recievedMessage[0] = galoisField[12];
-      recievedMessage[1] = galoisField[8];
-      recievedMessage[2] = galoisField[3];//error
-      recievedMessage[3] = galoisField[4];
-      recievedMessage[4] = galoisField[10];
-      recievedMessage[5] = galoisField[8];
-      recievedMessage[6] = 0;
-      recievedMessage[7] = galoisField[11];
-      recievedMessage[8] = galoisField[0];//error
-      recievedMessage[9] = 0;
-      recievedMessage[10] = 0;
-      recievedMessage[11] = 0;
-      recievedMessage[12] = 0;
-      recievedMessage[13] = 0;
-      recievedMessage[14] = 0;
+      recievedWord[0] = galoisField[12];
+      recievedWord[1] = galoisField[8];
+      recievedWord[2] = galoisField[3];//error
+      recievedWord[3] = galoisField[4];
+      recievedWord[4] = galoisField[10];
+      recievedWord[5] = galoisField[8];
+      recievedWord[6] = 0;
+      recievedWord[7] = galoisField[11];
+      recievedWord[8] = 0; //galoisField[0];//error
+      recievedWord[9] = 0;
+      recievedWord[10] = galoisField[0];//error
+      recievedWord[11] = 0;
+      recievedWord[12] = 0;
+      recievedWord[13] = 0;
+      recievedWord[14] = 0;
 
       //Pack recieved message
       for (i = 0; i <= 14; i = i + 1) begin
-        recievedMessageIn[4*i +: 4] = recievedMessage[i];
+        recievedWordIn[4*i +: 4] = recievedWord[i];
       end
     end
   endtask
 
-    task outputRecievedMessage2;
+    task outputrecievedWord2;
     begin
-      recievedMessage[0] = galoisField[12];
-      recievedMessage[1] = galoisField[8];
-      recievedMessage[2] = galoisField[3]; //error
-      recievedMessage[3] = galoisField[4];
-      recievedMessage[4] = galoisField[10];
-      recievedMessage[5] = galoisField[8];
-      recievedMessage[6] = 0;
-      recievedMessage[7] = galoisField[11];
-      recievedMessage[8] = galoisField[0]; //error
-      recievedMessage[9] = galoisField[0]; //error
-      recievedMessage[10] = 0;
-      recievedMessage[11] = 0;
-      recievedMessage[12] = 0;
-      recievedMessage[13] = 0;
-      recievedMessage[14] = 0;
+      recievedWord[0] = galoisField[12];
+      recievedWord[1] = galoisField[8];
+      recievedWord[2] = galoisField[3]; //error
+      recievedWord[3] = galoisField[4];
+      recievedWord[4] = galoisField[10];
+      recievedWord[5] = galoisField[8];
+      recievedWord[6] = 0;
+      recievedWord[7] = galoisField[11];
+      recievedWord[8] = galoisField[0]; //error
+      recievedWord[9] = galoisField[1]; //error
+      recievedWord[10] = 0;
+      recievedWord[11] = 0;
+      recievedWord[12] = 0;
+      recievedWord[13] = 0;
+      recievedWord[14] = 0;
 
       //Pack recieved message
       for (i = 0; i <= 14; i = i + 1) begin
-        recievedMessageIn[4*i +: 4] = recievedMessage[i];
+        recievedWordIn[4*i +: 4] = recievedWord[i];
       end
     end
   endtask
@@ -89,7 +89,7 @@
 
     #1;
     if(!decoderBusy)begin
-      outputRecievedMessage1;
+      outputrecievedWord1;
       decodeMessage = 1;
       #1;
       decodeMessage = 0;
@@ -97,7 +97,7 @@
     end
     $stop;
     if(!decoderBusy)begin
-      outputRecievedMessage2;
+      outputrecievedWord2;
       decodeMessage = 1;
       #1;
       decodeMessage = 0;
