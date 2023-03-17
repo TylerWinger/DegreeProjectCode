@@ -1,0 +1,54 @@
+/*
+ This module generates a test signal that will go though the circuit.
+ An enable signal will go high when the messages begins to send and 
+ will go low when the message is finished. 
+ When a button is pressed 'start' will go high and start the sequence
+*/
+module signal_gen (clk, clk_100, clk_200, enable, out_1, out_2, start);
+
+input clk;
+input clk_100;
+input clk_200;
+input start;
+
+output enable; // This will be connnected to the enable of the counter
+output out_1; // output 1 will be connected to the physical noise circuit
+output out_2; // output 2 will be connected to input2 of the XOR gate
+
+reg [9:0] count =10'b0;
+reg enable =0;
+reg out =0;
+
+// ------ Design implementation -----
+
+// connect output to 2 points 
+assign out_1 = out;
+assign out_2 = out;
+
+always @(posedge clk_200 or posedge enable or posedge start)
+begin
+    if(start)
+    begin
+        enable <= 1'b1; // latch enable when start is pressed
+    end
+    if(enable)
+    begin
+        out <= !clk_100; 
+            if(count >= 1000)
+            begin
+                count <= 0;
+                enable <= 0; // turns off enable once 1000 bits have been sent
+                out <= 0; // turns off signal
+            end 
+            else
+            begin
+                count <= count + 1'b1;
+            end
+    end
+    else
+    begin
+        out <= 0;
+    end
+end
+
+endmodule

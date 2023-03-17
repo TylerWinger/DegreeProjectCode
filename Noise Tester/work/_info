@@ -1,0 +1,234 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\cmurz\OneDrive\Personal OneDrive\Verilog\Noise Tester
+vbinary_to_bcd
+Z1 !s100 AoZC1e;=oe6m1i4E=^KgZ3
+Z2 IQPz5Y`Azg?eeg<NP;94Y@3
+Z3 VKXKXQf9me^Ud7j^=3fiJV1
+Z4 dC:\Users\cmurz\OneDrive\Personal OneDrive\Verilog\Noise Tester
+Z5 w1678641922
+Z6 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/binary_to_bcd.v
+Z7 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/binary_to_bcd.v
+L0 2
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/binary_to_bcd.v|
+Z10 o-work work -O0
+Z11 !s108 1678649297.780000
+Z12 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/binary_to_bcd.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vclk_gen_100khz
+Z13 !s100 IEf1W9Xi[SY5HK=J4KoKZ0
+Z14 IZP:RzL@Lab?Tn3h4dkaYm2
+Z15 VfiW6GVA]WhQi?5@_ZgX?n1
+R4
+Z16 w1678643395
+Z17 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_100hkz.v
+Z18 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_100hkz.v
+L0 4
+R8
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_100hkz.v|
+R10
+Z20 !s108 1678649298.421000
+Z21 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_100hkz.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vclk_gen_200khz
+Z22 !s100 lY8K61CgD4AVKm[_38?Gi0
+Z23 IQo<ETMoRlUQ1^3NP]G<_c1
+Z24 Vn=a7eh]dZ`R[j;MJ5E:9G2
+R4
+Z25 w1678643456
+Z26 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz.v
+Z27 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz.v
+L0 6
+R8
+r1
+31
+Z28 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz.v|
+R10
+!i10b 1
+!s85 0
+Z29 !s108 1678649298.520000
+Z30 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz.v|
+!s101 -O0
+vclk_gen_200khz_mid
+!i10b 1
+Z31 !s100 ?;h`eC;LSnA5EjlRbEd5Z1
+Z32 IAJoAo9aGU[7aG:JbmQ?cc2
+Z33 VBdeE8X^2`Z:;=M<kBOZh<0
+R4
+Z34 w1678643759
+Z35 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v
+Z36 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v
+L0 6
+R8
+r1
+!s85 0
+31
+!s108 1678649298.608000
+!s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v|
+Z37 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v|
+!s101 -O0
+R10
+vclk_gen_mid_200khz
+Z38 !s100 MLBe_ZFcV0DXL`R@Ec3<L3
+Z39 IDgBWlgB_VXiDzZbH8eODE2
+Z40 VC96_4ZHglzFPNKjR;e5];2
+R4
+Z41 w1678643444
+R35
+R36
+L0 6
+R8
+r1
+31
+R37
+R10
+Z42 !s108 1678643717.763000
+Z43 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/clk_gen_200khz_mid.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdisplay
+Z44 !s100 1cKhSQHWdX?9^`>ONK86P3
+Z45 I64OiZFF23ik@f4?A1UjZE2
+Z46 VNUh7L;:8f2RG8UZGj@JnQ3
+R4
+Z47 w1678588638
+Z48 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/display.v
+Z49 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/display.v
+L0 10
+R8
+r1
+31
+Z50 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/display.v|
+R10
+Z51 !s108 1678649297.850000
+Z52 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/display.v|
+!i10b 1
+!s85 0
+!s101 -O0
+verror_counter
+Z53 !s100 XzTljNlJ3H?`l0GHC8QB=1
+Z54 I6JDUOaV@62[FQef_CggRB0
+Z55 Vg@A24]f[Y9dG^a9aTD1WS0
+R4
+Z56 w1678648845
+Z57 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/error_counter.v
+Z58 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/error_counter.v
+L0 5
+R8
+r1
+31
+Z59 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/error_counter.v|
+R10
+Z60 !s108 1678649297.917000
+Z61 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/error_counter.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vnoise_test_top
+Z62 I038@i6lhTM6Aa[g]D?PUW3
+Z63 V5TJ0n09]EE:AE7I?XICd03
+R4
+Z64 w1678649258
+Z65 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top.v
+Z66 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top.v
+L0 4
+R8
+r1
+31
+Z67 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top.v|
+R10
+Z68 !s100 _R8<K7UWJOKbUMlbKCN:e0
+Z69 !s108 1678649298.082000
+Z70 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vnoise_test_top_tb
+Z71 IQ:CM^4C7;2RHzbfijCbZf1
+Z72 VE9nKaCoUgPIl^HHHiDMXQ2
+R4
+Z73 w1678649293
+Z74 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top._tb.v
+Z75 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top._tb.v
+L0 4
+R8
+r1
+31
+Z76 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top._tb.v|
+R10
+Z77 !s100 5@CZV5VFb]e]]7AkKW7R32
+Z78 !s108 1678649297.999000
+Z79 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/noise_circuit_top._tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsignal_gen
+Z80 !s100 1Fgl2M=z9QH7C8k0jNKki3
+Z81 I>=JNK?j1eeE>Jkn>P2z2Y3
+Z82 VXb`4mbF69OM8_=FCG@b6U1
+R4
+Z83 w1678648537
+Z84 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/signal_gen.v
+Z85 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/signal_gen.v
+L0 7
+R8
+r1
+31
+Z86 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/signal_gen.v|
+R10
+Z87 !s108 1678649298.179000
+Z88 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/signal_gen.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsync_1bit
+Z89 !s100 ]0LhDeGl6_=I>@T>mlL<E1
+Z90 IZ1a373[=a9h`ohze?i^f<1
+Z91 Vkg>U[:QjcGMC1R?2AUjS`3
+R4
+Z92 w1678642499
+Z93 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/sync_1bit.v
+Z94 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/sync_1bit.v
+L0 5
+R8
+r1
+31
+Z95 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/sync_1bit.v|
+R10
+Z96 !s108 1678649298.258000
+Z97 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/sync_1bit.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vX_OR
+Z98 !s100 >Oe4KJa>>X?Y0WGb=dU[>2
+Z99 INcoiz>c1WK@6Q;YMIjCX]3
+Z100 V`kH[`A9hi0aRLP@H?;12g2
+R4
+Z101 w1678634887
+Z102 8C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/X_OR.v
+Z103 FC:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/X_OR.v
+L0 5
+R8
+r1
+31
+Z104 !s90 -reportprogress|300|-work|work|C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/X_OR.v|
+R10
+Z105 n@x_@o@r
+Z106 !s108 1678649298.333000
+Z107 !s107 C:/Users/cmurz/OneDrive/Personal OneDrive/Verilog/Noise Tester/X_OR.v|
+!i10b 1
+!s85 0
+!s101 -O0

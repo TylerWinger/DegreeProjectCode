@@ -1,0 +1,74 @@
+/*
+ This module generates runs all .v files for the noise testing citcuit
+*/
+module noise_test_top(
+    clk, start_n, reset_n, run, pin_1, pin_2, HEX0, HEX1, HEX2, HEX3
+);
+
+input clk;
+input start_n;
+input run;
+input reset_n; // coutner reset
+input pin_2; // the noisy signal will be brough back to the FPGA on pin 2
+
+output pin_1; // the message signal will be sent to the circuit on pin 1
+output [6:0] HEX0, HEX1, HEX2, HEX3; //output for 7segment displays, 0 is ones, 1 is tens, 2 is hundreds, 3 is thousands
+
+wire start;
+wire reset;
+wire start_pulse;
+wire clk_100;
+wire clk_200;
+wire clk_200_mid;
+wire start_sync;
+wire out_2_signal;
+wire enable;
+wire s_end;
+wire out_1_XOR;
+wire [9:0] count_errors;
+wire [3:0] ones, tens, hundreds, thousands;
+
+assign start = !start_n;
+assign reset = !reset_n;
+//------------------------------------------------------------------------------------------------------------------------
+//assign pin_2 = ~pin_1; //connecting the two pins together ---- remove for physical circuit
+//------------------------------------------------------------------------------------------------------------------------
+posedge_detector posedge_detector_u(
+    .clk(clk_200), .in(start), .out(start_pulse)
+);
+
+clk_gen_100khz clk_gen_100khz_u( //100khs signal what will act as the mesasge 
+    .clk(clk), .clk_100(clk_100)
+);
+
+clk_gen_200khz clk_gen_200khz_u( //200khz signal that to send 100khz signal
+    .clk(clk), .clk_200(clk_200)
+);
+
+clk_gen_200khz_mid clk_gen_200khz_mid_u( //offset 200hkz signal to sample 100khz signal
+    .clk(clk), .clk_200_mid(clk_200_mid)
+);
+
+signal_gen signal_gen_u( //out_1 gets sent to pin_1 which is the noise circuit, out_2 get sent directly to the XOR
+    .clk(clk), .clk_100(clk_100), .clk_200(clk_200), .enable(enable), .out_1(pin_1), 
+    .out_2(out_2_signal), .start(start_pulse), .run(run)
+);
+
+X_OR X_OR_u( // in_1 gets its input from the output of the noise circuit, in_2 gets input directly from the signal
+    .in_1(pin_2), .in_2(out_2_signal), .out_1(out_1_XOR)
+);
+
+error_counter error_counter_u( //in_1 gets input from the output of the XOR, count_out is the output to the display
+    .clk(clk_200_mid), .reset(reset), .enable(enable), .in_1(out_1_XOR), .count(count_errors)
+);
+
+binary_to_bcd binary_to_bcd_u(
+    .clk(clk), .value(count_errors), .ones(ones), .tens(tens), .hundreds(hundreds), .thousands(thousands)
+);
+
+display display_u(
+    .clk(clk), .ones(ones), .tens(tens), .hundreds(hundreds), .thousands(thousands), 
+    .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3)
+);
+
+endmodule
