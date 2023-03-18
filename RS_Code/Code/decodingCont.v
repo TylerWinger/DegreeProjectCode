@@ -95,35 +95,38 @@ always @(decodeMessage)begin
 
   T = 4; //Initially T is set as too many errors, if this is not true, it will be corrected below 
 
-  //When all Si are 0, there are no errors
-  if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
-    T = 0;
+  if(det[3] != 0) begin
+    T = 3;
+    if(det[0] != 0) begin
+      T = 2;
+      //Condition for 1 error
+      if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
+        T = 1;
+        //When all Si are 0, there are no errors
+        if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
+          T = 0;
+        end
+      end
+    end
   end
 
-//Condition for 1 error, this condition is also true when all syndromes are zero, thus we used else if //! do we need to check all cases or will one suffice
-  else if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
+
+  if(T == 1) begin
     errorLocator[0] = divide(syndromeComponent[1],syndromeComponent[0]);
-    T = 1;
   end
 
   //Condition for 2 errors 
-  if(det[0] != 0) begin //If the determinant of generated equations is not 0
+  if(T == 2) begin 
     errorLocator[0] = divide((multiply(syndromeComponent[0],syndromeComponent[3]) ^ multiply(syndromeComponent[1],syndromeComponent[2])),(multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1])));
     errorLocator[1] = divide((multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2])),(multiply(syndromeComponent[1],syndromeComponent[1]) ^ multiply(syndromeComponent[0],syndromeComponent[2])));  
-    T = 2;
   end
 
     //Condition for T = 3
-  if(det[3] != 0) begin
+  if(T == 3) begin
     errorLocator[0] = divide(multiply(multiply(syndromeComponent[0],syndromeComponent[2]),syndromeComponent[5]) ^ multiply(multiply(syndromeComponent[0],syndromeComponent[3]),syndromeComponent[4]) ^ multiply(multiply(syndromeComponent[1],syndromeComponent[1]),syndromeComponent[5]) ^ multiply(multiply(syndromeComponent[1],syndromeComponent[2]),syndromeComponent[4]) ^ multiply(multiply(syndromeComponent[3],syndromeComponent[3]),syndromeComponent[1]) ^ multiply(multiply(syndromeComponent[2],syndromeComponent[2]),syndromeComponent[3]),det[3]);
     errorLocator[1] = divide(multiply(syndromeComponent[0],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[0],multiply(syndromeComponent[3],syndromeComponent[5])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[4])) ^ multiply(syndromeComponent[2],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[2],syndromeComponent[5])) ^ multiply(syndromeComponent[4],multiply(syndromeComponent[2],syndromeComponent[2])), det[3]);
     errorLocator[2] = divide(multiply(syndromeComponent[3],multiply(syndromeComponent[3],syndromeComponent[3])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[4],syndromeComponent[4])) ^ multiply(syndromeComponent[1],multiply(syndromeComponent[3],syndromeComponent[5])) ^ multiply(syndromeComponent[5],multiply(syndromeComponent[2],syndromeComponent[2])),det[3]);
-    T = 3;
   end
-
-  //else begin
-  //  T = 4;
-  //end
 
   //Finding error positions
   if(T == 1 || T == 2 || T == 3) begin
@@ -156,10 +159,12 @@ always @(decodeMessage)begin
       end
     end
     
+
     if (T == 1) begin //4.5.1 Direct Method
       errorValue[0] = divide(syndromeComponent[0],errorPosition[0]); //Finding error values
       errorWord[loc[0]] = errorValue[0]; //Decoding the error word 
     end
+
     if (T == 2) begin //4.5.1 Direct Method
       det[4] = multiply(multiply(errorPosition[1],errorPosition[1]),errorPosition[0]) ^ multiply(multiply(errorPosition[0],errorPosition[0]),errorPosition[1]);
       errorValue[0] = divide(multiply(syndromeComponent[0],multiply(errorPosition[1],errorPosition[1])) ^ multiply(syndromeComponent[1],errorPosition[1]) , det[4]);
@@ -167,6 +172,7 @@ always @(decodeMessage)begin
       errorWord[loc[0]] = errorValue[0]; 
       errorWord[loc[1]] = errorValue[1];
     end
+
     if(T == 3)begin //4.5.1 Direct Method
       errorValue[0] = divide(multiply(errorPosition[2],multiply(syndromeComponent[0],errorPosition[1]) ^ syndromeComponent[1]) ^ multiply(syndromeComponent[1],errorPosition[1]) ^ syndromeComponent[2]  ,  multiply(errorPosition[2],multiply(errorPosition[0],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[0])) ^ multiply(multiply(errorPosition[0],errorPosition[0]),errorPosition[1]) ^ multiply(multiply(errorPosition[0],errorPosition[0]),errorPosition[0]));
       errorValue[1] = divide(multiply(errorPosition[2],multiply(syndromeComponent[0],errorPosition[0]) ^ syndromeComponent[1]) ^ multiply(syndromeComponent[1],errorPosition[0]) ^ syndromeComponent[2]  ,  multiply(errorPosition[2],multiply(errorPosition[1],errorPosition[1]) ^ multiply(errorPosition[0],errorPosition[1])) ^ multiply(multiply(errorPosition[1],errorPosition[1]),errorPosition[1]) ^ multiply(multiply(errorPosition[1],errorPosition[1]),errorPosition[0]));
@@ -187,22 +193,15 @@ always @(decodeMessage)begin
     end
   end 
 
-  //Codeword condition when there are no errors
+  //Codeword condition when there are no error or too many errors
   //! Should be able to compress this
-  if(T == 0) begin
+  if(T == 0 || T == 4) begin
     for(i = 0; i < 15; i = i+1) begin
       codeWord[i] = recievedWord[i];
     end
     //Seperate the message and pack it
     for (i = 6; i <= 14; i = i + 1) begin
       messageRecieved[4*(i-6) +: 4] = codeWord[i];
-    end
-  end
-
-  //Codeword condition when there are more than 3 errors (sends tone message to indicate poor signal)
-  if(T == 4) begin
-    for(i = 0; i < 15; i = i+1) begin
-      codeWord[i] = 1;
     end
   end
   decoderBusy = 0;

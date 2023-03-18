@@ -3,23 +3,83 @@ K3
 13
 cModel Technology
 Z0 dC:\Lakehead\Year 3\Degree Project\Code\Verilog\Reed-Solomon
-vRSDecoder
-!i10b 1
-Z1 !s100 z5oImALcP30z0:n8N[@1Y1
-Z2 If5<VM3?RG^_oG:RMMAV>N2
-Z3 VkCN@6l`H<W?LCGkDQbCSN3
-Z4 dC:\Users\bouro\OneDrive\Documents\GitHub\DegreeProjectCode\RS_Code\Code
-Z5 w1674861424
-Z6 8C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v
-Z7 FC:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v
+vdecodingCont
+Z1 Ib`kgh@0>9b1n?YI98hXX>1
+Z2 VLWfSf]RR]6]1H?;RGPi?22
+Z3 dC:\Users\bouro\OneDrive\Documents\GitHub\DegreeProjectCode\RS_Code\Code
+Z4 w1678894730
+Z5 8C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/decodingCont.v
+Z6 FC:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/decodingCont.v
 L0 1
-Z8 OV;L;10.1d;51
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/decodingCont.v|
+Z9 o-work work -O0
+Z10 ndecoding@cont
+Z11 !s100 fCAhdzlPGMg22mk[P<hza3
+Z12 !s108 1678895230.418000
+Z13 !s107 C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/decodingCont.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vencodingContV2
+Z14 !s100 YCFI?cnj9GYVgYF5Y:mM=2
+Z15 IKBn2LdgX>0:K@0Y?K;kmK2
+Z16 V==>jGmIGcSWdjb7;I25zH2
+R3
+Z17 w1678893866
+Z18 8C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingContV2.v
+Z19 FC:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingContV2.v
+L0 8
+R7
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingContV2.v|
+R9
+Z21 nencoding@cont@v2
+!i10b 1
+!s85 0
+Z22 !s108 1678895230.503000
+Z23 !s107 C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingContV2.v|
+!s101 -O0
+vencodingDecodingTB
+!i10b 1
+Z24 !s100 _=9hoc:EQM7i4<dU5nnc]3
+Z25 IcLU6@zOB9Tj_4df`TCQEZ1
+Z26 V5o^OgRj?hLhJWQa1KQYjZ3
+R3
+R17
+Z27 8C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingDecodingTB.v
+Z28 FC:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingDecodingTB.v
+L0 1
+R7
 r1
 !s85 0
 31
-!s108 1674861497.404000
-!s107 C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
-Z9 !s90 -reportprogress|300|-work|work|C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
+!s108 1678895230.577000
+!s107 C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingDecodingTB.v|
+Z29 !s90 -reportprogress|300|-work|work|C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/encodingDecodingTB.v|
 !s101 -O0
-Z10 o-work work -O0
-Z11 n@r@s@decoder
+R9
+Z30 nencoding@decoding@t@b
+vRSDecoder
+Z31 !s100 z5oImALcP30z0:n8N[@1Y1
+Z32 If5<VM3?RG^_oG:RMMAV>N2
+Z33 VkCN@6l`H<W?LCGkDQbCSN3
+R3
+Z34 w1674861424
+Z35 8C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v
+Z36 FC:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v
+L0 1
+R7
+r1
+31
+Z37 !s90 -reportprogress|300|-work|work|C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
+R9
+Z38 n@r@s@decoder
+Z39 !s108 1674861497.404000
+Z40 !s107 C:/Users/bouro/OneDrive/Documents/GitHub/DegreeProjectCode/RS_Code/Code/RSDecoder.v|
+!i10b 1
+!s85 0
+!s101 -O0
