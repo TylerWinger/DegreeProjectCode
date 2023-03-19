@@ -93,7 +93,6 @@ always @(decodeMessage)begin
   det[2] = multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2]); // Represents det2,3
   det[3] = multiply(syndromeComponent[0],det[0]) ^ multiply(syndromeComponent[1],det[1]) ^ multiply(syndromeComponent[2],det[2]); //Represents det1,2,3
 
-  T = 4; //Initially T is set as too many errors, if this is not true, it will be corrected below 
 
   //When all Si are 0, there are no errors
   if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
