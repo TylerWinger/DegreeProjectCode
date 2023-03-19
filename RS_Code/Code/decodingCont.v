@@ -93,19 +93,28 @@ always @(decodeMessage)begin
   det[2] = multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2]); // Represents det2,3
   det[3] = multiply(syndromeComponent[0],det[0]) ^ multiply(syndromeComponent[1],det[1]) ^ multiply(syndromeComponent[2],det[2]); //Represents det1,2,3
 
-  T = 4; //Initially T is set as too many errors, if this is not true, it will be corrected below 
+if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
+    T = 0;
+  end
 
-  if(det[3] != 0) begin
-    T = 3;
-    if(det[0] != 0) begin
-      T = 2;
-      //Condition for 1 error
-      if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
+  else begin
+    i = 0;
+    while(i == 0) begin
+      if(det[3] != 0) begin
+        T = 3;
+        i = 1;
+      end
+      else if(det[0] != 0) begin
+        T = 2;
+        i = 1;
+      end
+      else if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
         T = 1;
-        //When all Si are 0, there are no errors
-        if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
-          T = 0;
-        end
+        i = 1;
+      end
+      else begin
+        T = 4;
+        i = 1;
       end
     end
   end

@@ -11,7 +11,7 @@ reg [3:0] errorPosition[2:0]; //z_i
 reg [3:0] errorValue[2:0]; //y_i
 reg [3:0] errorWord[14:0];
 reg [3:0] codeWord[14:0];
-reg [3:0] test;
+reg [3:0] test[4:0];
 
 integer i,j,k;
 integer T; //Used for # of errors
@@ -57,21 +57,21 @@ initial begin
   galoisField[13] = 4'b1101; //alpha^13
   galoisField[14] = 4'b1001; //alpha^14
       
-  recievedMessage[0] = galoisField[0] ^ 0; 
-  recievedMessage[1] = galoisField[8] ^ 0; 
-  recievedMessage[2] = galoisField[14] ^ 0; 
+  recievedMessage[0] = galoisField[12];
+  recievedMessage[1] = galoisField[8]; 
+  recievedMessage[2] = galoisField[14]; 
   recievedMessage[3] = galoisField[4] ^ 4'b0001;
   recievedMessage[4] = galoisField[10] ^ 4'b1000;
   recievedMessage[5] = galoisField[8] ^ 4'b0101;
-  recievedMessage[6] = 0 ^ 0;
-  recievedMessage[7] = galoisField[11] ^ 0;
-  recievedMessage[8] = 0 ^ 0;
-  recievedMessage[9] = 0 ^ 0;
-  recievedMessage[10] = 0 ^ 0;
+  recievedMessage[6] = 0;
+  recievedMessage[7] = galoisField[11];
+  recievedMessage[8] = 0;
+  recievedMessage[9] = 0;
+  recievedMessage[10] = 0;
   recievedMessage[11] = 0 ^ 4'b0101;
-  recievedMessage[12] = 0 ^ 0;
-  recievedMessage[13] = 0 ^ 0;
-  recievedMessage[14] = 0 ^ 0;
+  recievedMessage[12] = 0;
+  recievedMessage[13] = 0;
+  recievedMessage[14] = 0;
   //--------------------------------------------------
       
   //Calculating syndrome components (Method 1)
@@ -95,19 +95,34 @@ initial begin
   det[2] = multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2]); // Represents det2,3
   det[3] = multiply(syndromeComponent[0],det[0]) ^ multiply(syndromeComponent[1],det[1]) ^ multiply(syndromeComponent[2],det[2]); //Represents det1,2,3
 
-  T = 4; //Initially T is set as too many errors, if this is not true, it will be corrected below 
 
-  if(det[3] != 0) begin
-    T = 3;
-    if(det[0] != 0) begin
-      T = 2;
-      //Condition for 1 error
-      if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
+  test[0] = multiply(syndromeComponent[0],syndromeComponent[2]) ^ multiply(syndromeComponent[1],syndromeComponent[1]);
+  test[1] = multiply(syndromeComponent[1],syndromeComponent[3]) ^ multiply(syndromeComponent[2],syndromeComponent[2]);
+  test[2] = multiply(syndromeComponent[2],syndromeComponent[4]) ^ multiply(syndromeComponent[3],syndromeComponent[3]);
+
+
+  if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
+    T = 0;
+  end
+
+  else begin
+    i = 0;
+    while(i == 0) begin
+      if(det[3] != 0) begin
+        T = 3;
+        i = 1;
+      end
+      else if(det[0] != 0) begin
+        T = 2;
+        i = 1;
+      end
+      else if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
         T = 1;
-        //When all Si are 0, there are no errors
-        if((syndromeComponent[0] || syndromeComponent[1] || syndromeComponent[2] || syndromeComponent[3] || syndromeComponent[4] || syndromeComponent[5]) == 0) begin
-          T = 0;
-        end
+        i = 1;
+      end
+      else begin
+        T = 4;
+        i = 1;
       end
     end
   end
