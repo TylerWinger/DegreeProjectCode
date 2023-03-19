@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'recievedWordIn[0]'
+Slack : -64.086
+TNS   : -2291.147
+
+Type  : Slow Model Hold 'recievedWordIn[0]'
+Slack : 1.945
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'recievedWordIn[0]'
+Slack : -3.621
+TNS   : -1598.835
+
+Type  : Fast Model Setup 'recievedWordIn[0]'
+Slack : -21.782
+TNS   : -777.083
+
+Type  : Fast Model Hold 'recievedWordIn[0]'
+Slack : 0.371
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'recievedWordIn[0]'
+Slack : -1.222
+TNS   : -350.212
+
+------------------------------------------------------------

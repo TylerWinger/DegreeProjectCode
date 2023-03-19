@@ -100,7 +100,7 @@ always @(decodeMessage)begin
     T = 0;
   end
 
-//Condition for 1 error, this condition is also true when all syndromes are zero, thus we used else if //! do we need to check all cases or will one suffice
+//Condition for 1 error, this condition is also true when all syndromes are zero, thus we used else if 
   else if((divide(syndromeComponent[1],syndromeComponent[0])==divide(syndromeComponent[2],syndromeComponent[1])) && (divide(syndromeComponent[2],syndromeComponent[1])==divide(syndromeComponent[3],syndromeComponent[2])) && (divide(syndromeComponent[3],syndromeComponent[2])==divide(syndromeComponent[4],syndromeComponent[3])) && (divide(syndromeComponent[4],syndromeComponent[3])==divide(syndromeComponent[5],syndromeComponent[4])) && (divide(syndromeComponent[5],syndromeComponent[4])==divide(syndromeComponent[1],syndromeComponent[0]))) begin
     errorLocator[0] = divide(syndromeComponent[1],syndromeComponent[0]);
     T = 1;
@@ -121,9 +121,6 @@ always @(decodeMessage)begin
     T = 3;
   end
 
-  //else begin
-  //  T = 4;
-  //end
 
   //Finding error positions
   if(T == 1 || T == 2 || T == 3) begin

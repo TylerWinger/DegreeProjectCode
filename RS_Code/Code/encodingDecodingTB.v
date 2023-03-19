@@ -52,16 +52,27 @@ module encodingDecodingTB;
       begin
       	 error[0] = 0;
         error[1] = 0;
+<<<<<<< Updated upstream
         error[2] = 4'b0001;
         error[3] = 4'b1001;
         error[4] = 4'b0000;
         error[5] = 4'b0100;
+=======
+        error[2] = 4'b0000;
+        error[3] = 4'b0001;
+        error[4] = 4'b1000;
+        error[5] = 4'b0101;
+>>>>>>> Stashed changes
         error[6] = 0;
         error[7] = 0;
         error[8] = 4'b0000;
         error[9] = 4'b0000;
         error[10] = 4'b0000;
+<<<<<<< Updated upstream
         error[11] = 4'b0001;
+=======
+        error[11] = 4'b0101;
+>>>>>>> Stashed changes
         error[12] = 0;
         error[13] = 0;
         error[14] = 0;

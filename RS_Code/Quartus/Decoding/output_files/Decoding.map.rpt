@@ -1,0 +1,473 @@
+Analysis & Synthesis report for Decoding
+Fri Mar 17 17:13:23 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Mar 17 17:13:23 2023           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Decoding                                        ;
+; Top-level Entity Name              ; decodingCont                                    ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 2,704                                           ;
+;     Total combinational functions  ; 2,704                                           ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 98                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; decodingCont       ; Decoding           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------+---------+
+; ../../Code/decodingCont.v        ; yes             ; User Verilog HDL File  ; C:/Users/4tyle/OneDrive/!School/Degree/github/code/DegreeProjectCode/RS_Code/Code/decodingCont.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 2,704    ;
+;                                             ;          ;
+; Total combinational functions               ; 2704     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 1856     ;
+;     -- 3 input functions                    ; 388      ;
+;     -- <=2 input functions                  ; 460      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 2385     ;
+;     -- arithmetic mode                      ; 319      ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 98       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; Equal6~0 ;
+; Maximum fan-out                             ; 245      ;
+; Total fan-out                               ; 9500     ;
+; Average fan-out                             ; 3.39     ;
++---------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |decodingCont              ; 2704 (2704)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 98   ; 0            ; |decodingCont       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; messageRecieved[0]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[1]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[2]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[3]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[4]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[5]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[6]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[7]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[8]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[9]$latch                            ; T[2]                ; yes                    ;
+; messageRecieved[10]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[11]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[12]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[13]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[14]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[15]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[16]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[17]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[18]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[19]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[20]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[21]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[22]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[23]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[24]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[25]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[26]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[27]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[28]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[29]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[30]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[31]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[32]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[33]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[34]$latch                           ; T[2]                ; yes                    ;
+; messageRecieved[35]$latch                           ; T[2]                ; yes                    ;
+; Number of user-specified and inferred latches = 36  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |decodingCont|j                  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 27 bits   ; 54 LEs        ; 27 LEs               ; 27 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |decodingCont|j                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |decodingCont|errorLocator[1][3] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |decodingCont|T[0]               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |decodingCont|errorLocator[0][3] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |decodingCont|errorWord          ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |decodingCont|errorPosition      ;
+; 27:1               ; 4 bits    ; 72 LEs        ; 64 LEs               ; 8 LEs                  ; No         ; |decodingCont|loc                ;
+; 27:1               ; 4 bits    ; 72 LEs        ; 64 LEs               ; 8 LEs                  ; No         ; |decodingCont|errorPosition      ;
+; 38:1               ; 4 bits    ; 100 LEs       ; 92 LEs               ; 8 LEs                  ; No         ; |decodingCont|errorPosition      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:36     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Mar 17 17:12:45 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Decoding -c Decoding
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/4tyle/onedrive/!school/degree/github/code/degreeprojectcode/rs_code/code/decodingcont.v
+    Info (12023): Found entity 1: decodingCont
+Info (12127): Elaborating entity "decodingCont" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at decodingCont.v(71): variable "recievedWordIn" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at decodingCont.v(46): inferring latch(es) for variable "messageRecieved", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "messageRecieved[0]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[1]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[2]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[3]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[4]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[5]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[6]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[7]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[8]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[9]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[10]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[11]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[12]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[13]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[14]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[15]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[16]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[17]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[18]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[19]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[20]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[21]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[22]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[23]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[24]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[25]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[26]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[27]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[28]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[29]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[30]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[31]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[32]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[33]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[34]" at decodingCont.v(192)
+Info (10041): Inferred latch for "messageRecieved[35]" at decodingCont.v(192)
+Warning (13012): Latch messageRecieved[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[24]
+Warning (13012): Latch messageRecieved[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[25]
+Warning (13012): Latch messageRecieved[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[26]
+Warning (13012): Latch messageRecieved[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[27]
+Warning (13012): Latch messageRecieved[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[28]
+Warning (13012): Latch messageRecieved[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[29]
+Warning (13012): Latch messageRecieved[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[30]
+Warning (13012): Latch messageRecieved[7]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[31]
+Warning (13012): Latch messageRecieved[8]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[32]
+Warning (13012): Latch messageRecieved[9]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[33]
+Warning (13012): Latch messageRecieved[10]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[34]
+Warning (13012): Latch messageRecieved[11]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[35]
+Warning (13012): Latch messageRecieved[12]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[36]
+Warning (13012): Latch messageRecieved[13]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[37]
+Warning (13012): Latch messageRecieved[14]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[38]
+Warning (13012): Latch messageRecieved[15]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[39]
+Warning (13012): Latch messageRecieved[16]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[40]
+Warning (13012): Latch messageRecieved[17]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[41]
+Warning (13012): Latch messageRecieved[18]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[42]
+Warning (13012): Latch messageRecieved[19]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[43]
+Warning (13012): Latch messageRecieved[20]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[44]
+Warning (13012): Latch messageRecieved[21]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[45]
+Warning (13012): Latch messageRecieved[22]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[46]
+Warning (13012): Latch messageRecieved[23]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[47]
+Warning (13012): Latch messageRecieved[24]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[48]
+Warning (13012): Latch messageRecieved[25]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[49]
+Warning (13012): Latch messageRecieved[26]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[50]
+Warning (13012): Latch messageRecieved[27]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[51]
+Warning (13012): Latch messageRecieved[28]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[52]
+Warning (13012): Latch messageRecieved[29]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[53]
+Warning (13012): Latch messageRecieved[30]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[54]
+Warning (13012): Latch messageRecieved[31]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[55]
+Warning (13012): Latch messageRecieved[32]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[56]
+Warning (13012): Latch messageRecieved[33]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[57]
+Warning (13012): Latch messageRecieved[34]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[58]
+Warning (13012): Latch messageRecieved[35]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recievedWordIn[59]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "decoderBusy" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "decodeMessage"
+Info (21057): Implemented 2802 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 61 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 2704 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 78 warnings
+    Info: Peak virtual memory: 4636 megabytes
+    Info: Processing ended: Fri Mar 17 17:13:23 2023
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:00:37
+
+
