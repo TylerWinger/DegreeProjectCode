@@ -6,11 +6,13 @@ module encodingDecodingTB;
     reg decodeMessage = 0;
     reg [3:0] galoisField [14:0];
     reg [59:0] recievedWordIn;
-    reg [3:0] error [14:0];
+    reg [3:0] recievedWord [14:0];
+    reg [3:0] errorWord [14:0];
     reg [59:0] errorPacked;
     wire [59:0] encodedMessage;
     wire encoderBusy;
-    wire [35:0] messageRecieved;
+    wire [35:0] messageRecievedIn;
+    reg [3:0] messageRecieved [8:0];
 
     integer i;
 
@@ -25,20 +27,20 @@ module encodingDecodingTB;
       .recievedWordIn(recievedWordIn),
       .decodeMessage(decodeMessage),
       .decoderBusy(decoderBusy),
-      .messageRecieved(messageRecieved)
+      .messageRecieved(messageRecievedIn)
     );
 
     task outputMessage1; //alpha^11*X
       begin
-        message[0] = 0;
-        message[1] = galoisField[11];
-        message[2] = 0;
-        message[3] = 0;
-        message[4] = 0;
-        message[5] = 0;
-        message[6] = 0;
-        message[7] = 0;
-        message[8] = 0;
+        message[0] = galoisField[6];
+        message[1] = galoisField[9];
+        message[2] = galoisField[1];
+        message[3] = galoisField[9];
+        message[4] = galoisField[2];
+        message[5] = galoisField[0];
+        message[6] = galoisField[5];
+        message[7] = galoisField[12];
+        message[8] = galoisField[7];
 
       //Pack message
       for (i = 0; i <= 14; i = i + 1) begin
@@ -50,28 +52,31 @@ module encodingDecodingTB;
 
     task addError;
       begin
-      	 error[0] = 0;
-        error[1] = 0;
-        error[2] = 4'b0001;
-        error[3] = 4'b1001;
-        error[4] = 4'b0000;
-        error[5] = 4'b0000;
-        error[6] = 0;
-        error[7] = 0;
-        error[8] = 4'b1001;
-        error[9] = 4'b0000;
-        error[10] = 4'b0111;
-        error[11] = 4'b0101;
-        error[12] = 0;
-        error[13] = 0;
-        error[14] = 0;
+      	 errorWord[0] = 0;
+        errorWord[1] = 0;
+        errorWord[2] = 0;
+        errorWord[3] = 4'b0011;
+        errorWord[4] = 0;
+        errorWord[5] = 0;
+        errorWord[6] = 4'b0101;
+        errorWord[7] = 1;
+        errorWord[8] = 0;
+        errorWord[9] = 0;
+        errorWord[10] = 0;
+        errorWord[11] = 4'b1010;
+        errorWord[12] = 0;
+        errorWord[13] = 0;
+        errorWord[14] = 0;
         
-      //Pack error
+      //Pack errorWord
       for (i = 0; i <= 14; i = i + 1) begin
-        errorPacked[4*i +: 4] = error[i];
+        errorPacked[4*i +: 4] = errorWord[i];
       end
 
         recievedWordIn = encodedMessage ^ errorPacked;
+        for (i = 0; i <= 14 ;i = i + 1) begin
+          recievedWord[i] = recievedWordIn[4*i +: 4];
+     	  end
       end
     endtask
 
@@ -108,8 +113,11 @@ module encodingDecodingTB;
         addError;
         decodeMessage = ~decodeMessage;
         #1;
-        $stop;
       end  
+      for (i = 0; i <= 14 ;i = i + 1) begin
+        messageRecieved[i] = messageRecievedIn[4*i +: 4];
+     	end
+     	$stop;
     end
 endmodule
 

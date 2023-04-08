@@ -166,7 +166,7 @@ always @(decodeMessage)begin
       errorWord[loc[1]] = errorValue[1];
     end
     if(T == 3)begin //4.5.1 Direct Method
-      if (!(loc[0] & loc[1]) || !(loc[0] & loc[2]) || !(loc[1] & loc[2])) begin //If any two locations are zero then there is more than 3 errors.
+      if ((loc[0] == loc[1]) || (loc[0] == loc[2]) || (loc[1] == loc[2])) begin //If any two locations are zero then there is more than 3 errors.
         T = 4;
       end
       else begin
@@ -191,7 +191,6 @@ always @(decodeMessage)begin
   end 
 
   //Codeword condition when there are no errors
-  //! Should be able to compress this
   if(T == 0) begin
     for(i = 0; i < 15; i = i+1) begin
       codeWord[i] = recievedWord[i];
